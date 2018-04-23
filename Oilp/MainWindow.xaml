@@ -1,0 +1,292 @@
+﻿<Window x:Class="OilP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OilP"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       
+        xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="OilMainPanel" Height="1000" Width="1400">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Row="0" 
+                             Grid.Column="1" Grid.ColumnSpan="2" FontSize="40" Padding="3" Margin="0"
+                             FontFamily="YouYuan" HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center"  FontWeight="Bold" 
+                             HorizontalAlignment="Center" 
+                             Content="电控共轨系统测试软件" Background="LightBlue" />
+
+        <Grid Name="Common_rail_injector" ShowGridLines="True" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/GGPen.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="共轨喷油器"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="Common_rail_pump" ShowGridLines="True" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/GGBeng.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="共轨泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="HPO" ShowGridLines="True" Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/HPO.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="HPO泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="EUP_EUI" ShowGridLines="True" Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/EUP_EUI.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="EUP/EUI"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="EUP_I" ShowGridLines="True" Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/HEUIP.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="HEUI"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="HEUI_BENG" ShowGridLines="True" Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/HEUiBeng.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="HEUI泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="CAT" ShowGridLines="True" Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/CAT.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="CAT泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="DKZHBeng" ShowGridLines="True" Grid.Row="2" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/DKZHBENG.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="电控组合泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="VP37" ShowGridLines="True" Grid.Row="3" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/VP37.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="VP37"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="VP44" ShowGridLines="True" Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/VP44.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="VP44"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="TICS" ShowGridLines="True" Grid.Row="3" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/TICS.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="TICS泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="XIANDA" ShowGridLines="True" Grid.Row="3" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/XIANDA.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="先达电控泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="JIXIEVE" ShowGridLines="True" Grid.Row="4" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/JXVE.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="机械VE泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="JXBENG" ShowGridLines="True" Grid.Row="4" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/JXBENG.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="机械VE泵"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="JLUNIT" ShowGridLines="True" Grid.Row="4" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/JLUNIT.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="计量单元(ZME)"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <Grid Name="AHE" ShowGridLines="True" Grid.Row="4" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
+                <Image Source="Resources/AHE.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            </materialDesign:Card>
+            <Button  Background="LightBlue" Content="AHE"  FontFamily="YouYuan" FontWeight="Bold"
+                     Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                     Grid.Row="1" Margin="70,2,70,2">
+            </Button>
+        </Grid>
+
+        <materialDesign:ColorZone Mode="PrimaryLight" Padding="16" Grid.Row="5" Grid.Column="0" 
+              Grid.ColumnSpan="4" Margin="10,15" Background="LightBlue">
+                    <StackPanel Orientation="Horizontal">
+                            <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}">
+                            </ToggleButton>
+                            <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" FontWeight="Bold">
+                            预留下方工具栏
+                            </TextBlock>
+                     </StackPanel>
+        </materialDesign:ColorZone>
+    </Grid>
+
+</Window>
