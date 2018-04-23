@@ -37,7 +37,7 @@ namespace OilP
          **/
          public void Initialize_Item_Name()
         {
-
+            
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

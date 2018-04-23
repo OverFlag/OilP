@@ -51,7 +51,7 @@
                              FontFamily="YouYuan" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"  FontWeight="Bold" 
                              HorizontalAlignment="Center" 
-                             Content="电控共轨系统测试软件" Background="LightBlue" />
+                             Content="电控共轨系统测试软件" Name="common_rail_injector" Background="LightBlue" />
 
         <Grid Name="Common_rail_injector" ShowGridLines="True" Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>

@@ -55,7 +55,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ShowMeTheXAML">
-      <HintPath>..\..\ShowMeTheXAML.dll</HintPath>
+      <HintPath>..\..\..\VSResp\ShowMeTheXAML.dll</HintPath>
     </Reference>
     <Reference Include="SqlSugar, Version=4.6.4.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sqlSugar.4.6.4.8\lib\SqlSugar.dll</HintPath>
@@ -80,7 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dao\Oilp_Config_DAO.cs" />
+    <Compile Include="Model\OilP_Config.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
+    <Compile Include="Service\Oilp_Config_Service.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
