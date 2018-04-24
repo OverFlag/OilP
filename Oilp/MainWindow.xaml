@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="OilMainPanel" Height="1000" Width="1400">
+        Title="电控共轨系统测试软件(版本V1.0) - Main Panel" Height="1000" Width="1400">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -51,7 +51,7 @@
                              FontFamily="YouYuan" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"  FontWeight="Bold" 
                              HorizontalAlignment="Center" 
-                             Content="电控共轨系统测试软件" Name="common_rail_injector" Background="LightBlue" />
+                             Content="电控共轨系统测试软件" Name="electronic_control_common_rail_system_test_software" Background="LightBlue" />
 
         <Grid Name="Common_rail_injector" ShowGridLines="True" Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
@@ -61,7 +61,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/GGPen.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="共轨喷油器"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="共轨喷油器" Name="common_rail_injector" 
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -75,7 +76,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/GGBeng.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="共轨泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="共轨泵"  Name="common_rail_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -89,7 +91,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/HPO.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="HPO泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="HPO泵"  Name="hpo_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -103,7 +106,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/EUP_EUI.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="EUP/EUI"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="EUP/EUI" Name="eup_eui"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -117,7 +121,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/HEUIP.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="HEUI"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="HEUI" Name="heui"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -131,7 +136,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/HEUiBeng.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="HEUI泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="HEUI泵"  Name="heui_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -145,7 +151,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/CAT.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="CAT泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="CAT泵" Name="cat_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -159,7 +166,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/DKZHBENG.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="电控组合泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="电控组合泵" Name="electronically_controlled_combination_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -173,7 +181,7 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/VP37.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="VP37"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="VP37" Name="vp37" FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -187,7 +195,7 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/VP44.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="VP44"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="VP44" Name="vp44" FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -201,7 +209,7 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/TICS.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="TICS泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="TICS泵" Name="tics_pump" FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -215,7 +223,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/XIANDA.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="先达电控泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="先达电控泵"  Name="first_to_control_the_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -229,7 +238,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/JXVE.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="机械VE泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="机械VE泵"  Name="mechanical_ve_pump"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -243,7 +253,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/JXBENG.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="机械VE泵"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="机械VE泵"  Name="mechanical_pump" 
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -257,7 +268,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/JLUNIT.jpeg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="计量单元(ZME)"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="计量单元(ZME)"  Name="measuring_unit_zme"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
@@ -271,7 +283,8 @@
             <materialDesign:Card Grid.Row="0" Grid.RowSpan="1" Margin="5">
                 <Image Source="Resources/AHE.jpg" Grid.Row="0" Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </materialDesign:Card>
-            <Button  Background="LightBlue" Content="AHE"  FontFamily="YouYuan" FontWeight="Bold"
+            <Button  Background="LightBlue" Content="衔铁行程"  Name="armature_stroke_ahe"
+                     FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
                      Grid.Row="1" Margin="70,2,70,2">
             </Button>
