@@ -19,7 +19,7 @@ namespace OilP.Service
         {
             List<OilP_Config> oilP_Configs = new List<OilP_Config>();          
             oilP_Configs = OilP.Dao.Oilp_Config_DAO.QueryForAll();
-            //get the first element
+            //get the first element(this table only have one data)
             OilP_Config oilP_Config = new OilP_Config();
             oilP_Config = oilP_Configs[0];
             return oilP_Config;

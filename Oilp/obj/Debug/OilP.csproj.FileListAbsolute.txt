@@ -20,7 +20,6 @@ E:\VSResp\OilP\OilP\obj\Debug\OilP.csproj.CopyComplete
 E:\VSResp\OilP\OilP\obj\Debug\OilP.exe
 E:\VSResp\OilP\OilP\obj\Debug\OilP.pdb
 E:\VSResp\OilP\OilP\obj\Debug\OilP.csprojResolveAssemblyReference.cache
-E:\GitRepository\OilP\OilP\obj\Debug\OilP.csprojResolveAssemblyReference.cache
 E:\GitRepository\OilP\OilP\obj\Debug\MainWindow.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\App.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\OilP_MarkupCompile.cache
@@ -44,3 +43,4 @@ E:\GitRepository\OilP\OilP\obj\Debug\OilP.Properties.Resources.resources
 E:\GitRepository\OilP\OilP\obj\Debug\OilP.csproj.GenerateResource.cache
 E:\GitRepository\OilP\OilP\obj\Debug\OilP.csproj.CoreCompileInputs.cache
 E:\GitRepository\OilP\OilP\obj\Debug\OilP.csproj.CopyComplete
+E:\GitRepository\OilP\OilP\obj\Debug\OilP.csprojResolveAssemblyReference.cache
