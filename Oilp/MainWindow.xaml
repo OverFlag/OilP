@@ -45,7 +45,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
+       
         <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Row="0" 
                              Grid.Column="1" Grid.ColumnSpan="2" FontSize="40" Padding="3" Margin="0"
                              FontFamily="YouYuan" HorizontalContentAlignment="Center" 
@@ -64,7 +64,7 @@
             <Button  Background="LightBlue" Content="共轨喷油器" Name="common_rail_injector" 
                      FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
-                     Grid.Row="1" Margin="70,2,70,2">
+                     Grid.Row="1" Margin="70,2,70,2" Click="common_rail_injector_Click">
             </Button>
         </Grid>
 
@@ -300,6 +300,10 @@
                             </TextBlock>
                      </StackPanel>
         </materialDesign:ColorZone>
+        <Button Content="测试跳转" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Grid.Row="0" Grid.Column="4" FontFamily="YouYuan" FontWeight="Bold" Click="Test_Click">
+        </Button>
+
     </Grid>
 
 </Window>

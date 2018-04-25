@@ -31,6 +31,7 @@ namespace OilP
         {
             InitializeComponent();
             Initialize_Item_Name();
+           
         }
 
         /**
@@ -73,6 +74,26 @@ namespace OilP
             measuring_unit_zme.Content = item_Names[14].Item_name;
             armature_stroke_ahe.Content = item_Names[15].Item_name;
             electronic_control_common_rail_system_test_software.Content = item_Names[16].Item_name;
+        }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new Pages.Common_Rail_Injector();
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector.xaml", UriKind.Relative));
+        }
+
+        private void common_rail_injector_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Content = new Pages.Common_Rail_Injector();
+
+            //可以实现
+            NavigationWindow window = new NavigationWindow();
+            window.Source = new Uri("Pages/Common_Rail_Injector.xaml", UriKind.Relative);
+            window.Height = 1000;
+            window.Width = 1400;
+            window.Show();
+
+
         }
     }
 }

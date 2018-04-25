@@ -88,8 +88,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dao\Device_Information_DAO.cs" />
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
+    <Compile Include="Model\Device_Information.cs" />
     <Compile Include="Model\OilP_Config.cs" />
+    <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
+      <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\Item_Name_Service.cs" />
     <Compile Include="Service\Oilp_Config_Service.cs" />
     <Page Include="MainWindow.xaml">
@@ -107,6 +118,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Common_Rail_Injector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Item_Name.cs" />
