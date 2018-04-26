@@ -95,12 +95,10 @@
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
+    <Compile Include="Pages\HPO_Pump_Injector.xaml.cs">
+      <DependentUpon>HPO_Pump_Injector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Service\Device_Information_Service.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
     <Compile Include="Service\Oilp_Config_Service.cs" />
     <Page Include="MainWindow.xaml">
@@ -122,11 +120,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Window1.xaml">
+    <Page Include="Pages\HPO_Pump_Injector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

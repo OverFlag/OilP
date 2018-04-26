@@ -16,7 +16,7 @@ namespace OilP.Service
         /**
          * get names according to language
          **/
-        public  static List<Item_Name> Init_Item_Name()
+        public  static List<Item_Name> Init_Item_Name(string type)
         {
             //Get Language Type
             OilP_Config oilP_Config = new OilP_Config();
@@ -24,12 +24,12 @@ namespace OilP.Service
             string language = oilP_Config.Language;
             //get item names
             List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Dao.Item_Name_DAO.QueryForAll();
+            item_Names = OilP.Dao.Item_Name_DAO.QueryByType(type);
             //set return list
             List<Item_Name> return_list = new List<Item_Name>();
             if ("zh_CN".Equals(language))
             {
-                for (int i = 0; i <= item_Names.Count;i=i+2)
+                for (int i = 0; i < item_Names.Count;i=i+2)
                 {
                     Item_Name temp = new Item_Name();
                     temp = item_Names[i];

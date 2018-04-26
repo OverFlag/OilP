@@ -79,7 +79,7 @@
             <Button  Background="LightBlue" Content="共轨泵"  Name="common_rail_pump"
                      FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
-                     Grid.Row="1" Margin="70,2,70,2">
+                     Grid.Row="1" Margin="70,2,70,2" Click="common_rail_pump_Click" >
             </Button>
         </Grid>
 
@@ -94,7 +94,7 @@
             <Button  Background="LightBlue" Content="HPO泵"  Name="hpo_pump"
                      FontFamily="YouYuan" FontWeight="Bold"
                      Style="{DynamicResource MaterialDesignRaisedLightButton}" 
-                     Grid.Row="1" Margin="70,2,70,2">
+                     Grid.Row="1" Margin="70,2,70,2" Click="hpo_pump_Click">
             </Button>
         </Grid>
 

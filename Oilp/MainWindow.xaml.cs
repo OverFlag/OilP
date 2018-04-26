@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,7 +42,7 @@ namespace OilP
         {
             //get name list
             List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name();
+            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("index");
             //init names
             setEleName(item_Names);
 
@@ -50,8 +51,6 @@ namespace OilP
         {
 
         }
-
-
         /**
          * set the names of elements
          * */
@@ -74,6 +73,32 @@ namespace OilP
             measuring_unit_zme.Content = item_Names[14].Item_name;
             armature_stroke_ahe.Content = item_Names[15].Item_name;
             electronic_control_common_rail_system_test_software.Content = item_Names[16].Item_name;
+            //change the font family for en_US
+            if ("en_US".Equals(item_Names[0].Language))
+            {
+                //set font family
+                setFontFamily("Yu Gothic UI Semibold");
+            }
+        }
+
+        private void setFontFamily(string font)
+        {
+            common_rail_injector.FontFamily = new FontFamily(font);
+            common_rail_pump.FontFamily = new FontFamily(font);
+            hpo_pump.FontFamily = new FontFamily(font);
+            eup_eui.FontFamily = new FontFamily(font);
+            heui.FontFamily = new FontFamily(font);
+            heui_pump.FontFamily = new FontFamily(font);
+            cat_pump.FontFamily = new FontFamily(font);
+            electronically_controlled_combination_pump.FontFamily = new FontFamily(font);
+            vp37.FontFamily = new FontFamily(font);
+            vp44.FontFamily = new FontFamily(font);
+            tics_pump.FontFamily = new FontFamily(font);
+            first_to_control_the_pump.FontFamily = new FontFamily(font);
+            mechanical_ve_pump.FontFamily = new FontFamily(font);
+            measuring_unit_zme.FontFamily = new FontFamily(font);
+            armature_stroke_ahe.FontFamily = new FontFamily(font);
+            electronic_control_common_rail_system_test_software.FontFamily = new FontFamily(font);
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
@@ -92,8 +117,20 @@ namespace OilP
             window.Height = 1000;
             window.Width = 1400;
             window.Show();
+        }
 
+        private void common_rail_pump_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
 
+        private void hpo_pump_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow window = new NavigationWindow();
+            window.Source = new Uri("Pages/HPO_Pump_Injector.xaml", UriKind.Relative);
+            window.Height = 1000;
+            window.Width = 1400;
+            window.Show();
         }
     }
 }

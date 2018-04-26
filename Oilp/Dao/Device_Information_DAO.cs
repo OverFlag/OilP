@@ -24,5 +24,24 @@ namespace OilP.Dao
             device_Information = db.Queryable<Device_Information>().ToList();
             return device_Information;
         }
+
+        /**
+         * Get Data By Model_no And Manufacturer
+         * */
+        public static List<Device_Information> getDataByParams(String model_no, String manufacturer)
+        {
+            return null;
+        }
+
+        /**
+         *Get Data By Type
+         * */
+        public static List<Device_Information> getDataByType(String type)
+        {
+            List<Device_Information> device_Information = new List<Device_Information>();
+            SqlSugarClient db = DBConnect.GetInstance();
+            device_Information = db.Queryable<Device_Information>().Where(it => it.Type == type).ToList();
+            return device_Information;
+        }
     }
 }

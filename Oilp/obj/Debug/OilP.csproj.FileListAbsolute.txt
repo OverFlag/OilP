@@ -47,7 +47,6 @@ E:\GitRepository\OilP\OilP\obj\Debug\OilP.exe
 E:\GitRepository\OilP\OilP\obj\Debug\OilP.pdb
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector.baml
-E:\GitRepository\OilP\OilP\obj\Debug\Pages\Window1.g.cs
-E:\GitRepository\OilP\OilP\obj\Debug\Pages\Window1.baml
-E:\GitRepository\OilP\OilP\obj\Debug\Pages\Page1.g.cs
-E:\GitRepository\OilP\OilP\obj\Debug\Pages\Page1.baml
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\HPO_Pump_Injector.baml
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\HPO_Pump_Injector.g.cs
+E:\GitRepository\OilP\OilP\obj\Debug\OilP.csprojResolveAssemblyReference.cache

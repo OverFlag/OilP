@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,79 +17,78 @@ using OilP.Model;
 namespace OilP.Pages
 {
     /// <summary>
-    /// Common_Rail_Injector.xaml 的交互逻辑
+    /// HPO_Pump_Injector.xaml 的交互逻辑
     /// </summary>
-    public partial class Common_Rail_Injector : Page
+    public partial class HPO_Pump_Injector : Page
     {
-        public Common_Rail_Injector()
+        public HPO_Pump_Injector()
         {
             InitializeComponent();
             Initialize_Page();
         }
 
         /**
-         * set the item name and datagrid
-         **/
+        * set the item name and datagrid
+        **/
         public void Initialize_Page()
         {
             List<Device_Information> device_Information = new List<Device_Information>();
-            //get common rail injector device information
-            device_Information = OilP.Service.Device_Information_Service.getDataByType("cri");
+            //get hpo pump device information
+            device_Information = OilP.Service.Device_Information_Service.getDataByType("hpo");
             device_information_datagrid.ItemsSource = device_Information;
 
             //get name list
             List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("cri");
+            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("hpo");
             //init names
             setEleName(item_Names);
         }
 
         /**
-         * exit the system
-         * */
-        private void Button_Exit_Click(object sender, RoutedEventArgs e)
-        {
-             Application.Current.Shutdown();
-            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Page1.xaml", UriKind.Relative));
-        }
-
-        /**
-        * set the names of elements
-        * */
+       * set the names of elements
+       * */
         private void setEleName(List<Item_Name> item_Names)
         {
             model_no_name.Text = item_Names[0].Item_name;
-            
+
             search.Content = item_Names[1].Item_name;
             exit_system.Content = item_Names[2].Item_name;
             add.Content = item_Names[3].Item_name;
             edit.Content = item_Names[4].Item_name;
             delete.Content = item_Names[5].Item_name;
             confirm.Content = item_Names[6].Item_name;
-            //change the datagrid header language
-            Regex regChina = new Regex("^[^\x00-\xFF]");
-            Regex regEnglish = new Regex("^[a-zA-Z]");
-            if (regEnglish.IsMatch(item_Names[1].Item_name))
+            //change the font family for en_US
+            if ("en_US".Equals(item_Names[0].Language))
             {
                 //set font family
                 setFontFamily("Yu Gothic UI Semibold");
-                // i don't know how to rewrite the header of wpf datagrid
-                //do nothing
             }
         }
 
         /**
          * set font family for en_US
          **/
-         private void setFontFamily(string font)
+        private void setFontFamily(string font)
         {
             model_no_name.FontFamily = new FontFamily(font);
             search.FontFamily = new FontFamily(font);
             exit_system.FontFamily = new FontFamily(font);
             add.FontFamily = new FontFamily(font);
             edit.FontFamily = new FontFamily(font);
-            delete.FontFamily = new FontFamily(font); 
+            delete.FontFamily = new FontFamily(font);
             confirm.FontFamily = new FontFamily(font);
+        }
+
+        /**
+           * exit the system
+        **/
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Page1.xaml", UriKind.Relative));
         }
     }
 }
+
+    
+
