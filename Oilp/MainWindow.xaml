@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OilP"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-       
         xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -45,7 +45,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-       
+
         <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Row="0" 
                              Grid.Column="1" Grid.ColumnSpan="2" FontSize="40" Padding="3" Margin="0"
                              FontFamily="YouYuan" HorizontalContentAlignment="Center" 
@@ -292,18 +292,19 @@
 
         <materialDesign:ColorZone Mode="PrimaryLight" Padding="16" Grid.Row="5" Grid.Column="0" 
               Grid.ColumnSpan="4" Margin="10,15" Background="LightBlue">
-                    <StackPanel Orientation="Horizontal">
-                            <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}">
-                            </ToggleButton>
-                            <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" FontWeight="Bold">
+            <StackPanel Orientation="Horizontal">
+                <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}">
+                </ToggleButton>
+                <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" FontWeight="Bold">
                             预留下方工具栏
-                            </TextBlock>
-                     </StackPanel>
+                </TextBlock>
+            </StackPanel>
         </materialDesign:ColorZone>
-        <Button Content="测试跳转" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Grid.Row="0" Grid.Column="4" FontFamily="YouYuan" FontWeight="Bold" Click="Test_Click">
+        <Button Content="系统设置" Name="system_set" Background="LightBlue"
+                Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                Grid.Row="1" Grid.Column="4" FontFamily="YouYuan" FontWeight="Bold" Click="system_set_Click" >
         </Button>
 
-    </Grid>
 
+    </Grid>
 </Window>

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using OilP.Model;
 
+
 /**
  * author:Slytherin
  * date:2018.04.19
@@ -131,6 +132,11 @@ namespace OilP
             window.Height = 1000;
             window.Width = 1400;
             window.Show();
+        }
+
+        private void system_set_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
