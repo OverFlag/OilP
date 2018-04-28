@@ -24,5 +24,18 @@ namespace OilP.Dao
             oilP_Configs = db.Queryable<OilP_Config>().ToList();
             return oilP_Configs;
         }
+
+        /**
+            * update the config 
+          * */
+          public static void updateConfig(OilP_Config oilP_Config)
+        {
+            List<OilP_Config> oilP_Configs = new List<OilP_Config>();
+            SqlSugarClient db = DBConnect.GetInstance();
+            //updata one object
+            db.Updateable(oilP_Config).ExecuteCommand();
+            //update one column
+            //db.Updateable(oilP_Config).UpdateColumns(it => new { it.Language }).ExecuteCommand();
+        }
     }
 }

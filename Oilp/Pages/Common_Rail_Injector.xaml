@@ -35,7 +35,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid ShowGridLines="True" Name="common_rail_injector_grid">
+    <Grid ShowGridLines="true" Name="common_rail_injector_grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="0.15*"></RowDefinition>
@@ -45,13 +45,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid ShowGridLines="True" Name="search_grid" Grid.Row="0" Grid.Column="0">
+        <Grid ShowGridLines="true" Name="search_grid" Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"></RowDefinition>
                 <RowDefinition Height="0.6*"></RowDefinition>
                 <RowDefinition Height="0.15*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid ShowGridLines="True">
+            <Grid ShowGridLines="true">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -65,6 +65,7 @@
                      Text="5a" Margin="30,10,30,10"  FontSize="50" 
                       >
                 </TextBox>
+                
             </Grid>
             <Button Content="查找" Name="search" Grid.Row="2" Grid.Column="0" Margin="30,10,30,10" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightBlue"
@@ -101,7 +102,7 @@
                     FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan"
                      Click="Button_Exit_Click">
             </Button>
-        <Grid ShowGridLines="True" Grid.Row="2" Grid.Column="1">
+        <Grid ShowGridLines="true" Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\GitRepository\OilP\OilP\App.xaml
-41609435718
+5229368852
 
-23-1332904652
+24-1978551276
 19-765892935
-MainWindow.xaml;Pages\Common_Rail_Injector.xaml;Pages\HPO_Pump_Injector.xaml;Pages\Sysytem_Config.xaml;
+MainWindow.xaml;Pages\Common_Rail_Injector.xaml;Pages\Common_Rail_Injector_Test.xaml;Pages\HPO_Pump_Injector.xaml;Pages\System_Config.xaml;
 
-False
+True
 

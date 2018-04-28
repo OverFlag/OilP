@@ -24,5 +24,14 @@ namespace OilP.Service
             oilP_Config = oilP_Configs[0];
             return oilP_Config;
         }
+
+        /**
+         * update the config 
+         * */
+         public static void updateConfig(OilP_Config oilP_Config)
+        {
+            OilP.Dao.Oilp_Config_DAO.updateConfig(oilP_Config);
+        }
+         
     }
 }

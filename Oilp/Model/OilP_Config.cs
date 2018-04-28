@@ -13,7 +13,9 @@ namespace OilP.Model
     class OilP_Config
     {
         private string language;
+        private int config_no;
 
         public string Language { get => language; set => language = value; }
+        public int Config_no { get => config_no; set => config_no = value; }
     }
 }
