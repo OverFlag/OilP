@@ -95,11 +95,14 @@
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Test.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HPO_Pump_Injector.xaml.cs">
       <DependentUpon>HPO_Pump_Injector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Sysytem_Config.xaml.cs">
-      <DependentUpon>Sysytem_Config.xaml</DependentUpon>
+    <Compile Include="Pages\System_Config.xaml.cs">
+      <DependentUpon>System_Config.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\Device_Information_Service.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
@@ -123,11 +126,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Common_Rail_Injector_Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HPO_Pump_Injector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Sysytem_Config.xaml">
+    <Page Include="Pages\System_Config.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
