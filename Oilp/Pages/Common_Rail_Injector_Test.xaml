@@ -20,6 +20,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.RadioButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -433,6 +434,49 @@
                 <ColumnDefinition Width="0.3*"></ColumnDefinition>
                 <ColumnDefinition Width="0.3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="实时喷油量" FontFamily="YouYuan" FontSize="40" TextWrapping="Wrap"
+                 Margin="15">
+                </TextBlock>
+                <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="200" FontSize="20" Margin="60,70,35,0" Grid.Row="0"></TextBlock>
+                    <TextBlock Text="mm³/H" FontSize="20" Margin="110,200,0,0" Grid.Row="1"></TextBlock>
+                    <TextBlock Text="10" FontSize="20" Margin="70,0,0,0" Grid.Row="2"></TextBlock>
+                    <TextBox Grid.Row="3" Name="fuel_injection" Background="LightGreen" Text="0.0" FontSize="30"></TextBox>
+                </Grid>
+            </Grid>
+
+            <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="实时回油量" FontFamily="YouYuan" FontSize="40" TextWrapping="Wrap"
+                 Margin="15">
+                </TextBlock>
+                <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="70" FontSize="20" Margin="60,70,35,0" Grid.Row="0"></TextBlock>
+                    <TextBlock Text="mm³/H" FontSize="20" Margin="110,200,0,0" Grid.Row="1"></TextBlock>
+                    <TextBlock Text="0" FontSize="20" Margin="70,0,0,0" Grid.Row="2"></TextBlock>
+                    <TextBox Grid.Row="3" Name="return_oil" Background="LightGreen" Text="0.0" FontSize="30"></TextBox>
+                </Grid>
+            </Grid>
             <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -440,6 +484,56 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
+                <RadioButton GroupName="directon" Name="forward" Content="正向" FontFamily="YouYuan"
+                 FontSize="30" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0">
+                </RadioButton>
+                <RadioButton GroupName="directon" Name="backward" Content="反向" FontFamily="YouYuan"
+                 FontSize="30" Margin="10,60,10,10" Grid.Row="0" Grid.Column="0">
+                </RadioButton>
+                <RadioButton GroupName="op_cl" Name="open" Content="常开" FontFamily="YouYuan"
+                 FontSize="30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="0">
+                </RadioButton>
+                <RadioButton GroupName="op_cl" Name="close" Content="常闭" FontFamily="YouYuan"
+                 FontSize="30" Margin="10,60,10,10" Grid.Row="1" Grid.Column="0">
+                </RadioButton>
+                <Button Name="time_add" Background="LightBlue" Grid.Row="2" Grid.Column="0" 
+                        Content="+" FontSize="30" Margin="20,20,20,20" Height="50" >
+                </Button>
+            </Grid>
+
+            <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="setp_1" Text="LEAK:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="0" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_2" Text="WARM:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="1" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_3_1" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="2" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_3_2" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="3" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_4" Text="EM:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="4" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_5" Text="LL:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="5" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_6" Text="VE:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="6" Grid.Column="0"></TextBlock>
+                <TextBlock Name="setp_7" Text="VE R:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="7" Grid.Column="0"></TextBlock>
             </Grid>
         </Grid>
         <Grid ShowGridLines="true" Grid.Row="2">
@@ -453,6 +547,35 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="0.7*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Name="exit" Grid.Row="1" Margin="60,10,60,10" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/exit.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <TextBlock Text="ESC" FontFamily="Yu Gothic UI Semibold" FontSize="25" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+
+            <Grid Grid.Column="1" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="0.7*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Name="show" Grid.Row="1" Margin="60,10,60,10" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/movie.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <TextBlock Text="演示" FontFamily="YouYuan" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

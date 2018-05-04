@@ -126,7 +126,7 @@
             </Button>
             <Button Content="确认" Name="confirm" Grid.Row="0" Grid.Column="3" Margin="30,20,30,20" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightGreen"
-                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan"
+                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="confirm_Click"
                      >
             </Button>
         </Grid>

@@ -92,5 +92,10 @@ namespace OilP.Pages
             delete.FontFamily = new FontFamily(font); 
             confirm.FontFamily = new FontFamily(font);
         }
+
+        private void confirm_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
+        }
     }
 }
