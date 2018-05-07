@@ -62,28 +62,28 @@
 
                 </TextBlock>
                 <TextBox Name="model_no"  Grid.Row="1" Grid.Column="0"  
-                     Text="5a" Margin="30,10,30,10"  FontSize="50" 
+                     Text="" Margin="30,10,30,10"  FontSize="50" 
                       >
                 </TextBox>
                 
             </Grid>
             <Button Content="查找" Name="search" Grid.Row="2" Grid.Column="0" Margin="30,10,30,10" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightBlue"
-                    FontSize="50" Height="Auto" FontWeight="Bold" FontFamily="YouYuan">
+                    FontSize="50" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="search_Click">
 
             </Button>
             <ListBox Name="manufacturer_list" Grid.Row="1" Grid.Column="0"  Margin="10,10,10,10"
                  IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
-                <TextBlock Text="Bosch" FontSize="30"/>
-                <TextBlock Text="Denso" FontSize="30"/>
-                <TextBlock Text="Delphi" FontSize="30"/>
-                <TextBlock Text="Siemens" FontSize="30"/>
-                <TextBlock Text="Caterpillar" FontSize="30"/>
-                <TextBlock Text="BYC" FontSize="30"/>
-                <TextBlock Text="Cummins" FontSize="30"/>
-                <TextBlock Text="LongBeng" FontSize="30"/>
-                <TextBlock Text="NanYue" FontSize="30"/>
-                <TextBlock Text="WIT" FontSize="30"/>
+                <ListBoxItem  Content="Bosch" FontSize="30" IsSelected="True"/>
+                <ListBoxItem  Content="Denso" FontSize="30"/>
+                <ListBoxItem  Content="Delphi" FontSize="30"/>
+                <ListBoxItem  Content="Siemens" FontSize="30"/>
+                <ListBoxItem  Content="Caterpillar" FontSize="30"/>
+                <ListBoxItem  Content="BYC" FontSize="30"/>
+                <ListBoxItem  Content="Cummins" FontSize="30"/>
+                <ListBoxItem  Content="LongBeng" FontSize="30"/>
+                <ListBoxItem  Content="NanYue" FontSize="30"/>
+                <ListBoxItem  Content="WIT" FontSize="30"/>
             </ListBox>
         </Grid>
         <DataGrid Name="device_information_datagrid" Grid.Row="0" Grid.Column="1" 

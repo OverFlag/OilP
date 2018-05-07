@@ -30,7 +30,16 @@ namespace OilP.Dao
          * */
         public static List<Device_Information> getDataByParams(String model_no, String manufacturer)
         {
-            return null;
+            List<Device_Information> device_Information = new List<Device_Information>();
+            SqlSugarClient db = DBConnect.GetInstance();
+            if (!"".Equals(model_no))
+            {
+                device_Information = db.Queryable<Device_Information>().Where(it => it.Model_no == model_no ).ToList();
+            }
+            else {
+                device_Information = db.Queryable<Device_Information>().Where(it => it.Manufacturer == manufacturer).ToList();
+            }
+            return device_Information;
         }
 
         /**

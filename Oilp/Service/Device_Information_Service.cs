@@ -27,7 +27,9 @@ namespace OilP.Service
          * */
         public static List<Device_Information> getDataByParams(String model_no,String manufacturer)
         {
-            return null;
+            List<Device_Information> device_Information = new List<Device_Information>();
+            device_Information = OilP.Dao.Device_Information_DAO.getDataByParams(model_no, manufacturer);
+            return device_Information;
         }
 
         /**

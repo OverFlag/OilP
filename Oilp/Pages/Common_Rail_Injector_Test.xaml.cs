@@ -20,23 +20,33 @@ namespace OilP.Pages
     /// </summary>
     public partial class Common_Rail_Injector_Test : Page
     {
-        public Common_Rail_Injector_Test()
+        public Common_Rail_Injector_Test(String model_no)
         {
             InitializeComponent();
-            Initialize_Page();
+            Initialize_Page(model_no);
+           
         }
 
         /**
         * set the item name and datagrid
         **/
-        public void Initialize_Page()
+        public void Initialize_Page(String model_no)
         {
+            //根据model_no读取数据库测试表的数据
+
+            //the way to change the pic of button
+            btn_step_1.Background = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri("pack://application:,,,../Resources/exit.png"))
+            };
+
             //get name list
             List<Item_Name> item_Names = new List<Item_Name>();
             item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("cri");
             //init names
             //setelename(item_names);
         }
+
 
        
     }

@@ -95,7 +95,32 @@ namespace OilP.Pages
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
+            //获取datagrid选中行，并获取其model_no
+            Device_Information device_Information = new Device_Information();
+            device_Information = (Device_Information) device_information_datagrid.SelectedItem;
+            String model_no = device_Information.Model_no;
+            //页面跳转，传递model_no参数
+            Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
+            this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
+        }
+
+        private void search_Click(object sender, RoutedEventArgs e)
+        {
+            List<Device_Information> device_Information = new List<Device_Information>();
+            //获取listbox中选择的项
+            try
+            {
+                String manu = ((ListBoxItem)manufacturer_list.SelectedItem).Content.ToString();
+                String no = model_no.Text;
+                device_Information = OilP.Service.Device_Information_Service.getDataByParams(no,manu);
+                device_information_datagrid.ItemsSource = device_Information;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
     }
 }

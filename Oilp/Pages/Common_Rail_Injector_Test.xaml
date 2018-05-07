@@ -431,8 +431,8 @@
                 <ColumnDefinition Width="0.1*"></ColumnDefinition>
                 <ColumnDefinition Width="0.2*"></ColumnDefinition>
                 <ColumnDefinition Width="0.2*"></ColumnDefinition>
-                <ColumnDefinition Width="0.3*"></ColumnDefinition>
-                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -503,10 +503,10 @@
 
             <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -534,6 +534,71 @@
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="6" Grid.Column="0"></TextBlock>
                 <TextBlock Name="setp_7" Text="VE R:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="7" Grid.Column="0"></TextBlock>
+                <Button Name="btn_step_1" Grid.Row="0" Grid.Column="1" Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_2" Grid.Row="1" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_3_1" Grid.Row="2" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_3_2" Grid.Row="3" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_4" Grid.Row="4" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_5" Grid.Row="5" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_6" Grid.Row="6" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="btn_step_7" Grid.Row="7" Grid.Column="1"  Width="60" Height="50">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/setting.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+
+                <Button Grid.Column="2" Grid.Row="0" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_1"></Button>
+                <Button Grid.Column="2" Grid.Row="1" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_2"></Button>
+                <Button Grid.Column="2" Grid.Row="2" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_3"></Button>
+                <Button Grid.Column="2" Grid.Row="3" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_4"></Button>
+                <Button Grid.Column="2" Grid.Row="4" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_5"></Button>
+                <Button Grid.Column="2" Grid.Row="5" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_6"></Button>
+                <Button Grid.Column="2" Grid.Row="6" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_7"></Button>
+                <Button Grid.Column="2" Grid.Row="7" Content="0.0-70.0" FontSize="35" Height="45"
+                        Background="LightBlue" Name="range_8"></Button>
             </Grid>
         </Grid>
         <Grid ShowGridLines="true" Grid.Row="2">
