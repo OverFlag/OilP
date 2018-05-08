@@ -139,8 +139,8 @@ namespace OilP
         private void system_set_Click(object sender, RoutedEventArgs e)
         {
             NavigationWindow window = new NavigationWindow();
-            //window.Source = new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative);
-            window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
+            window.Source = new Uri("Pages/Common_Rail_Injector_Edit.xaml", UriKind.Relative);
+            //window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
             window.Height =500;
             window.Width =700;
             window.Show();

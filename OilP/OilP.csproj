@@ -88,12 +88,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dao\Code_Table_DAO.cs" />
+    <Compile Include="Dao\Common_Rail_Injector_Test_DAO.cs" />
     <Compile Include="Dao\Device_Information_DAO.cs" />
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
+    <Compile Include="Model\Code_Table.cs" />
+    <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\Device_Information.cs" />
     <Compile Include="Model\OilP_Config.cs" />
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Edit.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Common_Rail_Injector_Test.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Test.xaml</DependentUpon>
@@ -104,6 +111,7 @@
     <Compile Include="Pages\System_Config.xaml.cs">
       <DependentUpon>System_Config.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\Code_Table_Service.cs" />
     <Compile Include="Service\Device_Information_Service.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
     <Compile Include="Service\Oilp_Config_Service.cs" />
@@ -123,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\Common_Rail_Injector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common_Rail_Injector_Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

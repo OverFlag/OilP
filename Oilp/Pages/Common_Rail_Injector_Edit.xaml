@@ -13,8 +13,18 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-      d:DesignHeight="1000" d:DesignWidth="1400"
-      Title="Common_Rail_Injector_Edit">
+      
+      Title="Common_Rail_Injector_Edit" Width="1400" Height="1000">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Slider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
@@ -33,6 +43,46 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="型号-零件号" FontSize="45" FontFamily="YouYuan"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TextBox Name="model_no" Grid.Row="1" Grid.Column="0" FontSize="45" FontFamily="Yu Gothic UI Semibold"
+                     HorizontalAlignment="Center" VerticalAlignment="Center">123</TextBox>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="制造商" FontSize="45" FontFamily="YouYuan"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ComboBox materialDesign:HintAssist.Hint="Search" Name="manus_combobox"
+                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="Bosch" Name="Bosch" IsSelected="True"></ComboBoxItem>
+                    <ComboBoxItem Content="Denso" Name="Denso"></ComboBoxItem>
+                    <ComboBoxItem Content="Delphi" Name="Delphi"></ComboBoxItem>
+                    <ComboBoxItem Content="Siemens" Name="Siemens"></ComboBoxItem>
+                    <ComboBoxItem Content="Caterpillar" Name="Caterpillar"></ComboBoxItem>
+                    <ComboBoxItem Content="BYC" Name="BYC"></ComboBoxItem>
+                    <ComboBoxItem Content="Cummins" Name="Cummins"></ComboBoxItem>
+                    <ComboBoxItem Content="Long Beng" Name="Long_Beng"></ComboBoxItem>
+                    <ComboBoxItem Content="Nan Yue" Name="Nan_Yue"></ComboBoxItem>
+                    <ComboBoxItem Content="WIT" Name="WIT"></ComboBoxItem>
+                </ComboBox>
+            </smtx:XamlDisplay>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="新建数据模板" FontSize="40" FontFamily="YouYuan"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ComboBox materialDesign:HintAssist.Hint="Search" Name="template_combobox"
+                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="template" Name="template_1" IsSelected="True">
+                    </ComboBoxItem>
+                </ComboBox>
+            </smtx:XamlDisplay>
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="特性曲线" FontSize="40" FontFamily="YouYuan"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ComboBox materialDesign:HintAssist.Hint="Search" Name="curve_combobox"
+                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="curve" Name="curve_1" IsSelected="True">
+                    </ComboBoxItem>
+                </ComboBox>
+            </smtx:XamlDisplay>
         </Grid>
         <Grid ShowGridLines="True" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -44,12 +94,166 @@
                     <RowDefinition Height="0.1*"></RowDefinition>
                     <RowDefinition Height="0.9*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="检测值" Name="test_value_TextBlock" FontSize="45" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 <Grid ShowGridLines="True" Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="检测步骤名称" Name="test_step_name_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Name="step_name_TextBox" Grid.Row="0" Grid.Column="1" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                    <TextBlock Grid.Row="1" Text="控制持续时间" Name="last_time_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="last_time_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="μS" Name="miuS" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                         VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="2" Text="压力" Name="pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="pressure_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="MPa" Name="zhaoP" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                          VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="3" Text="喷油量" Name="oil_p_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="3" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="oil_p_hor_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="±" Name="zf_p" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                          VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <TextBox Name="oil_p_ver_TextBox" Grid.Row="0" Grid.Column="2" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="3" Text="mm³/H" Name="mmh3_p" FontSize="30" FontFamily="Yu Gothic UI Semibold"
+                          VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="4" Text="回油量" Name="oil_h_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="4" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="oil_h_hor_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="±" Name="zf_h" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                          VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <TextBox Name="oil_h_ver_TextBox" Grid.Row="0" Grid.Column="2" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock Grid.Row="1" Grid.Column="3" Text="mm³/H" Name="mmh3_h" FontSize="30" FontFamily="Yu Gothic UI Semibold"
+                          VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="5" Text="测量时间" Name="test_time_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="5" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="test_time_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock  Grid.Column="1" Text="S" Name="S" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                         VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="6" Text="特性曲线" Name="curve_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Name="curve_TextBox" Grid.Row="6" Grid.Column="1" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                    <TextBlock Grid.Row="7" Text="Magnification" Name="magn_TextBlock" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Name="magn_TextBox" Grid.Row="7" Grid.Column="1" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                    <TextBlock Grid.Row="8" Text="Period" Name="period_TextBlock" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="8" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="period_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock  Grid.Column="1" Text="S" Name="mS" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                         VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                    <TextBlock Grid.Row="9" Text="Voltage" Name="voltage_TextBlock" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid ShowGridLines="True" Grid.Row="9" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="voltage_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="123"></TextBox>
+                        <TextBlock  Grid.Column="1" Text="S" Name="V" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                         VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                   
                 </Grid>
+            </Grid>
+            <Grid ShowGridLines="True" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="0.9*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid ShowGridLines="True" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.9*"></RowDefinition>
+                        <RowDefinition Height="0.1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid ShowGridLines="True" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Background="LightBlue" Name="step_add" Content="增加"  FontSize="40" 
+                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="0"></Button>
+                        <Button Background="LightBlue" Name="step_delete" Content="删除"  FontSize="40" 
+                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="1"></Button>
+                        <Button Background="LightBlue" Name="step_change" Content="更改"  FontSize="40" 
+                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="2"></Button>
+                    </Grid>
+                    <ListBox Grid.Row="0" Name="step_ListBox">
+
+                    </ListBox>
+                </Grid>
+                <TextBlock Grid.Row="0"  Text="检测步骤" Name="step_TextBlock" FontSize="40" FontFamily="YouYuan"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+  
             </Grid>
         </Grid>
     </Grid>
