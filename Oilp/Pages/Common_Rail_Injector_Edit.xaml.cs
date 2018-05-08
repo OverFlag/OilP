@@ -24,5 +24,9 @@ namespace OilP.Pages
         {
             InitializeComponent();
         }
+        public void Init_step_ListBox()
+        {
+
+        }
     }
 }
