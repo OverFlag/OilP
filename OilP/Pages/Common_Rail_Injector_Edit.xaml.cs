@@ -17,16 +17,20 @@ using OilP.Model;
 
 namespace OilP.Pages
 {
+
     /// <summary>
     /// Common_Rail_Injector_Edit.xaml 的交互逻辑
     /// </summary>
     public partial class Common_Rail_Injector_Edit : Page
     {
+        public static string MODEL_NO;
         public Common_Rail_Injector_Edit(string model_no)
         {
             //构造函数传入model_no
             InitializeComponent();
+            MODEL_NO = model_no;
             Init_step_ListBox(model_no);
+            
         }
         /**
          * 根据model_no获取ListBox的填入项
@@ -41,8 +45,14 @@ namespace OilP.Pages
                 item.Content = common_Rail_Injector_Tests[i].Step_name;
                 item.FontSize = 40;
                 item.FontFamily = new FontFamily("Yu Gothic UI Semibold");
-                step_ListBox.Items.Add(item);             
+                step_ListBox.Items.Add(item);
+                //设置listbox的默认值
+                //if (i==0)
+                //{
+                //    item.IsSelected = true;
+                //}
             }
+            
             //传入model_no和list仲的第一个step_name向页面填入数据库存在的数据
             setData(model_no, common_Rail_Injector_Tests[0].Step_name);
             model_no_TextBox.Text = model_no;
@@ -73,7 +83,14 @@ namespace OilP.Pages
             oil_h_hor_TextBox.Text = common_Rail_Injector_Test.Fuel_h_hor.ToString();
             oil_h_ver_TextBox.Text = common_Rail_Injector_Test.Fuel_h_hor.ToString();
             test_time_TextBox.Text = common_Rail_Injector_Test.Test_time.ToString();
-            curve_TextBox.Text = common_Rail_Injector_Test.Curve.ToString();
+            if (null == common_Rail_Injector_Test.Curve|| common_Rail_Injector_Test.Curve.Length ==0)
+            {
+                curve_TextBox.Text = null;
+            }
+            else
+            {
+                curve_TextBox.Text = common_Rail_Injector_Test.Curve.ToString();
+            }         
             magn_TextBox.Text = common_Rail_Injector_Test.Magnification.ToString();
             period_TextBox.Text = common_Rail_Injector_Test.Period.ToString();
             voltage_TextBox.Text = common_Rail_Injector_Test.Voltage.ToString();
@@ -167,6 +184,15 @@ namespace OilP.Pages
                 period_TextBox.Background = Brushes.White; 
                 voltage_TextBox.Background = Brushes.White; 
             }
+        }
+
+        /**
+         * 根据选择的测试步骤更新页面数据
+         * */
+        private void step_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
+            setData(MODEL_NO,step_name);
         }
     }
 }
