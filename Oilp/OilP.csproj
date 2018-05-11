@@ -112,6 +112,7 @@
       <DependentUpon>System_Config.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\Code_Table_Service.cs" />
+    <Compile Include="Service\Common_Rail_Injector_Test_Service.cs" />
     <Compile Include="Service\Device_Information_Service.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
     <Compile Include="Service\Oilp_Config_Service.cs" />

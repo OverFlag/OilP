@@ -122,5 +122,16 @@ namespace OilP.Pages
             }
             
         }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+            //获取datagrid选中行，并获取其model_no
+            Device_Information device_Information = new Device_Information();
+            device_Information = (Device_Information)device_information_datagrid.SelectedItem;
+            String model_no = device_Information.Model_no;
+            //页面跳转，传递model_no参数
+            Common_Rail_Injector_Edit common_Rail_Injector_Edit_page = new Common_Rail_Injector_Edit(model_no);
+            this.NavigationService.Navigate(common_Rail_Injector_Edit_page);
+        }
     }
 }

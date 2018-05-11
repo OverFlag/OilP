@@ -20,7 +20,7 @@ namespace OilP.Pages
     /// </summary>
     public partial class Common_Rail_Injector_Test : Page
     {
-        public Common_Rail_Injector_Test(String model_no)
+        public Common_Rail_Injector_Test(string model_no)
         {
             InitializeComponent();
             Initialize_Page(model_no);
@@ -30,8 +30,9 @@ namespace OilP.Pages
         /**
         * set the item name and datagrid
         **/
-        public void Initialize_Page(String model_no)
+        public void Initialize_Page(string model_no)
         {
+            string no = model_no;
             //根据model_no读取数据库测试表的数据
 
             //the way to change the pic of button

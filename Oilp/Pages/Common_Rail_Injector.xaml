@@ -116,7 +116,7 @@
             </Button>
             <Button Content="修改" Name="edit" Grid.Row="0" Grid.Column="1" Margin="30,20,30,20" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightGreen"
-                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan"
+                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="edit_Click"
                      >
             </Button>
             <Button Content="删除" Name="delete" Grid.Row="0" Grid.Column="2" Margin="30,20,30,20" 

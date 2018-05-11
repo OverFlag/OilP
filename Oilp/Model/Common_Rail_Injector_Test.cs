@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace OilP.Model
 {
-    class Common_Rail_Injector_Test
+    public class Common_Rail_Injector_Test
     {
-        string model_no;
-        string step_name;
-        double duration;
-        double rail_pressure;
-        double fuel_p_hor;
-        double fuel_p_ver;
-        double fuel_h_hor;
-        double fuel_h_ver;
-        int test_time;
-        double magnification;
-        int period;
-        int voltage;
-        double line;
+        private string model_no;
+        private string step_name;
+        private double duration;
+        private double rail_pressure;
+        private double fuel_p_hor;
+        private double fuel_p_ver;
+        private double fuel_h_hor;
+        private double fuel_h_ver;
+        private int test_time;
+        private string curve;
+        private double magnification;
+        private int period;
+        private int voltage;
+        private string line;
 
         public string Model_no { get => model_no; set => model_no = value; }
         public string Step_name { get => step_name; set => step_name = value; }
@@ -34,6 +35,7 @@ namespace OilP.Model
         public double Magnification { get => magnification; set => magnification = value; }
         public int Period { get => period; set => period = value; }
         public int Voltage { get => voltage; set => voltage = value; }
-        public double Line { get => line; set => line = value; }
+        public string Line { get => line; set => line = value; }
+        public string Curve { get => curve; set => curve = value; }
     }
 }

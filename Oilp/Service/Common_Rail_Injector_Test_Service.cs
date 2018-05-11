@@ -1,47 +1,43 @@
-﻿using System;
+﻿using OilP.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OilP.Model;
-using SqlSugar;
 
-namespace OilP.Dao
+namespace OilP.Service
 {
-    class Common_Rail_Injector_Test_DAO
+    class Common_Rail_Injector_Test_Service
     {
         /**
-       * get all data from table
-       **/
+      * get all data from table
+      **/
         public static List<Common_Rail_Injector_Test> QueryForAll()
         {
             List<Common_Rail_Injector_Test> common_Rail_Injector_Tests = new List<Common_Rail_Injector_Test>();
-            SqlSugarClient db = DBConnect.GetInstance();
-            common_Rail_Injector_Tests = db.Queryable<Common_Rail_Injector_Test>().ToList();
+            common_Rail_Injector_Tests = OilP.Dao.Common_Rail_Injector_Test_DAO.QueryForAll();
             return common_Rail_Injector_Tests;
         }
 
         /**
-         * 根据model_no和step_name获取数据
-         * */
+         * 通过model_no和step_name查询所单条数据
+        **/
         public static Common_Rail_Injector_Test QueryByModelNoAndStepName(string model_no ,string step_name)
         {
             Common_Rail_Injector_Test common_Rail_Injector_Test = new Common_Rail_Injector_Test();
-            SqlSugarClient db = DBConnect.GetInstance();
-            //查询单条，不用single，single超过一条会报错。
-            common_Rail_Injector_Test = db.Queryable<Common_Rail_Injector_Test>().Where(it => it.Model_no == model_no && it.Step_name == step_name).First();
+            common_Rail_Injector_Test = OilP.Dao.Common_Rail_Injector_Test_DAO.QueryByModelNoAndStepName(model_no,step_name);
             return common_Rail_Injector_Test;
         }
 
         /**
-       * 根据model_no获取数据集合
-       **/
+      * 通过model_no获取所有的step_name集合
+      **/
         public static List<Common_Rail_Injector_Test> QueryByModelNo(string model_no)
         {
             List<Common_Rail_Injector_Test> common_Rail_Injector_Tests = new List<Common_Rail_Injector_Test>();
-            SqlSugarClient db = DBConnect.GetInstance();
-            common_Rail_Injector_Tests = db.Queryable<Common_Rail_Injector_Test>().Where(it=>it.Model_no==model_no).ToList();
+            common_Rail_Injector_Tests = OilP.Dao.Common_Rail_Injector_Test_DAO.QueryByModelNo(model_no);
             return common_Rail_Injector_Tests;
         }
+
     }
 }
