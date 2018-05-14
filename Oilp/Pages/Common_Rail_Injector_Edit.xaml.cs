@@ -17,16 +17,20 @@ using OilP.Model;
 
 namespace OilP.Pages
 {
+
     /// <summary>
     /// Common_Rail_Injector_Edit.xaml 的交互逻辑
     /// </summary>
     public partial class Common_Rail_Injector_Edit : Page
     {
+        public static string MODEL_NO;
         public Common_Rail_Injector_Edit(string model_no)
         {
             //构造函数传入model_no
             InitializeComponent();
+            MODEL_NO = model_no;
             Init_step_ListBox(model_no);
+            
         }
         /**
          * 根据model_no获取ListBox的填入项
@@ -41,8 +45,14 @@ namespace OilP.Pages
                 item.Content = common_Rail_Injector_Tests[i].Step_name;
                 item.FontSize = 40;
                 item.FontFamily = new FontFamily("Yu Gothic UI Semibold");
-                step_ListBox.Items.Add(item);             
+                step_ListBox.Items.Add(item);
+                //设置listbox的默认值
+                //if (i==0)
+                //{
+                //    item.IsSelected = true;
+                //}
             }
+            
             //传入model_no和list仲的第一个step_name向页面填入数据库存在的数据
             setData(model_no, common_Rail_Injector_Tests[0].Step_name);
             model_no_TextBox.Text = model_no;
@@ -73,7 +83,14 @@ namespace OilP.Pages
             oil_h_hor_TextBox.Text = common_Rail_Injector_Test.Fuel_h_hor.ToString();
             oil_h_ver_TextBox.Text = common_Rail_Injector_Test.Fuel_h_hor.ToString();
             test_time_TextBox.Text = common_Rail_Injector_Test.Test_time.ToString();
-            curve_TextBox.Text = common_Rail_Injector_Test.Curve.ToString();
+            if (null == common_Rail_Injector_Test.Curve|| common_Rail_Injector_Test.Curve.Length ==0)
+            {
+                curve_TextBox.Text = null;
+            }
+            else
+            {
+                curve_TextBox.Text = common_Rail_Injector_Test.Curve.ToString();
+            }         
             magn_TextBox.Text = common_Rail_Injector_Test.Magnification.ToString();
             period_TextBox.Text = common_Rail_Injector_Test.Period.ToString();
             voltage_TextBox.Text = common_Rail_Injector_Test.Voltage.ToString();
@@ -90,6 +107,7 @@ namespace OilP.Pages
             {
                 model_no_TextBox.IsReadOnly = false;
                 step_name_TextBox.IsReadOnly = false;
+                last_time_TextBox.IsReadOnly = false;
                 pressure_TextBox.IsReadOnly = false;
                 oil_p_hor_TextBox.IsReadOnly = false;
                 oil_p_ver_TextBox.IsReadOnly = false;
@@ -104,11 +122,13 @@ namespace OilP.Pages
                 step_add.Visibility = Visibility.Visible;
                 step_delete.Visibility = Visibility.Visible;
                 step_change.Visibility = Visibility.Visible;
+                setTextBoxBG(true);
             }
             else
             {
                 model_no_TextBox.IsReadOnly = true;
                 step_name_TextBox.IsReadOnly = true;
+                last_time_TextBox.IsReadOnly = true;
                 pressure_TextBox.IsReadOnly = true;
                 oil_p_hor_TextBox.IsReadOnly = true;
                 oil_p_ver_TextBox.IsReadOnly = true;
@@ -123,7 +143,8 @@ namespace OilP.Pages
                 step_add.Visibility = Visibility.Hidden;
                 step_delete.Visibility = Visibility.Hidden;
                 step_change.Visibility = Visibility.Hidden;
-                
+                setTextBoxBG(false);
+
             }      
         }
         /**
@@ -131,21 +152,64 @@ namespace OilP.Pages
            * */
         public void setTextBoxBG(bool flag)
         {
-            if (flag == true)
+            if (flag == false)
             {
                 model_no_TextBox.Background = Brushes.LightGray;
-                step_name_TextBox.Background = Brushes.LightGray; ;
-                pressure_TextBox.Background = Brushes.LightGray; ;
-                oil_p_hor_TextBox.Background = Brushes.LightGray; ;
-                oil_p_ver_TextBox.Background = Brushes.LightGray; ;
-                oil_h_hor_TextBox.Background = Brushes.LightGray; ;
-                oil_h_ver_TextBox.Background = Brushes.LightGray; ;
-                test_time_TextBox.Background = Brushes.LightGray; ;
-                curve_TextBox.Background = Brushes.LightGray; ;
-                magn_TextBox.Background = Brushes.LightGray; ;
-                period_TextBox.Background = Brushes.LightGray; ;
-                voltage_TextBox.Background = Brushes.LightGray; ;
+                step_name_TextBox.Background = Brushes.LightGray; 
+                last_time_TextBox.Background = Brushes.LightGray;
+                pressure_TextBox.Background = Brushes.LightGray; 
+                oil_p_hor_TextBox.Background = Brushes.LightGray; 
+                oil_p_ver_TextBox.Background = Brushes.LightGray; 
+                oil_h_hor_TextBox.Background = Brushes.LightGray; 
+                oil_h_ver_TextBox.Background = Brushes.LightGray; 
+                test_time_TextBox.Background = Brushes.LightGray; 
+                curve_TextBox.Background = Brushes.LightGray; 
+                magn_TextBox.Background = Brushes.LightGray; 
+                period_TextBox.Background = Brushes.LightGray; 
+                voltage_TextBox.Background = Brushes.LightGray; 
             }
+            else
+            {
+                model_no_TextBox.Background = Brushes.White;
+                step_name_TextBox.Background = Brushes.White; 
+                last_time_TextBox.Background = Brushes.White; 
+                pressure_TextBox.Background = Brushes.White; 
+                oil_p_hor_TextBox.Background = Brushes.White; 
+                oil_p_ver_TextBox.Background = Brushes.White; 
+                oil_h_hor_TextBox.Background = Brushes.White; 
+                oil_h_ver_TextBox.Background = Brushes.White; 
+                test_time_TextBox.Background = Brushes.White; 
+                curve_TextBox.Background = Brushes.White; 
+                magn_TextBox.Background = Brushes.White; 
+                period_TextBox.Background = Brushes.White; 
+                voltage_TextBox.Background = Brushes.White; 
+            }
+        }
+
+        /**
+         * 根据选择的测试步骤更新页面数据
+         * */
+        private void step_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
+            setData(MODEL_NO,step_name);
+        }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //将textbox设置为可修改
+            setEditable(true);
+            setTextBoxBG(true);
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+            string model_no = MODEL_NO;
+            //页面跳转，传递model_no参数
+            Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
+            this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
         }
     }
 }

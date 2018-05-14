@@ -266,6 +266,45 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="exit" Grid.Column="1" Margin="20,10,20,10" Height="60">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/exit.png" Stretch="Fill">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <TextBlock FontSize="40" HorizontalAlignment="Center"  VerticalAlignment="Center" Text="ESC"
+                           FontFamily="Yu Gothic UI Semibold"></TextBlock>
+            </Grid>
+            
+            <Button Name="curve" Grid.Row="0" Grid.Column="1" Margin="80,10,80,10" Height="60">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/curve.png" Stretch="Fill">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Name="save" Grid.Row="0" Grid.Column="2" Margin="80,10,80,10" Height="60">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/save.png" Stretch="Fill">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Name="edit" Grid.Row="0" Grid.Column="3" Margin="80,10,80,10" Height="60" Click="edit_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/edit.png" Stretch="Fill">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Name="next" Grid.Row="0" Grid.Column="4" Margin="80,10,80,10" Height="60" Click="next_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Resources/next.png" Stretch="Fill">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
         </Grid>
         
     </Grid>

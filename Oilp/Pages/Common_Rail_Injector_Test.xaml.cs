@@ -20,10 +20,12 @@ namespace OilP.Pages
     /// </summary>
     public partial class Common_Rail_Injector_Test : Page
     {
+        private static String MODEL_NO;
         public Common_Rail_Injector_Test(string model_no)
         {
             InitializeComponent();
             Initialize_Page(model_no);
+            MODEL_NO = model_no;
            
         }
 
@@ -32,9 +34,7 @@ namespace OilP.Pages
         **/
         public void Initialize_Page(string model_no)
         {
-            string no = model_no;
-            //根据model_no读取数据库测试表的数据
-
+            
             //the way to change the pic of button
             btn_step_1.Background = new ImageBrush
             {
@@ -48,7 +48,22 @@ namespace OilP.Pages
             //setelename(item_names);
         }
 
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
 
-       
+        /**
+          * 根据model_no和step_name查找详细数据
+          * */
+        public void setData(string model_no, string step_name)
+        {
+            Model.Common_Rail_Injector_Test common_Rail_Injector_Test = new Model.Common_Rail_Injector_Test();
+            common_Rail_Injector_Test = OilP.Service.Common_Rail_Injector_Test_Service.QueryByModelNoAndStepName(model_no, step_name);
+            //在页面上填入step_name和model_no的数据
+            step_name_TextBox.Text = step_name;
+            //fillData(common_Rail_Injector_Test);
+
+        }
     }
 }

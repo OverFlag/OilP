@@ -40,13 +40,31 @@
                     <RowDefinition Height="0.7*"></RowDefinition>
                     <RowDefinition Height="0.3*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <Grid ShowGridLines="True" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:Chip Name="cri_type_no" Grid.Row="0" Grid.Column="0"
+                       Content="型号:" FontSize="30"  HorizontalAlignment="Center"
+                        VerticalAlignment="Center"   FontFamily="YouYuan">
+                    </materialDesign:Chip>
+                    <materialDesign:Chip Name="cri_type_step" Grid.Row="1" Grid.Column="0"
+                       Content="步骤:" FontSize="30" HorizontalAlignment="Center"
+                        VerticalAlignment="Center"  FontFamily="YouYuan">
+                    </materialDesign:Chip>
+                    <TextBox Name="model_no_TextBox" Grid.Row="0" Grid.Column="1" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Center" VerticalAlignment="Center" Text="model_no"></TextBox>
+                    <TextBox Name="step_name_TextBox" Grid.Row="1" Grid.Column="1" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Center" VerticalAlignment="Center" Text="step_name"></TextBox>
+                </Grid>
                 <Image Source="../Resources/GGPen.jpeg" Margin="10,10,10,10" ></Image>
-                <materialDesign:Chip Name="cri_type_no" Grid.Row="1" Grid.Column="0"
-                       Content="型号:" FontSize="30" VerticalAlignment="Top"  Margin="0,20" FontFamily="YouYuan">
-                </materialDesign:Chip>
-                <materialDesign:Chip Name="cri_type_step" Grid.Row="1" Grid.Column="0"
-                       Content="步骤:" FontSize="30" VerticalAlignment="Bottom" Margin="0,20" FontFamily="YouYuan">
-                </materialDesign:Chip>
+               
+                
             </Grid>
             <Grid ShowGridLines="true" Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -616,7 +634,7 @@
                     <RowDefinition Height="0.3*"></RowDefinition>
                     <RowDefinition Height="0.7*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Name="exit" Grid.Row="1" Margin="60,10,60,10" Height="50">
+                <Button Name="exit" Grid.Row="1" Margin="60,10,60,10" Height="50" Click="exit_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/exit.png" Stretch="Fill">
                         </ImageBrush>
