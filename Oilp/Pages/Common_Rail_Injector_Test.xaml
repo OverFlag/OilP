@@ -63,8 +63,8 @@
                       HorizontalAlignment="Center" VerticalAlignment="Center" Text="step_name"></TextBox>
                 </Grid>
                 <Image Source="../Resources/GGPen.jpeg" Margin="10,10,10,10" ></Image>
-               
-                
+
+
             </Grid>
             <Grid ShowGridLines="true" Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -83,21 +83,46 @@
                         <ColumnDefinition Width="0.2*"></ColumnDefinition>
                         <ColumnDefinition Width="0.8*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:Chip Name="cri_rotating_speed" Grid.Row="1" Grid.Column="0"
-                       Content="转速" FontSize="25" VerticalAlignment="Top"  Margin="0,10" FontFamily="YouYuan">
-                    </materialDesign:Chip>
-                    <materialDesign:Chip Name="cri_pump_pressure" Grid.Row="1" Grid.Column="0"
-                       Content="泵腔压力" FontSize="25" VerticalAlignment="Top"  Margin="0,80" FontFamily="YouYuan">
-                    </materialDesign:Chip>
-                    <materialDesign:Chip Name="cri_rail_pressure" Grid.Row="1" Grid.Column="0"
-                       Content="轨压门限" FontSize="25" VerticalAlignment="Top" Margin="0,160" FontFamily="YouYuan">
-                    </materialDesign:Chip>
-                    <materialDesign:Chip Name="cri_rail_adjustment" Grid.Row="1" Grid.Column="0"
-                       Content="轨压调整" FontSize="25" VerticalAlignment="Bottom"  Margin="0,120" FontFamily="YouYuan">
-                    </materialDesign:Chip>
-                    <materialDesign:Chip Name="cri_flow" Grid.Row="1" Grid.Column="0"
-                       Content="流量检测" FontSize="25" VerticalAlignment="Bottom"  Margin="0,50" FontFamily="YouYuan">
-                    </materialDesign:Chip>
+                    <Grid ShowGridLines="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <materialDesign:Chip Name="cri_rotating_speed" Grid.Row="0" Grid.Column="0"
+                       Content="转速" FontSize="25" VerticalAlignment="Center"  FontFamily="YouYuan">
+                        </materialDesign:Chip>
+                        <TextBox Name="rotating_speed_TextBox" Grid.Row="1" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="rotating_speed"></TextBox>
+                        <materialDesign:Chip Name="cri_pump_pressure" Grid.Row="2" Grid.Column="0"
+                       Content="泵腔压力" FontSize="25" VerticalAlignment="Center"  FontFamily="YouYuan">
+                        </materialDesign:Chip>
+                        <TextBox Name="pump_pressure_TextBox" Grid.Row="3" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="pump_pressure"></TextBox>
+                        <materialDesign:Chip Name="cri_rail_pressure" Grid.Row="4" Grid.Column="0"
+                       Content="轨压门限" FontSize="25" VerticalAlignment="center" FontFamily="YouYuan">
+                        </materialDesign:Chip>
+                        <TextBox Name="rail_pressure_TextBox" Grid.Row="5" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="rail_pressure"></TextBox>
+                        <materialDesign:Chip Name="cri_rail_adjustment" Grid.Row="6" Grid.Column="0"
+                       Content="轨压调整" FontSize="25" VerticalAlignment="Center"  FontFamily="YouYuan">
+                        </materialDesign:Chip>
+                        <TextBox Name="rail_adjustment_TextBox" Grid.Row="7" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="rail_adjustment"></TextBox>
+                        <materialDesign:Chip Name="cri_flow" Grid.Row="8" Grid.Column="0"
+                       Content="流量检测" FontSize="25" VerticalAlignment="Center"   FontFamily="YouYuan">
+                        </materialDesign:Chip>
+                        <TextBox Name="flow_TextBox" Grid.Row="9" FontSize="25" FontFamily="Yu Gothic UI Semibold"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="flow"></TextBox>
+                    </Grid>
+
                     <Grid ShowGridLines="true" Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -130,14 +155,28 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="/min" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button Name="hor_round_speed" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+
+                            <Button Name="equal_round_speed" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="hor_rotating_speed_textBox" FontSize="25" >
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="equal_rotating_speed_textBox">
                             </TextBox>
                         </Grid>
 
@@ -152,6 +191,24 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
+                            <Button Name="hor_oil_p" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_oil_p" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_oil_p" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
                             <TextBlock Grid.Row="0" Grid.Column="0" Name="text_block_name_fuel_P"
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="YouYuan"
                                 Text="喷油量" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">
@@ -160,22 +217,25 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="mm³/H" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="hor_fuel_P_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="ver_fuel_P_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="equal_fuel_P_textBox">
                             </TextBox>
                         </Grid>
-                     <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="2">
+                        <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="2">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="0.8*"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="40*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="50*"></RowDefinition>
+                                <RowDefinition Height="51*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -189,18 +249,39 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="mm³/H" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button Name="hor_oil_h" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_oil_h" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_oil_h" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="hor_fuel_h_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="ver_fuel_h_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="equal_fuel_h_textBox">
                             </TextBox>
                         </Grid>
 
-                         <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="3">
+                        <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="3">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="0.8*"></RowDefinition>
                                 <RowDefinition></RowDefinition>
@@ -219,15 +300,20 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="μs" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button Name="hor_pulse_width" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="pulse_width_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            </TextBox>
+
                         </Grid>
 
                         <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="4">
@@ -249,14 +335,35 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="MPa" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button Name="hor_pressure" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_pressure" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_pressure" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="hor_rail_pressure_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="ver_rail_pressure_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="equal_rail_pressure_textBox">
                             </TextBox>
                         </Grid>
 
@@ -279,17 +386,17 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="KPa" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>
-                        
+
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="0.8*"></RowDefinition>
@@ -301,7 +408,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" Name="text_block_name_time"
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="text_block_name_test_time"
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="YouYuan"
                                 Text="时间" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">
                             </TextBlock>
@@ -309,23 +416,31 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="s" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="test_time_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
+
+                            <Button Name="test_time" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
                         </Grid>
 
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="1">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="0.8*"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="40*"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50*"></RowDefinition>
+                                <RowDefinition Height="51*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -339,15 +454,14 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="v" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBox FontSize="25" 
+                                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                     Name="voltage_textBox">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            </TextBox>
+
                         </Grid>
 
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="3">
@@ -369,23 +483,41 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="℃" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <Button Name="hor_tank_T" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_tank_T" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_tank_T" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>
 
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="4">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="0.8*"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="40*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="50*"></RowDefinition>
+                                <RowDefinition Height="51*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -399,23 +531,41 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="℃" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <Button Name="hor_oil_in_T" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_oil_in_T" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_oil_in_T" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>
 
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="5">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="0.8*"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="43*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="54*"></RowDefinition>
+                                <RowDefinition Height="55*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -429,13 +579,32 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="℃" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox materialDesign:HintAssist.Hint="转速一填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+
+                            <Button Name="hor_oil_h_T" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="ver_oil_h_T" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="equal_oil_h_T" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
+                                    </ImageBrush>
+                                </Button.Background>
+                            </Button>
+                            <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速二填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox materialDesign:HintAssist.Hint="转速三填写" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                            <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>
@@ -535,13 +704,13 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Name="setp_1" Text="LEAK:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <TextBlock Name="setp_0" Text="LEAK:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="0" Grid.Column="0"></TextBlock>
-                <TextBlock Name="setp_2" Text="WARM:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <TextBlock Name="setp_1" Text="WARM:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="1" Grid.Column="0"></TextBlock>
-                <TextBlock Name="setp_3_1" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <TextBlock Name="setp_2" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="2" Grid.Column="0"></TextBlock>
-                <TextBlock Name="setp_3_2" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <TextBlock Name="setp_3" Text="VL:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="3" Grid.Column="0"></TextBlock>
                 <TextBlock Name="setp_4" Text="EM:" HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="Yu Gothic UI Semibold" FontSize="30" Grid.Row="4" Grid.Column="0"></TextBlock>

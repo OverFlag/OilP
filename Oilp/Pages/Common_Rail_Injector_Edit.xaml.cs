@@ -211,5 +211,29 @@ namespace OilP.Pages
             this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
             //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
         }
+
+        /**
+         * 新增测试步骤
+         * */
+        private void step_add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /**
+         * 获取
+         * */
+        public Model.Common_Rail_Injector_Test Get_data_from_page()
+        {
+            Model.Common_Rail_Injector_Test common_Rail_Injector_Test = new Model.Common_Rail_Injector_Test();
+            common_Rail_Injector_Test.Model_no = model_no_TextBox.Text.ToString();
+            common_Rail_Injector_Test.Step_name = step_name_TextBox.Text.ToString();
+            common_Rail_Injector_Test.Duration = double.Parse(last_time_TextBox.Text.ToString()) ;
+            common_Rail_Injector_Test.Rail_pressure = double.Parse(pressure_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_p_hor = double.Parse(oil_p_hor_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_p_ver = double.Parse(oil_p_ver_TextBox.Text.ToString());
+
+            return common_Rail_Injector_Test;
+        }
     }
 }

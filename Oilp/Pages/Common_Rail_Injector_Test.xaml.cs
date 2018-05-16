@@ -46,7 +46,26 @@ namespace OilP.Pages
             item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("cri");
             //init names
             //setelename(item_names);
+
+            //初始化测试步骤列表并填入数据库中数据
+            Init_test_names(model_no);
+
+
         }
+
+        /**
+         * 初始化测试步骤列表
+         * */
+         public void Init_test_names(string model_no)
+        {
+            List<OilP.Model.Common_Rail_Injector_Test> common_Rail_Injector_Tests = new List<Model.Common_Rail_Injector_Test>();
+            common_Rail_Injector_Tests = OilP.Service.Common_Rail_Injector_Test_Service.QueryByModelNo(model_no);
+            int length = common_Rail_Injector_Tests.Count;
+            Set_test_names(length, common_Rail_Injector_Tests);
+            setData(model_no, setp_0.Text);
+        }
+
+       
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
@@ -62,8 +81,92 @@ namespace OilP.Pages
             common_Rail_Injector_Test = OilP.Service.Common_Rail_Injector_Test_Service.QueryByModelNoAndStepName(model_no, step_name);
             //在页面上填入step_name和model_no的数据
             step_name_TextBox.Text = step_name;
-            //fillData(common_Rail_Injector_Test);
+            fillData(common_Rail_Injector_Test);
 
+        }
+
+        /**
+         * 向页面填充数据
+         * */
+         public void fillData(Model.Common_Rail_Injector_Test common_Rail_Injector_Test)
+        {
+            pulse_width_textBox.Text = common_Rail_Injector_Test.Duration.ToString();
+            hor_rail_pressure_textBox.Text = common_Rail_Injector_Test.Rail_pressure.ToString();
+            hor_fuel_P_textBox.Text = common_Rail_Injector_Test.Fuel_p_hor.ToString();
+            ver_fuel_P_textBox.Text = common_Rail_Injector_Test.Fuel_p_ver.ToString();
+            hor_fuel_h_textBox.Text = common_Rail_Injector_Test.Fuel_h_hor.ToString();
+            ver_fuel_h_textBox.Text = common_Rail_Injector_Test.Fuel_h_ver.ToString();
+            test_time_textBox.Text = common_Rail_Injector_Test.Test_time.ToString();
+            voltage_textBox.Text = common_Rail_Injector_Test.Voltage.ToString();
+        }
+
+
+        public void Set_test_names(int length, List<OilP.Model.Common_Rail_Injector_Test> common_Rail_Injector_Tests)
+        {
+            if (length > 0)
+            {
+                setp_0.Text = common_Rail_Injector_Tests[0].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length>1)
+            {
+                setp_1.Text = common_Rail_Injector_Tests[1].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 2)
+            {
+                setp_2.Text = common_Rail_Injector_Tests[2].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 3)
+            {
+                setp_3.Text = common_Rail_Injector_Tests[3].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 4)
+            {
+                setp_4.Text = common_Rail_Injector_Tests[4].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 5)
+            {
+                setp_5.Text = common_Rail_Injector_Tests[5].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 6)
+            {
+                setp_6.Text = common_Rail_Injector_Tests[6].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
+            if (length > 7)
+            {
+                setp_7.Text = common_Rail_Injector_Tests[7].Step_name.ToString();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

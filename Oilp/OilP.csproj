@@ -255,5 +255,14 @@
     <Resource Include="Resources\edit.png" />
     <Resource Include="Resources\next.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hor_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\equal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ver_arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
