@@ -194,5 +194,63 @@ namespace OilP.Pages
             string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
             setData(MODEL_NO,step_name);
         }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //将textbox设置为可修改
+            setEditable(true);
+            setTextBoxBG(true);
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+            string model_no = MODEL_NO;
+            //页面跳转，传递model_no参数
+            Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
+            this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+            //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
+        }
+
+        /**
+         * 新增测试步骤
+         * */
+        private void step_add_Click(object sender, RoutedEventArgs e)
+        {
+            //获取当前页面上的数据
+            Model.Common_Rail_Injector_Test common_Rail_Injector_Test = new Model.Common_Rail_Injector_Test();
+            common_Rail_Injector_Test = Get_data_from_page();
+            string message =  OilP.Service.Common_Rail_Injector_Test_Service.AddData(common_Rail_Injector_Test, MODEL_NO);
+            MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (dr == MessageBoxResult.OK)
+            {
+                //重新加载ListBox
+                step_ListBox.Items.Clear();
+                Init_step_ListBox(MODEL_NO);
+            }
+
+        }
+
+        /**
+         * 获取页面上需要新增的测试步骤数据
+         * */
+        public Model.Common_Rail_Injector_Test Get_data_from_page()
+        {
+            Model.Common_Rail_Injector_Test common_Rail_Injector_Test = new Model.Common_Rail_Injector_Test();
+            common_Rail_Injector_Test.Model_no = model_no_TextBox.Text.ToString();
+            common_Rail_Injector_Test.Step_name = step_name_TextBox.Text.ToString();
+            common_Rail_Injector_Test.Duration = double.Parse(last_time_TextBox.Text.ToString()) ;
+            common_Rail_Injector_Test.Rail_pressure = double.Parse(pressure_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_p_hor = double.Parse(oil_p_hor_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_p_ver = double.Parse(oil_p_ver_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_h_hor = double.Parse(oil_h_hor_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Fuel_h_ver = double.Parse(oil_h_ver_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Test_time = int.Parse(test_time_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Curve = curve_TextBox.Text.ToString();
+            common_Rail_Injector_Test.Magnification = double.Parse(magn_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Period = int.Parse(period_TextBox.Text.ToString());
+            common_Rail_Injector_Test.Voltage = int.Parse(voltage_TextBox.Text.ToString());
+            return common_Rail_Injector_Test;
+        }
     }
 }

@@ -39,5 +39,31 @@ namespace OilP.Service
             return common_Rail_Injector_Tests;
         }
 
+        /**
+         * 添加数据
+         * */
+        public static string AddData(Common_Rail_Injector_Test data,string model_no)
+        {
+            //判断是否是已经存在的测试步骤，根据step_name
+            List<Common_Rail_Injector_Test> common_Rail_Injector_Tests = new List<Common_Rail_Injector_Test>();
+            common_Rail_Injector_Tests = OilP.Dao.Common_Rail_Injector_Test_DAO.QueryByModelNo(model_no);
+            for (int i = 0; i < common_Rail_Injector_Tests.Count; i++)
+            {
+                if (common_Rail_Injector_Tests[i].Step_name.ToLower().ToString().Equals(data.Step_name.ToLower().ToString()))
+                {
+                    return "测试步骤添加失败：已经存在该测试步骤！";
+                }
+            }
+            bool flag = false;
+            flag = OilP.Dao.Common_Rail_Injector_Test_DAO.AddData(data);
+            if (flag)
+            {
+                return "测试步骤添加成功";
+            }
+            else
+            {
+                return "测试步骤添加失败";
+            }
+        }
     }
 }

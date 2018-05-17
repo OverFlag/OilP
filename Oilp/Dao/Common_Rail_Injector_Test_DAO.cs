@@ -43,5 +43,16 @@ namespace OilP.Dao
             common_Rail_Injector_Tests = db.Queryable<Common_Rail_Injector_Test>().Where(it=>it.Model_no==model_no).ToList();
             return common_Rail_Injector_Tests;
         }
+
+        /**
+      * 新增数据
+      **/
+        public static bool AddData (Common_Rail_Injector_Test data)
+        {
+            bool flag = false;
+           SqlSugarClient db = DBConnect.GetInstance();
+            flag = db.Insertable(data).ExecuteCommandIdentityIntoEntity();
+            return true;
+        }
     }
 }

@@ -207,7 +207,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBox Name="period_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" Text="period"></TextBox>
-                        <TextBlock  Grid.Column="1" Text="S" Name="mS" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        <TextBlock  Grid.Column="1" Text="mS" Name="mS" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                          VerticalAlignment="Center" ></TextBlock>
                     </Grid>
                     <TextBlock Grid.Row="9" Text="Voltage" Name="voltage_TextBlock" FontSize="40" FontFamily="Yu Gothic UI Semibold"
@@ -219,7 +219,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBox Name="voltage_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" Text="voltage"></TextBox>
-                        <TextBlock  Grid.Column="1" Text="S" Name="V" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        <TextBlock  Grid.Column="1" Text="V" Name="V" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                          VerticalAlignment="Center" ></TextBlock>
                     </Grid>
 
