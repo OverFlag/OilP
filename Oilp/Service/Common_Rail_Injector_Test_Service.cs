@@ -65,5 +65,26 @@ namespace OilP.Service
                 return "测试步骤添加失败";
             }
         }
+
+        /**
+         * 根据model_no和step_name删除数据
+         * */
+        public static bool DeleteData(string model_no, string step_name)
+        {
+            bool flag = false;
+            flag = OilP.Dao.Common_Rail_Injector_Test_DAO.DeleteData(model_no, step_name);
+            return flag;
+        }
+
+        /**
+     * 根据model_no和step_name更新选中的数据
+     * */
+        public static bool UpdateData(Common_Rail_Injector_Test common_Rail_Injector_Test)
+        {
+            bool flag = false;
+            flag = OilP.Dao.Common_Rail_Injector_Test_DAO.UpdateData(common_Rail_Injector_Test);
+            return flag;
+        }
+
     }
 }

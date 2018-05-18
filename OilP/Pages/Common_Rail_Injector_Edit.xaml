@@ -244,9 +244,9 @@
                         <Button Background="LightBlue" Name="step_add" Content="增加"  FontSize="40" 
                                Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="0" Click="step_add_Click"></Button>
                         <Button Background="LightBlue" Name="step_delete" Content="删除"  FontSize="40" 
-                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="1"></Button>
+                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="1" Click="step_delete_Click"></Button>
                         <Button Background="LightBlue" Name="step_change" Content="更改"  FontSize="40" 
-                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="2"></Button>
+                               Margin="5,0,5,0" Height="50" FontFamily="YouYuan" Grid.Column="2" Click="step_change_Click"></Button>
                     </Grid>
                     <ListBox Grid.Row="0" Name="step_ListBox" SelectionChanged="step_ListBox_SelectionChanged">
 
@@ -259,12 +259,13 @@
         </Grid>
         <Grid Grid.Row="2" ShowGridLines="True">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="233*"></ColumnDefinition>
+                <ColumnDefinition Width="233*"></ColumnDefinition>
+                <ColumnDefinition Width="234*"></ColumnDefinition>
+                <ColumnDefinition Width="233*"></ColumnDefinition>
+                <ColumnDefinition Width="123*"></ColumnDefinition>
+                <ColumnDefinition Width="111*"/>
+                <ColumnDefinition Width="233*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
@@ -280,32 +281,32 @@
                 <TextBlock FontSize="40" HorizontalAlignment="Center"  VerticalAlignment="Center" Text="ESC"
                            FontFamily="Yu Gothic UI Semibold"></TextBlock>
             </Grid>
-            
-            <Button Name="curve" Grid.Row="0" Grid.Column="1" Margin="80,10,80,10" Height="60">
+
+            <Button Name="curve" Grid.Row="0" Grid.Column="1" Margin="80,20" Height="60">
                 <Button.Background>
                     <ImageBrush ImageSource="../Resources/curve.png" Stretch="Fill">
                     </ImageBrush>
                 </Button.Background>
             </Button>
-            <Button Name="save" Grid.Row="0" Grid.Column="2" Margin="80,10,80,10" Height="60">
+            <Button Name="save" Grid.Row="0" Grid.Column="2" Margin="80,20" Height="60">
                 <Button.Background>
                     <ImageBrush ImageSource="../Resources/save.png" Stretch="Fill">
                     </ImageBrush>
                 </Button.Background>
             </Button>
-            <Button Name="edit" Grid.Row="0" Grid.Column="3" Margin="80,10,80,10" Height="60" Click="edit_Click">
+            <Button Name="edit" Grid.Row="0" Grid.Column="3" Margin="80,20" Height="60" Click="edit_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="../Resources/edit.png" Stretch="Fill">
                     </ImageBrush>
                 </Button.Background>
             </Button>
-            <Button Name="next" Grid.Row="0" Grid.Column="4" Margin="80,10,80,10" Height="60" Click="next_Click">
+            <Button Name="next" Grid.Row="0" Grid.Column="4" Margin="80,20" Height="60" Click="next_Click" Grid.ColumnSpan="2">
                 <Button.Background>
                     <ImageBrush ImageSource="../Resources/next.png" Stretch="Fill">
                     </ImageBrush>
                 </Button.Background>
             </Button>
         </Grid>
-        
+
     </Grid>
 </Page>

@@ -54,5 +54,44 @@ namespace OilP.Dao
             flag = db.Insertable(data).ExecuteCommandIdentityIntoEntity();
             return true;
         }
+
+       /**
+        * 根据model_no和step_name删除选中的测试步骤
+        * */
+        public static bool DeleteData(string model_no,string step_name)
+        {
+            bool flag = false;
+            SqlSugarClient db = DBConnect.GetInstance();
+            
+            var a = db.Deleteable<Common_Rail_Injector_Test>().Where(it=>it.Model_no == model_no&&it.Step_name==step_name).ExecuteCommand();
+            if (a==1)
+            {
+                flag = true;
+                return flag;
+            }
+            else
+            {
+                return flag;
+            }
+        }
+
+        /**
+      * 根据model_no和step_name更新选中的数据
+      * */
+      public static bool UpdateData(Common_Rail_Injector_Test common_Rail_Injector_Test)
+        {
+            bool flag = false;
+            SqlSugarClient db = DBConnect.GetInstance();
+            var a = db.Updateable< Common_Rail_Injector_Test>(common_Rail_Injector_Test).Where(it => it.Model_no == common_Rail_Injector_Test.Model_no && it.Step_name == common_Rail_Injector_Test.Step_name).ExecuteCommand();
+            if (a==1)
+            {
+                flag = true;
+                return flag;
+            }
+            else
+            {
+                return flag;
+            }
+        }
     }
 }

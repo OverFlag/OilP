@@ -21,9 +21,13 @@ namespace OilP.Pages
     /// <summary>
     /// Common_Rail_Injector_Edit.xaml 的交互逻辑
     /// </summary>
+   
     public partial class Common_Rail_Injector_Edit : Page
     {
         public static string MODEL_NO;
+        public bool EDIT_FLAG = false;
+        public bool TEXT_BG_FLAG = false;
+
         public Common_Rail_Injector_Edit(string model_no)
         {
             //构造函数传入model_no
@@ -191,6 +195,10 @@ namespace OilP.Pages
          * */
         private void step_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (step_ListBox.Items.Count==0)
+            {
+                return;
+            }
             string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
             setData(MODEL_NO,step_name);
         }
@@ -199,8 +207,11 @@ namespace OilP.Pages
         {
             
             //将textbox设置为可修改
+            
             setEditable(true);
             setTextBoxBG(true);
+            //将listbox的选中项默认为第一个
+
         }
 
         private void next_Click(object sender, RoutedEventArgs e)
@@ -251,6 +262,75 @@ namespace OilP.Pages
             common_Rail_Injector_Test.Period = int.Parse(period_TextBox.Text.ToString());
             common_Rail_Injector_Test.Voltage = int.Parse(voltage_TextBox.Text.ToString());
             return common_Rail_Injector_Test;
+        }
+
+        /**
+         * 删除选中listbox的一项
+         * */
+        private void step_delete_Click(object sender, RoutedEventArgs e)
+        {
+            //获取选择的listbox的step_name
+            string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
+            //根据model_no和step_name删除
+            bool flag = OilP.Service.Common_Rail_Injector_Test_Service.DeleteData(MODEL_NO, step_name);
+            if (flag)
+            {
+                string message = "删除成功";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                if (dr == MessageBoxResult.OK)
+                {
+                    //重新加载ListBox
+                    step_ListBox.Items.Clear();
+                    Init_step_ListBox(MODEL_NO);
+                }
+            }
+            else
+            {
+                string message = "删除失败";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                if (dr == MessageBoxResult.OK)
+                {
+                    //重新加载ListBox
+                    step_ListBox.Items.Clear();
+                    Init_step_ListBox(MODEL_NO);
+                }
+            }
+
+        }
+
+        /**
+         * 更新选择的step_name的数据信息
+         * */
+        private void step_change_Click(object sender, RoutedEventArgs e)
+        {
+            //获取选择的listbox的step_name
+            string step_name = ((ListBoxItem)step_ListBox.SelectedItem).Content.ToString();
+            Model.Common_Rail_Injector_Test common_Rail_Injector_Test = new Model.Common_Rail_Injector_Test();
+            common_Rail_Injector_Test = Get_data_from_page();
+            //根据model_no和step_name更新数据
+            bool flag = OilP.Service.Common_Rail_Injector_Test_Service.UpdateData(common_Rail_Injector_Test);
+            if (flag)
+            {
+                string message = "测试步骤更新成功";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                //if (dr == MessageBoxResult.OK)
+                //{
+                //    //重新加载ListBox
+                //    step_ListBox.Items.Clear();
+                //    Init_step_ListBox(MODEL_NO);
+                //}
+            }
+            else
+            {
+                string message = "测试步骤更新失败";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                //if (dr == MessageBoxResult.OK)
+                //{
+                //    //重新加载ListBox
+                //    step_ListBox.Items.Clear();
+                //    Init_step_ListBox(MODEL_NO);
+                //}
+            }
         }
     }
 }
