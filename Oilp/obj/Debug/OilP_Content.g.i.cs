@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ver_arrow.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/debug.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/start.png")]
 
 

@@ -8,6 +8,9 @@ namespace OilP
 {
     class Config
     {
-        public static string ConnectionString = "server=localhost;Database=oil;Uid=root;Pwd=ZWYzwy1993";
+        //本地
+         public static string ConnectionString = "server=localhost;Database=oil;Uid=root;Pwd=root";
+        //Ali云
+        //public static string ConnectionString = "server=rm-bp14w305c6j7qw7d8lo.mysql.rds.aliyuncs.com;Database=oil;Uid=root;Pwd=ZWYzwy1993";
     }
 }

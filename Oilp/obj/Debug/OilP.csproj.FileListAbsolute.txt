@@ -55,4 +55,6 @@ E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Test.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Test.baml
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Edit.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Edit.baml
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Pump_Test.g.cs
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Pump_Test.baml
 E:\GitRepository\OilP\OilP\obj\Debug\OilP.csprojResolveAssemblyReference.cache

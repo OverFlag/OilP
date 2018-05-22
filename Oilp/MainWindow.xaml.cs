@@ -124,7 +124,13 @@ namespace OilP
 
         private void common_rail_pump_Click(object sender, RoutedEventArgs e)
         {
-           
+
+            //可以实现
+            NavigationWindow window = new NavigationWindow();
+            window.Source = new Uri("Pages/Common_Rail_Pump_Test.xaml", UriKind.Relative);
+            window.Height = 900;
+            window.Width = 1200;
+            window.Show();
         }
 
         private void hpo_pump_Click(object sender, RoutedEventArgs e)
