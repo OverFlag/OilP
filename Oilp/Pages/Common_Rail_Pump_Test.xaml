@@ -155,14 +155,14 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="/min" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_round_speed" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
 
-                            <Button Name="equal_round_speed" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -191,19 +191,19 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Button Name="hor_oil_p" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_oil_p" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button  Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_oil_p" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -249,19 +249,19 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="l/h" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_oil_h" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_oil_h" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button  Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_oil_h" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -300,19 +300,19 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="MPa" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_pressure" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_pressure" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_pressure" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -352,19 +352,19 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="Bar" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_fuel_j_pressure" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_fuel_j_pressure" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button  Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_fuel_j_pressure" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -403,19 +403,19 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="KPa" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_fuel_h_pressure" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_fuel_h_pressure" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button  Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_fuel_h_pressure" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
@@ -576,31 +576,31 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="℃" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <Button Name="hor_tank_T" Grid.Row="1" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="1" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/hor_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="ver_tank_T" Grid.Row="2" Grid.Column="0" Width="30" Height="40">
+                            <Button  Grid.Row="2" Grid.Column="0" Width="30" Height="40">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/ver_arrow.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <Button Name="equal_tank_T" Grid.Row="3" Grid.Column="0" Width="60" Height="35">
+                            <Button  Grid.Row="3" Grid.Column="0" Width="60" Height="35">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../Resources/equal.png" Stretch="Fill">
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25" Name="hor_tank_T"
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25" Name="ver_tank_T"
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25" Name="equal_tank_T"
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>

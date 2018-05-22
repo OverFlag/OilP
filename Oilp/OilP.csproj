@@ -94,6 +94,7 @@
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
+    <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
     <Compile Include="Model\OilP_Config.cs" />
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
@@ -110,6 +111,9 @@
     </Compile>
     <Compile Include="Pages\HPO_Pump_Injector.xaml.cs">
       <DependentUpon>HPO_Pump_Injector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HPO_Pump_Injector_Edit_.xaml.cs">
+      <DependentUpon>HPO_Pump_Injector_Edit_.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\System_Config.xaml.cs">
       <DependentUpon>System_Config.xaml</DependentUpon>
@@ -151,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\HPO_Pump_Injector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HPO_Pump_Injector_Edit_.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

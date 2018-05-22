@@ -76,7 +76,7 @@
                              FontFamily="YouYuan" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"  FontWeight="Bold" 
                              HorizontalAlignment="Center" 
-                             Content="电控共轨系统测试软件" Name="electronic_control_common_rail_system_test_software" Background="LightBlue">
+                             Content="喷油器测试" Name="common_rail_injector_test" Background="LightBlue">
                 </materialDesign:Card>
                 <Grid ShowGridLines="true" Grid.Row="1">
                     <Grid.ColumnDefinitions>
