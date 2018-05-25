@@ -13,11 +13,11 @@ namespace OilP.Service
         /**
          * Get Data By code
          * */
-        public static List<Code_Table> getDataByParams(String code)
-        {
-            List<Code_Table> code_Tables = new List<Code_Table>();
-            code_Tables = Code_Table_DAO.getDataByParams(code);
-            return code_Tables;
-        }
+    //    public static List<Code_Table> getDataByParams(String code)
+    //    {
+    //        List<Code_Table> code_Tables = new List<Code_Table>();
+    //        code_Tables = Code_Table_DAO.getDataByParams(code);
+    //        return code_Tables;
+    //    }
     }
 }

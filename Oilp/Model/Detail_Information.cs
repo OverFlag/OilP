@@ -8,6 +8,8 @@ namespace OilP.Model
 {
     class Detail_Information
     {
+        /*型号*/
+        private string model_no;
         /*制造商*/
         private string manufacturer;
         /*工况名*/

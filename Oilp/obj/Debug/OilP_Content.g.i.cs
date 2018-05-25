@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/debug.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/start.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/cri_model.txt")]
 
 

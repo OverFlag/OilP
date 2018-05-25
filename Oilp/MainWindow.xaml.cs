@@ -144,12 +144,42 @@ namespace OilP
 
         private void system_set_Click(object sender, RoutedEventArgs e)
         {
-            NavigationWindow window = new NavigationWindow();
-            //window.Source = new Uri("Pages/Common_Rail_Injector_Edit.xaml", UriKind.Relative);
-            window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
-            window.Height =500;
-            window.Width =700;
-            window.Show();
+            //暂时调试方法用
+            //OilP.Dao.CRI_DAO.QueryByModelNo("0445110002");
+
+
+            //OilP.Dao.CRI_DAO.DeleteData("0445110002", "RRTEST");
+
+            CRI_Model cr = new CRI_Model();
+            cr.Model_no = "0445110002";
+            cr.Manufacturer = "Bosch";
+            cr.Curve = "14V";
+            cr.Step_name = "GG";
+            cr.Round_speed = "4";
+            cr.Oil_p_standard = "5";
+            cr.Oil_p_deviation = "6";
+            cr.Oil_h_standard = " ";
+            cr.Oil_h_deviation = " ";
+            cr.Pulse_width = " ";
+            cr.Rail_pressure = " ";
+            cr.Oil_j_pressure = " ";
+            cr.Oil_h_pressure = "7";
+            cr.Punmp_pressure = "8";
+            cr.Control_last_time = " ";
+            cr.Voltage = " ";
+            cr.Oil_tank_T = "9";
+            cr.Oil_j_T = " ";
+            cr.Oil_h_T = " ";
+            //OilP.Dao.CRI_DAO.AddData(cr, "0445110002");
+
+            OilP.Dao.CRI_DAO.UpdateData(cr);
+
+            //NavigationWindow window = new NavigationWindow();
+            ////window.Source = new Uri("Pages/Common_Rail_Injector_Edit.xaml", UriKind.Relative);
+            //window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
+            //window.Height =500;
+            //window.Width =700;
+            //window.Show();
         }
     }
 }

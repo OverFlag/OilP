@@ -24,5 +24,35 @@ namespace OilP.Pages
         {
             InitializeComponent();
         }
+
+        private void step_add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void step_delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void step_change_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void step_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
