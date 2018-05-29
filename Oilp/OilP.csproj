@@ -93,13 +93,16 @@
     <Compile Include="Dao\Config_DAO.cs" />
     <Compile Include="Dao\CRI_DAO.cs" />
     <Compile Include="Dao\Device_Information_DAO.cs" />
+    <Compile Include="Dao\DEV_DAO.cs" />
+    <Compile Include="Dao\LAN_Dao.cs" />
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\CRI_Model.cs" />
     <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
-    <Compile Include="Model\DEV_List_Model.cs" />
+    <Compile Include="Model\DEV_I_Model.cs" />
+    <Compile Include="Model\LAN_Model.cs" />
     <Compile Include="Model\OilP_Config.cs" />
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
