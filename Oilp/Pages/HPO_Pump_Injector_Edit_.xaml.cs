@@ -20,9 +20,15 @@ namespace OilP.Pages
     /// </summary>
     public partial class HPO_Pump_Injector_Edit_ : Page
     {
-        public HPO_Pump_Injector_Edit_()
+        public static string MODEL_NO;
+        public bool EDIT_FLAG = false;
+        public bool TEXT_BG_FLAG = false;
+        public HPO_Pump_Injector_Edit_(string model_no)
         {
+            //构造函数传入model_no
             InitializeComponent();
+            MODEL_NO = model_no;
+            Init_step_ListBox(model_no);
         }
 
         private void step_add_Click(object sender, RoutedEventArgs e)

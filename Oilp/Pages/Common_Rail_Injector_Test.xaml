@@ -219,23 +219,23 @@
                             </TextBlock>
                             <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="hor_fuel_P_textBox" >
+                                     Name="TextBox_oil_p_standard" >
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="ver_fuel_P_textBox">
+                                     Name="TextBox_oil_p_deviation">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="equal_fuel_P_textBox">
+                                     Name="TextBox_equal_oil">
                             </TextBox>
                         </Grid>
                         <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="40*"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="50*"></RowDefinition>
-                                <RowDefinition Height="51*"></RowDefinition>
+                            <Grid.RowDefinitions >
+                                <RowDefinition ></RowDefinition>
+                                <RowDefinition ></RowDefinition>
+                                <RowDefinition ></RowDefinition>
+                                <RowDefinition ></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -269,15 +269,15 @@
                             </Button>
                             <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="hor_fuel_h_textBox">
+                                     Name="TextBox_oil_h_standrad">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="ver_fuel_h_textBox">
+                                     Name="TextBox_oil_h_deviation">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="equal_fuel_h_textBox">
+                                     Name="TextBox_equal_oil_h">
                             </TextBox>
                         </Grid>
 
@@ -355,15 +355,15 @@
                             </Button>
                             <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="hor_rail_pressure_textBox">
+                                     Name="TextBox_rail_pressure">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="ver_rail_pressure_textBox">
+                                     Name="TextBox_rail_pressure_deviation">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="equal_rail_pressure_textBox">
+                                     Name="TextBox_equal_rail_pressure">
                             </TextBox>
                         </Grid>
 
@@ -386,13 +386,13 @@
                                 Style="{StaticResource MaterialDesignTitleTextBlock}" FontFamily="Yu Gothic UI Semibold"
                                 Text="KPa" HorizontalAlignment="Center" VerticalAlignment="Center">
                             </TextBlock>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25" Name="TextBox_oil_j_pressure"
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25" Name="TextBox_oil_h_pressure"
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25"  Name="TextBox_punmp_pressure"
                                      Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                         </Grid>
@@ -418,7 +418,7 @@
                             </TextBlock>
                             <TextBox FontSize="25" 
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                     Name="test_time_textBox">
+                                     Name="TextBox_control_last_time">
                             </TextBox>
                             <TextBox FontSize="25" 
                                      Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

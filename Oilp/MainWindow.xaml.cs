@@ -150,29 +150,32 @@ namespace OilP
 
             //OilP.Dao.CRI_DAO.DeleteData("0445110002", "RRTEST");
 
-            CRI_Model cr = new CRI_Model();
-            cr.Model_no = "0445110002";
-            cr.Manufacturer = "Bosch";
-            cr.Curve = "14V";
-            cr.Step_name = "GG";
-            cr.Round_speed = "4";
-            cr.Oil_p_standard = "5";
-            cr.Oil_p_deviation = "6";
-            cr.Oil_h_standard = " ";
-            cr.Oil_h_deviation = " ";
-            cr.Pulse_width = " ";
-            cr.Rail_pressure = " ";
-            cr.Oil_j_pressure = " ";
-            cr.Oil_h_pressure = "7";
-            cr.Punmp_pressure = "8";
-            cr.Control_last_time = " ";
-            cr.Voltage = " ";
-            cr.Oil_tank_T = "9";
-            cr.Oil_j_T = " ";
-            cr.Oil_h_T = " ";
-            //OilP.Dao.CRI_DAO.AddData(cr, "0445110002");
+            //CRI_Model cr = new CRI_Model();
+            //cr.Model_no = "0445110002";
+            //cr.Manufacturer = "Bosch";
+            //cr.Curve = "14V";
+            //cr.Step_name = "GG";
+            //cr.Round_speed = "4";
+            //cr.Oil_p_standard = "5";
+            //cr.Oil_p_deviation = "6";
+            //cr.Oil_h_standard = " ";
+            //cr.Oil_h_deviation = " ";
+            //cr.Pulse_width = " ";
+            //cr.Rail_pressure = " ";
+            //cr.Oil_j_pressure = " ";
+            //cr.Oil_h_pressure = "7";
+            //cr.Punmp_pressure = "8";
+            //cr.Control_last_time = " ";
+            //cr.Voltage = " ";
+            //cr.Oil_tank_T = "9";
+            //cr.Oil_j_T = " ";
+            //cr.Oil_h_T = " ";
+            ////OilP.Dao.CRI_DAO.AddData(cr, "0445110002");
 
-            OilP.Dao.CRI_DAO.UpdateData(cr);
+            //OilP.Dao.CRI_DAO.UpdateData(cr);
+
+            //OilP.Dao.DEV_DAO.QueryByType("cri");
+            OilP.Dao.DEV_DAO.QueryByManu("boche","cri");
 
             //NavigationWindow window = new NavigationWindow();
             ////window.Source = new Uri("Pages/Common_Rail_Injector_Edit.xaml", UriKind.Relative);

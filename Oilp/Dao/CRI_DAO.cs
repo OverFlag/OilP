@@ -118,16 +118,7 @@ namespace OilP.Dao
             return true;
         }
 
-        /**
-          * 根据model_no和step_name更新选中的数据
-        * */
-        public List<string> GetManuNames(string device_name)
-        {
-            List<string> manu_names = new List<string>();
-
-            return manu_names;
-        }
-
+        
 
 
         public static CRI_Model StringToCRIModel(int length, string[] readline)

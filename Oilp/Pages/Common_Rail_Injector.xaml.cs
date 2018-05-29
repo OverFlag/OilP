@@ -33,10 +33,10 @@ namespace OilP.Pages
          **/
         public void Initialize_Page()
         {
-            List<Device_Information> device_Information = new List<Device_Information>();
+            List<DEV_I_Model> dEV_I_Models = new List<DEV_I_Model>();
             //get common rail injector device information
-            device_Information = OilP.Service.Device_Information_Service.getDataByType("cri");
-            device_information_datagrid.ItemsSource = device_Information;
+            dEV_I_Models = OilP.Service.Device_Information_Service.getDataByType("cri");
+            device_information_datagrid.ItemsSource = dEV_I_Models;
 
             //get name list
             List<Item_Name> item_Names = new List<Item_Name>();
@@ -93,12 +93,24 @@ namespace OilP.Pages
             confirm.FontFamily = new FontFamily(font);
         }
 
+        //private void confirm_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //获取datagrid选中行，并获取其model_no
+        //    Device_Information device_Information = new Device_Information();
+        //    device_Information = (Device_Information) device_information_datagrid.SelectedItem;
+        //    String model_no = device_Information.Model_no;
+        //    //页面跳转，传递model_no参数
+        //    Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
+        //    this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+        //    //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
+        //}
+
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
             //获取datagrid选中行，并获取其model_no
-            Device_Information device_Information = new Device_Information();
-            device_Information = (Device_Information) device_information_datagrid.SelectedItem;
-            String model_no = device_Information.Model_no;
+            DEV_I_Model dEV_I_Model = new DEV_I_Model();
+            dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
+            String model_no = dEV_I_Model.Model_no;
             //页面跳转，传递model_no参数
             Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
             this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
@@ -107,14 +119,22 @@ namespace OilP.Pages
 
         private void search_Click(object sender, RoutedEventArgs e)
         {
-            List<Device_Information> device_Information = new List<Device_Information>();
+            List<DEV_I_Model> dEV_I_Models = new List<DEV_I_Model>();
             //获取listbox中选择的项
             try
             {
                 String manu = ((ListBoxItem)manufacturer_list.SelectedItem).Content.ToString();
                 String no = model_no.Text;
-                device_Information = OilP.Service.Device_Information_Service.getDataByParams(no,manu);
-                device_information_datagrid.ItemsSource = device_Information;
+                if ("".Equals(no)||no==null)
+                {
+                    dEV_I_Models = OilP.Service.Device_Information_Service.getDataByManu(manu,"cri");
+                }
+                else
+                {
+                    dEV_I_Models = OilP.Service.Device_Information_Service.getDataByModelNo(no, "cri");
+                }
+              
+                device_information_datagrid.ItemsSource = dEV_I_Models;
             }
             catch (Exception)
             {
@@ -126,9 +146,9 @@ namespace OilP.Pages
         private void edit_Click(object sender, RoutedEventArgs e)
         {
             //获取datagrid选中行，并获取其model_no
-            Device_Information device_Information = new Device_Information();
-            device_Information = (Device_Information)device_information_datagrid.SelectedItem;
-            String model_no = device_Information.Model_no;
+            DEV_I_Model dEV_I_Model = new DEV_I_Model();
+            dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
+            String model_no = dEV_I_Model.Model_no;
             //页面跳转，传递model_no参数
             Common_Rail_Injector_Edit common_Rail_Injector_Edit_page = new Common_Rail_Injector_Edit(model_no);
             this.NavigationService.Navigate(common_Rail_Injector_Edit_page);

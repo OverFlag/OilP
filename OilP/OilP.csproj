@@ -90,11 +90,19 @@
     </ApplicationDefinition>
     <Compile Include="Dao\Code_Table_DAO.cs" />
     <Compile Include="Dao\Common_Rail_Injector_Test_DAO.cs" />
+    <Compile Include="Dao\Config_DAO.cs" />
+    <Compile Include="Dao\CRI_DAO.cs" />
     <Compile Include="Dao\Device_Information_DAO.cs" />
+    <Compile Include="Dao\DEV_DAO.cs" />
+    <Compile Include="Dao\LAN_Dao.cs" />
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
+    <Compile Include="Model\CRI_Model.cs" />
+    <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
+    <Compile Include="Model\DEV_I_Model.cs" />
+    <Compile Include="Model\LAN_Model.cs" />
     <Compile Include="Model\OilP_Config.cs" />
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
@@ -105,8 +113,14 @@
     <Compile Include="Pages\Common_Rail_Injector_Test.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Common_Rail_Pump_Test.xaml.cs">
+      <DependentUpon>Common_Rail_Pump_Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HPO_Pump_Injector.xaml.cs">
       <DependentUpon>HPO_Pump_Injector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HPO_Pump_Injector_Edit_.xaml.cs">
+      <DependentUpon>HPO_Pump_Injector_Edit_.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\System_Config.xaml.cs">
       <DependentUpon>System_Config.xaml</DependentUpon>
@@ -143,7 +157,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Common_Rail_Pump_Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HPO_Pump_Injector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HPO_Pump_Injector_Edit_.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,6 +285,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ver_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\debug.png" />
+    <Resource Include="Resources\start.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

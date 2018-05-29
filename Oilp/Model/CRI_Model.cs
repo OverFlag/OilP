@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OilP.Model
 {
-    class CRI_Model
+    public class CRI_Model
     {
         /*型号*/
         private string model_no;
@@ -47,6 +47,10 @@ namespace OilP.Model
         private string oil_j_T;
         /*回油温度*/
         private string oil_h_T;
+        /*magnification*/
+        private string magnification;
+        /*period*/
+        private string period;
 
         public string Model_no { get => model_no; set => model_no = value; }
         public string Manufacturer { get => manufacturer; set => manufacturer = value; }
@@ -67,5 +71,7 @@ namespace OilP.Model
         public string Oil_tank_T { get => oil_tank_T; set => oil_tank_T = value; }
         public string Oil_j_T { get => oil_j_T; set => oil_j_T = value; }
         public string Oil_h_T { get => oil_h_T; set => oil_h_T = value; }
+        public string Magnification { get => magnification; set => magnification = value; }
+        public string Period { get => period; set => period = value; }
     }
 }
