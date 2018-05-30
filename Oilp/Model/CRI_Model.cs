@@ -16,7 +16,7 @@ namespace OilP.Model
         private string curve;
         /*工况名*/
         private string step_name;
-       
+
         /*转速*/
         private string round_speed;
         /*喷油标准*/

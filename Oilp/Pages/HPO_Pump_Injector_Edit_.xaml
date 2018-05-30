@@ -117,19 +117,19 @@
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="/min" Name="miuS" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                          VerticalAlignment="Center" ></TextBlock>
                     </Grid>
-                    <TextBlock Grid.Row="2" Text="DRV电流" Name="drv_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="2" Text="DRV电流" Name="drv_a_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="2" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="drv_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="drv"></TextBox>
+                        <TextBox Name="drv_a_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="drv_a"></TextBox>
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="A"  FontSize="40" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
-                    <TextBlock Grid.Row="3" Text="参考压力" Name="rail_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="3" Text="共轨压力" Name="rail_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="3" Grid.Column="1">
                         <Grid.ColumnDefinitions>
@@ -137,7 +137,7 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBox Name="rail_pressure_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="drv"></TextBox>
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="rail_pressure"></TextBox>
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="MPa"  FontSize="40" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
@@ -159,7 +159,7 @@
                         <TextBlock Grid.Row="1" Grid.Column="3" Text="l/h" Name="mmh3_p" FontSize="30" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
-                    <TextBlock Grid.Row="4" Text="流量" Name="flow_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="4" Text="喷油量" Name="oil_p_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="4" Grid.Column="1">
                         <Grid.ColumnDefinitions>
@@ -168,12 +168,12 @@
                             <ColumnDefinition Width="3*"></ColumnDefinition>
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="flow_standard_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="flow_standard"></TextBox>
+                        <TextBox Name="oil_p_standard_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="oil_p_standard"></TextBox>
                         <TextBlock Grid.Row="0" Grid.Column="1" Text="±" Name="zf_h" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                        <TextBox Name="flow_deviationr_TextBox" Grid.Row="0" Grid.Column="2" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="flow_deviation"></TextBox>
+                        <TextBox Name="oil_p_deviationr_TextBox" Grid.Row="0" Grid.Column="2" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="oil_p_deviationr"></TextBox>
                         <TextBlock Grid.Row="1" Grid.Column="3" Text="l/h" Name="mmh3_h" FontSize="30" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
@@ -191,40 +191,40 @@
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
 
-                    <TextBlock Grid.Row="7" Text="驱动电压" Name="supply_voltage_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="7" Text="驱动电压" Name="voltage_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Bottom" ></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="7" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="supply_voltage_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="voltage_TextBox" Grid.Row="0" Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" Text="supply_voltage"></TextBox>
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="V"  FontSize="40" FontFamily="Yu Gothic UI Semibold"
                           VerticalAlignment="Center"></TextBlock>
                     </Grid>
 
-                    <TextBlock Grid.Row="8" Text="供油" Name="oil_in_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="8" Text="进油压力" Name="oil_j_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="8" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="oil_in_pressure_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="oil_in_pressure"></TextBox>
+                        <TextBox Name="oil_j_pressure_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="oil_j_pressure"></TextBox>
                         <TextBlock  Grid.Column="1" Text="KPa"  FontSize="40" FontFamily="Yu Gothic UI Semibold"
                          VerticalAlignment="Center" ></TextBlock>
                     </Grid>
-                    <TextBlock Grid.Row="9" Text="背油" Name="oil_out_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
+                    <TextBlock Grid.Row="9" Text="回油压力" Name="oil_h_pressure_TextBlock" FontSize="40" FontFamily="YouYuan"
                            HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Grid ShowGridLines="True" Grid.Row="9" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="oil_out_pressure_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
-                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="oil_out_pressure"></TextBox>
+                        <TextBox Name="oil_h_pressure_TextBox"  Grid.Column="0" FontSize="40" FontFamily="Yu Gothic UI Semibold"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Text="oil_h_pressure"></TextBox>
                         <TextBlock  Grid.Column="1" Text="KPa"  FontSize="40" FontFamily="Yu Gothic UI Semibold"
                          VerticalAlignment="Center" ></TextBlock>
                     </Grid>
