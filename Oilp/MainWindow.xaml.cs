@@ -39,23 +39,68 @@ namespace OilP
         /**
          * Initialize Item Name(zn_CN or en_US)
          **/
+        //public void Initialize_Item_Name()
+        //{
+        //    //get name list
+        //    List<Item_Name> item_Names = new List<Item_Name>();
+        //    item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("index");
+        //    //init names
+        //    setEleName(item_Names);
+
+        //}
+
+        /**
+         * Initialize Item Name(zn_CN or en_US)
+         **/
         public void Initialize_Item_Name()
         {
             //get name list
-            List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("index");
+            List<LAN_Model> lAN_Models = new List<LAN_Model>();
+            lAN_Models = Service.LAN_Service.Init_Item_Name("index");
             //init names
-            setEleName(item_Names);
+            setEleName(lAN_Models);
 
         }
+
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
         }
+        ///**
+        // * set the names of elements
+        // * */
+        //private void setEleName(List<Item_Name> item_Names)
+        //{
+        //    common_rail_injector.Content = item_Names[0].Item_name;
+        //    common_rail_pump.Content = item_Names[1].Item_name;
+        //    hpo_pump.Content = item_Names[2].Item_name;
+        //    eup_eui.Content = item_Names[3].Item_name;
+        //    heui.Content = item_Names[4].Item_name;
+        //    heui_pump.Content = item_Names[5].Item_name;
+        //    cat_pump.Content = item_Names[6].Item_name;
+        //    electronically_controlled_combination_pump.Content = item_Names[7].Item_name;
+        //    vp37.Content = item_Names[8].Item_name;
+        //    vp44.Content = item_Names[9].Item_name;
+        //    tics_pump.Content = item_Names[10].Item_name;
+        //    first_to_control_the_pump.Content = item_Names[11].Item_name;
+        //    mechanical_ve_pump.Content = item_Names[12].Item_name;
+        //    mechanical_pump.Content = item_Names[13].Item_name;
+        //    measuring_unit_zme.Content = item_Names[14].Item_name;
+        //    armature_stroke_ahe.Content = item_Names[15].Item_name;
+        //    electronic_control_common_rail_system_test_software.Content = item_Names[16].Item_name;
+        //    system_set.Content = item_Names[17].Item_name;
+        //    //change the font family for en_US
+        //    if ("en_US".Equals(item_Names[0].Language))
+        //    {
+        //        //set font family
+        //        setFontFamily("Yu Gothic UI Semibold");
+        //    }
+        //}
+
         /**
-         * set the names of elements
-         * */
-        private void setEleName(List<Item_Name> item_Names)
+       * set the names of elements
+       * */
+        private void setEleName(List<LAN_Model> item_Names)
         {
             common_rail_injector.Content = item_Names[0].Item_name;
             common_rail_pump.Content = item_Names[1].Item_name;
@@ -175,14 +220,14 @@ namespace OilP
             //OilP.Dao.CRI_DAO.UpdateData(cr);
 
             //OilP.Dao.DEV_DAO.QueryByType("cri");
-            OilP.Dao.DEV_DAO.QueryByManu("boche","cri");
+            //OilP.Dao.DEV_DAO.QueryByManu("boche","cri");
 
-            //NavigationWindow window = new NavigationWindow();
+            NavigationWindow window = new NavigationWindow();
             ////window.Source = new Uri("Pages/Common_Rail_Injector_Edit.xaml", UriKind.Relative);
-            //window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
-            //window.Height =500;
-            //window.Width =700;
-            //window.Show();
+            window.Source = new Uri("Pages/System_Config.xaml", UriKind.Relative);
+            window.Height = 500;
+            window.Width = 700;
+            window.Show();
         }
     }
 }

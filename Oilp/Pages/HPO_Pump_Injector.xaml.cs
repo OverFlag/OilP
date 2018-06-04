@@ -38,31 +38,36 @@ namespace OilP.Pages
             device_information_datagrid.ItemsSource = dEV_I_Models;
 
             //get name list
-            List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("hpo");
+            List<LAN_Model> lAN_Models = new List<LAN_Model>();
+            lAN_Models = OilP.Service.LAN_Service.Init_Item_Name("hpo");
             //init names
-            setEleName(item_Names);
+            setEleName(lAN_Models);
+
+            //填充历史记录datagrid
+            List<HIS_Model> hIS_Models = new List<HIS_Model>();
+            hIS_Models = Dao.DEV_DAO.QueryHistoryByType("hpo");
+            history_datagrid.ItemsSource = hIS_Models;
         }
 
         /**
        * set the names of elements
        * */
-        private void setEleName(List<Item_Name> item_Names)
+        private void setEleName(List<LAN_Model> item_Names)
         {
-            model_no_name.Text = item_Names[0].Item_name;
+            //model_no_name.Text = item_Names[0].Item_name;
 
-            search.Content = item_Names[1].Item_name;
-            exit_system.Content = item_Names[2].Item_name;
-            add.Content = item_Names[3].Item_name;
-            edit.Content = item_Names[4].Item_name;
-            delete.Content = item_Names[5].Item_name;
-            confirm.Content = item_Names[6].Item_name;
-            //change the font family for en_US
-            if ("en_US".Equals(item_Names[0].Language))
-            {
-                //set font family
-                setFontFamily("Yu Gothic UI Semibold");
-            }
+            //search.Content = item_Names[1].Item_name;
+            //exit_system.Content = item_Names[2].Item_name;
+            //add.Content = item_Names[3].Item_name;
+            //edit.Content = item_Names[4].Item_name;
+            //delete.Content = item_Names[5].Item_name;
+            //confirm.Content = item_Names[6].Item_name;
+            ////change the font family for en_US
+            //if ("en_US".Equals(item_Names[0].Language))
+            //{
+            //    //set font family
+            //    setFontFamily("Yu Gothic UI Semibold");
+            //}
         }
 
         /**
@@ -94,6 +99,12 @@ namespace OilP.Pages
             DEV_I_Model dEV_I_Model = new DEV_I_Model();
             dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
             String model_no = dEV_I_Model.Model_no;
+
+            //往history添加记录
+            HIS_Model hIS_Model = new HIS_Model();
+            hIS_Model.Model_no = model_no;
+            Dao.DEV_DAO.WriteToHistory("hpo", hIS_Model);
+
             //页面跳转，传递model_no参数
             HPO_Pump_Injector_Edit_ hPO_Pump_Injector_Edit_Page = new HPO_Pump_Injector_Edit_(model_no);
             this.NavigationService.Navigate(hPO_Pump_Injector_Edit_Page);
@@ -130,9 +141,15 @@ namespace OilP.Pages
             DEV_I_Model dEV_I_Model = new DEV_I_Model();
             dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
             String model_no = dEV_I_Model.Model_no;
+
+            //往history添加记录
+            HIS_Model hIS_Model = new HIS_Model();
+            hIS_Model.Model_no = model_no;
+            Dao.DEV_DAO.WriteToHistory("hpo", hIS_Model);
+
             //页面跳转，传递model_no参数
-            HdasfasPO_Pump_Injector_test_ Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
-            this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+            HPO_Pump_Injector_Test hPO_Pump_Injector_Test_page = new HPO_Pump_Injector_Test(model_no);
+            this.NavigationService.Navigate(hPO_Pump_Injector_Test_page);
             //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
         }
     }

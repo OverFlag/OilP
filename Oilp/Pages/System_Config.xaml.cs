@@ -35,32 +35,56 @@ namespace OilP.Pages
             //get data from 
 
             //get name list
-            List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("con");
+            List<LAN_Model> lAN_Models = new List<LAN_Model>();
+            lAN_Models = OilP.Service.LAN_Service.Init_Item_Name("conf");
             //init names
-            setEleName(item_Names);
+            setEleName(lAN_Models);
         }
+
+        ///**
+        // * submit the config
+        // * */
+        //private void confirm_Click(object sender, RoutedEventArgs e)
+        //{
+        //    OilP_Config oilP_Config = new OilP_Config();
+        //    string language = language_combobox.Text;
+        //    if ("Chinese".Equals(language)||"简体中文".Equals(language))
+        //    {
+        //        oilP_Config.Language = "zh_CN";
+        //    }
+        //    else
+        //    {
+        //        oilP_Config.Language = "en_US";
+        //    }
+        //    oilP_Config.Config_no = 1;
+        //    OilP.Service.Oilp_Config_Service.updateConfig(oilP_Config);
+        //    Window win = (Window)this.Parent;
+        //    win.Close();
+
+        //}
+
 
         /**
          * submit the config
          * */
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            OilP_Config oilP_Config = new OilP_Config();
+            CONFIG_Model cONFIG_Model = new CONFIG_Model();
             string language = language_combobox.Text;
-            if ("Chinese".Equals(language)||"简体中文".Equals(language))
+            if ("Chinese".Equals(language) || "简体中文".Equals(language))
             {
-                oilP_Config.Language = "zh_CN";
+                cONFIG_Model.Name = "language";
+                cONFIG_Model.Value = "zh_CN";
             }
             else
             {
-                oilP_Config.Language = "en_US";
+                cONFIG_Model.Name = "language";
+                cONFIG_Model.Value = "en_US";
             }
-            oilP_Config.Config_no = 1;
-            OilP.Service.Oilp_Config_Service.updateConfig(oilP_Config);
+            OilP.Service.LAN_Service.UpdateConfig(cONFIG_Model);
             Window win = (Window)this.Parent;
             win.Close();
-            
+
         }
 
         /**
@@ -74,7 +98,7 @@ namespace OilP.Pages
         /**
       * set the names of elements
       * */
-        private void setEleName(List<Item_Name> item_Names)
+        private void setEleName(List<LAN_Model> item_Names)
         {
             language.Text = item_Names[0].Item_name;
             confirm.Content = item_Names[1].Item_name;

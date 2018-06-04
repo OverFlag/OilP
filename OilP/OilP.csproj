@@ -99,13 +99,18 @@
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
+    <Compile Include="Model\CONFIG_Model.cs" />
     <Compile Include="Model\CRI_Model.cs" />
     <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
     <Compile Include="Model\DEV_I_Model.cs" />
+    <Compile Include="Model\HIS_Model.cs" />
     <Compile Include="Model\HPO_Model.cs" />
     <Compile Include="Model\LAN_Model.cs" />
     <Compile Include="Model\OilP_Config.cs" />
+    <Compile Include="Pages\Common_Rail_Inejector_Add.xaml.cs">
+      <DependentUpon>Common_Rail_Inejector_Add.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
     </Compile>
@@ -124,6 +129,9 @@
     <Compile Include="Pages\HPO_Pump_Injector_Edit_.xaml.cs">
       <DependentUpon>HPO_Pump_Injector_Edit_.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HPO_Pump_Injector_Test.xaml.cs">
+      <DependentUpon>HPO_Pump_Injector_Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\System_Config.xaml.cs">
       <DependentUpon>System_Config.xaml</DependentUpon>
     </Compile>
@@ -132,6 +140,7 @@
     <Compile Include="Service\Device_Information_Service.cs" />
     <Compile Include="Service\HPO_Service.cs" />
     <Compile Include="Service\Item_Name_Service.cs" />
+    <Compile Include="Service\LAN_Service.cs" />
     <Compile Include="Service\Oilp_Config_Service.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +157,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Common_Rail_Inejector_Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Common_Rail_Injector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\HPO_Pump_Injector_Edit_.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HPO_Pump_Injector_Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

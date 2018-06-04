@@ -66,14 +66,39 @@
                     FontSize="50" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="search_Click">
 
             </Button>
-            <ListBox Name="manufacturer_list" Grid.Row="1" Grid.Column="0"  Margin="10,10,10,10"
+
+            <Grid ShowGridLines="True" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ListBox Name="manufacturer_list" Grid.Row="1" Grid.Column="0"  Margin="10,10,10,10"
                  IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
-                <ListBoxItem Content="Bosch" FontSize="30" IsSelected="True"/>
-                <ListBoxItem Content="Denso" FontSize="30"/>
-                <ListBoxItem Content="Delphi" FontSize="30"/>
-                <ListBoxItem Content="Siemens" FontSize="30"/>
-                <ListBoxItem Content="Caterpillar" FontSize="30"/>
-            </ListBox>
+                    <ListBoxItem Content="Bosch" FontSize="30" IsSelected="True"/>
+                    <ListBoxItem Content="Denso" FontSize="30"/>
+                    <ListBoxItem Content="Delphi" FontSize="30"/>
+                    <ListBoxItem Content="Siemens" FontSize="30"/>
+                    <ListBoxItem Content="Caterpillar" FontSize="30"/>
+                </ListBox>
+
+                <Grid ShowGridLines="True" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*"></RowDefinition>
+                        <RowDefinition Height="0.9*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="history_TextBlock" Text="历史记录" FontFamily="YouYuan" FontSize="40"
+                               VerticalAlignment="Center"  HorizontalAlignment="Center"></TextBlock>
+                    <DataGrid Name="history_datagrid" Grid.Row="1" Grid.Column="0" 
+                  Margin="5,5,5,5" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                  IsReadOnly="True" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="型号"  Binding="{Binding Model_no}" FontSize="25"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Grid>
+           
         </Grid>
         <DataGrid Name="device_information_datagrid" Grid.Row="0" Grid.Column="1" 
                   Margin="50,50,50,50" AutoGenerateColumns="False" ItemsSource="{Binding}"

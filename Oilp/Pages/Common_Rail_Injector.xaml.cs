@@ -34,15 +34,19 @@ namespace OilP.Pages
         public void Initialize_Page()
         {
             List<DEV_I_Model> dEV_I_Models = new List<DEV_I_Model>();
-            //get common rail injector device information
+            //填充查询结果datagrid
             dEV_I_Models = OilP.Service.Device_Information_Service.getDataByType("cri");
             device_information_datagrid.ItemsSource = dEV_I_Models;
 
-            //get name list
-            List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("cri");
+            //填充itemname
+            List<LAN_Model> lAN_Models = new List<LAN_Model>();
+            lAN_Models = OilP.Service.LAN_Service.Init_Item_Name("cri");
             //init names
-            setEleName(item_Names);
+            setEleName(lAN_Models);
+            //填充历史记录datagrid
+            List<HIS_Model> hIS_Models = new List<HIS_Model>();
+            hIS_Models = Dao.DEV_DAO.QueryHistoryByType("cri");
+            history_datagrid.ItemsSource = hIS_Models;
         }
 
         /**
@@ -57,7 +61,7 @@ namespace OilP.Pages
         /**
         * set the names of elements
         * */
-        private void setEleName(List<Item_Name> item_Names)
+        private void setEleName(List<LAN_Model> item_Names)
         {
             model_no_name.Text = item_Names[0].Item_name;
             
@@ -111,6 +115,12 @@ namespace OilP.Pages
             DEV_I_Model dEV_I_Model = new DEV_I_Model();
             dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
             String model_no = dEV_I_Model.Model_no;
+
+            //往history添加记录
+            HIS_Model hIS_Model = new HIS_Model();
+            hIS_Model.Model_no = model_no;
+            Dao.DEV_DAO.WriteToHistory("cri", hIS_Model);
+
             //页面跳转，传递model_no参数
             Common_Rail_Injector_Test Common_Rail_Injector_Test_page = new Common_Rail_Injector_Test(model_no);
             this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
@@ -149,6 +159,12 @@ namespace OilP.Pages
             DEV_I_Model dEV_I_Model = new DEV_I_Model();
             dEV_I_Model = (DEV_I_Model)device_information_datagrid.SelectedItem;
             String model_no = dEV_I_Model.Model_no;
+
+            //往history添加记录
+            HIS_Model hIS_Model = new HIS_Model();
+            hIS_Model.Model_no = model_no;
+            Dao.DEV_DAO.WriteToHistory("cri", hIS_Model);
+
             //页面跳转，传递model_no参数
             Common_Rail_Injector_Edit common_Rail_Injector_Edit_page = new Common_Rail_Injector_Edit(model_no);
             this.NavigationService.Navigate(common_Rail_Injector_Edit_page);

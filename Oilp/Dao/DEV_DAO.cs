@@ -93,7 +93,77 @@ namespace OilP.Dao
             return dEV_I_Model;
         }
 
+        /**
+       * 根据type获取该类型的Histoyry集合，取出的是txt文件中的所有数据
+       **/
+        public static List<HIS_Model> QueryHistoryByType(string type)
+        {
+            List<HIS_Model> hIS_Models = new List<HIS_Model>();
+            /* type 转大写*/
+            string H_type = type.ToUpper();
 
-        
+            string filePath = "../Data/" + H_type + "/HISTORY.txt";
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite);
+
+            StreamReader rd = new StreamReader(fs, Encoding.UTF8);
+            string readLine;
+
+          
+            while ((readLine = rd.ReadLine()) != null)
+            {
+                HIS_Model temp = new HIS_Model();
+                temp.Model_no = readLine;
+                hIS_Models.Add(temp);
+            }
+            rd.Close();
+            fs.Close();
+            return hIS_Models;
+        }
+
+
+        /**
+      * 根据type类型，往history文件中写入数据
+      **/
+        public static bool WriteToHistory(string type, HIS_Model hIS_Model)
+        {
+            List<HIS_Model> hIS_Models = new List<HIS_Model>();
+            hIS_Models = QueryHistoryByType(type);
+            bool flag = false;
+            /* type 转大写*/
+            string H_type = type.ToUpper();
+            string filePath = "../Data/"+H_type+ "/HISTORY.txt";       
+            FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite);
+            StreamWriter wr = new StreamWriter(fs, Encoding.UTF8);
+
+            //先写入新的一条记录放在开头
+            wr.WriteLine(hIS_Model.Model_no);
+
+            //写入之前的99条记录，超过100条的记录会被覆盖
+           
+            int i = 1;
+            foreach (HIS_Model item in hIS_Models)
+            {
+                
+                wr.WriteLine(item.Model_no);
+                i++;
+                if (i>=99)
+                {
+                    break;
+                }
+            }
+            wr.Close();
+            fs.Close();
+            return true;
+        }
+
+        /**
+        * 将list写入指定txt文件
+        * */
+        public static void WriteListToTxt(string type, List<CRI_Model> cRI_Models)
+        {
+            
+        }
+
+
     }
 }

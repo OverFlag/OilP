@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,16 +42,48 @@ namespace OilP.Pages
                 ImageSource = new BitmapImage(new Uri("pack://application:,,,../Resources/exit.png"))
             };
 
-            //get name list
-            List<Item_Name> item_Names = new List<Item_Name>();
-            item_Names = OilP.Service.Item_Name_Service.Init_Item_Name("cri");
+            //需要修改的读取item_name，改成读txt文件的
+            List<LAN_Model> lAN_Models = new List<LAN_Model>();
+            lAN_Models = OilP.Service.LAN_Service.Init_Item_Name("cri_test");
             //init names
-            //setelename(item_names);
+            setEleName(lAN_Models);
 
             //初始化测试步骤列表并填入数据库中数据
             Init_test_names(model_no);
+        }
 
+        /**
+        * set the names of elements
+        * */
+        private void setEleName(List<LAN_Model> item_Names)
+        {
+            //common_rail_injector_test.Content = item_Names[0].Item_name;
+            //cri_model_no.Content = item_Names[1].Item_name;
+            //cri_step_name.Content = item_Names[2].Item_name;
 
+         
+            ////change the datagrid header language
+            //Regex regChina = new Regex("^[^\x00-\xFF]");
+            //Regex regEnglish = new Regex("^[a-zA-Z]");
+            //if (regEnglish.IsMatch(item_Names[1].Item_name))
+            //{
+            //    //set font family
+            //    setFontFamily("Yu Gothic UI Semibold");       
+            //}
+        }
+
+        /**
+         * set font family for en_US
+         **/
+        private void setFontFamily(string font)
+        {
+            //model_no_name.FontFamily = new FontFamily(font);
+            //search.FontFamily = new FontFamily(font);
+            //exit_system.FontFamily = new FontFamily(font);
+            //add.FontFamily = new FontFamily(font);
+            //edit.FontFamily = new FontFamily(font);
+            //delete.FontFamily = new FontFamily(font);
+            //confirm.FontFamily = new FontFamily(font);
         }
 
         /**

@@ -220,8 +220,8 @@ namespace OilP.Pages
         {
             string model_no = MODEL_NO;
             //页面跳转，传递model_no参数
-           HPO_Test Common_Rail_Injector_Test_page = new HPO_Test(model_no);
-            this.NavigationService.Navigate(Common_Rail_Injector_Test_page);
+           HPO_Pump_Injector_Test hPO_Pump_Injector_Test_page = new HPO_Pump_Injector_Test(model_no);
+            this.NavigationService.Navigate(hPO_Pump_Injector_Test_page);
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
