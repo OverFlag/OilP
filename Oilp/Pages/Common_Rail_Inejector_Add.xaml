@@ -70,8 +70,8 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ComboBox materialDesign:HintAssist.Hint="Search" Name="template_combobox"
-                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
-                    <ComboBoxItem Content="template" Name="template_1" IsSelected="True">
+                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" SelectionChanged="template_combobox_SelectionChanged">
+                    <ComboBoxItem Content="请选择" Name="plz" IsSelected="True">
                     </ComboBoxItem>
                 </ComboBox>
             </smtx:XamlDisplay>

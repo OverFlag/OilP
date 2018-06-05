@@ -169,5 +169,12 @@ namespace OilP.Pages
             Common_Rail_Injector_Edit common_Rail_Injector_Edit_page = new Common_Rail_Injector_Edit(model_no);
             this.NavigationService.Navigate(common_Rail_Injector_Edit_page);
         }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            //页面跳转，传递model_no参数
+            Common_Rail_Inejector_Add common_Rail_Injector_Add_Page= new Common_Rail_Inejector_Add();
+            this.NavigationService.Navigate(common_Rail_Injector_Add_Page);
+        }
     }
 }

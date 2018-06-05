@@ -138,7 +138,7 @@
             </Grid.ColumnDefinitions>
             <Button Content="新增" Name="add" Grid.Row="0" Grid.Column="0" Margin="30,20,30,20" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightGreen"
-                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan"
+                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="add_Click"
                      >
             </Button>
             <Button Content="修改" Name="edit" Grid.Row="0" Grid.Column="1" Margin="30,20,30,20" 
