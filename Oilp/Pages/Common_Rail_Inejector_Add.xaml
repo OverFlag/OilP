@@ -53,7 +53,7 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ComboBox materialDesign:HintAssist.Hint="Search" Name="manus_combobox"
-                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                  IsEditable="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
                     <ComboBoxItem Content="Bosch" Name="Bosch" IsSelected="True"></ComboBoxItem>
                     <ComboBoxItem Content="Denso" Name="Denso"></ComboBoxItem>
                     <ComboBoxItem Content="Delphi" Name="Delphi"></ComboBoxItem>
@@ -70,7 +70,7 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ComboBox materialDesign:HintAssist.Hint="Search" Name="template_combobox"
-                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" SelectionChanged="template_combobox_SelectionChanged">
+                  IsEditable="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" SelectionChanged="template_combobox_SelectionChanged">
                     <ComboBoxItem Content="请选择" Name="plz" IsSelected="True">
                     </ComboBoxItem>
                 </ComboBox>
@@ -80,7 +80,7 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <smtx:XamlDisplay Key="language_field" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <ComboBox materialDesign:HintAssist.Hint="Search" Name="curve_combobox"
-                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                  IsEditable="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
                     <ComboBoxItem Content="" Name="curve_1" IsSelected="True">
                     </ComboBoxItem>
                 </ComboBox>
@@ -270,13 +270,13 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Name="save" Grid.Row="0" Grid.Column="1" Margin="20,10,20,10" Height="60">
+                <Button Name="save" Grid.Row="0" Grid.Column="1" Margin="20,10,20,10" Height="60" Click="save_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/save.png" Stretch="Fill">
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <TextBlock FontSize="40" HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Save"
+                <TextBlock FontSize="40" Name="save_TextBox" HorizontalAlignment="Center"  VerticalAlignment="Center" Text="Save"
                            FontFamily="Yu Gothic UI Semibold"></TextBlock>
             </Grid>
         </Grid>

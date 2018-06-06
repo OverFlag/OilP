@@ -670,18 +670,31 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <RadioButton GroupName="directon" Name="forward" Content="正向" FontFamily="YouYuan"
-                 FontSize="30" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0">
-                </RadioButton>
-                <RadioButton GroupName="directon" Name="backward" Content="反向" FontFamily="YouYuan"
-                 FontSize="30" Margin="10,60,10,10" Grid.Row="0" Grid.Column="0">
-                </RadioButton>
-                <RadioButton GroupName="op_cl" Name="open" Content="常开" FontFamily="YouYuan"
-                 FontSize="30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="0">
-                </RadioButton>
-                <RadioButton GroupName="op_cl" Name="close" Content="常闭" FontFamily="YouYuan"
-                 FontSize="30" Margin="10,60,10,10" Grid.Row="1" Grid.Column="0">
-                </RadioButton>
+                <Grid ShowGridLines="True" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton Grid.Row="0" GroupName="directon" Name="forward" Content="正向" FontFamily="YouYuan"
+                 FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    </RadioButton>
+                    <RadioButton Grid.Row="1" GroupName="directon" Name="backward" Content="反向" FontFamily="YouYuan"
+                 FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    </RadioButton>
+                </Grid>
+                <Grid ShowGridLines="True" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton GroupName="op_cl" Name="open" Content="常开" FontFamily="YouYuan"
+                 FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                    </RadioButton>
+                    <RadioButton GroupName="op_cl" Name="close" Content="常闭" FontFamily="YouYuan"
+                 FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                    </RadioButton>
+                </Grid>
+             
                 <Button Name="time_add" Background="LightBlue" Grid.Row="2" Grid.Column="0" 
                         Content="+" FontSize="30" Margin="20,20,20,20" Height="50" >
                 </Button>
