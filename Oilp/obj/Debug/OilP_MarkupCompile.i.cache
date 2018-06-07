@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\GitRepository\OilP\OilP\App.xaml
-11-338183414
+12-1580198206
 
-52-1233762881
+53-259006748
 19-765892935
-MainWindow.xaml;Pages\Common_Rail_Inejector_Add.xaml;Pages\Common_Rail_Injector.xaml;Pages\Common_Rail_Injector_Edit.xaml;Pages\Common_Rail_Injector_Setting.xaml;Pages\Common_Rail_Injector_Test.xaml;Pages\Common_Rail_Pump_Test.xaml;Pages\HPO_Pump_Injector.xaml;Pages\HPO_Pump_Injector_Edit_.xaml;Pages\HPO_Pump_Injector_Test.xaml;Pages\System_Config.xaml;
+MainWindow.xaml;Pages\Common_Rail_Inejector_Add.xaml;Pages\Common_Rail_Injector.xaml;Pages\Common_Rail_Injector_Edit.xaml;Pages\Common_Rail_Injector_Setting.xaml;Pages\Common_Rail_Injector_Test.xaml;Pages\Common_Rail_Injector_Test_Setting.xaml;Pages\Common_Rail_Pump_Test.xaml;Pages\HPO_Pump_Injector.xaml;Pages\HPO_Pump_Injector_Edit_.xaml;Pages\HPO_Pump_Injector_Test.xaml;Pages\System_Config.xaml;
 
-False
+True
 

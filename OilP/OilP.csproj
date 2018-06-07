@@ -97,6 +97,7 @@
     <Compile Include="Dao\HPO_DAO.cs" />
     <Compile Include="Dao\LAN_Dao.cs" />
     <Compile Include="Dao\Oilp_Config_DAO.cs" />
+    <Compile Include="Dao\TEMPLATE_DAO.cs" />
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\CONFIG_Model.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Model\HPO_Model.cs" />
     <Compile Include="Model\LAN_Model.cs" />
     <Compile Include="Model\OilP_Config.cs" />
+    <Compile Include="Model\TEMPLATE_Model.cs" />
     <Compile Include="Pages\Common_Rail_Inejector_Add.xaml.cs">
       <DependentUpon>Common_Rail_Inejector_Add.xaml</DependentUpon>
     </Compile>
@@ -117,8 +119,14 @@
     <Compile Include="Pages\Common_Rail_Injector_Edit.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Setting.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Setting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Common_Rail_Injector_Test.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Test_Setting.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Test_Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Common_Rail_Pump_Test.xaml.cs">
       <DependentUpon>Common_Rail_Pump_Test.xaml</DependentUpon>
@@ -169,7 +177,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Common_Rail_Injector_Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Common_Rail_Injector_Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common_Rail_Injector_Test_Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

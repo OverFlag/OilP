@@ -67,6 +67,15 @@
                                    FontSize="25" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
                         <TextBlock Name="JY_T_deviation_TextBlock" Text="机油温度偏差[℃]" FontFamily="YouYuan"
                                    FontSize="25" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="RY_T_TextBox" Text="30" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="JY_T_TextBox" Text="30" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="RY_T_deviation_TextBox" Text="2" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="JY_T_deviation_TextBox" Text="2" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"></TextBox>
+
                     </Grid>
                 </Grid>
                 <Grid ShowGridLines="True">
@@ -132,6 +141,242 @@
                                  FontSize="25" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
                         <TextBox Name="oil_D_TextBox" Text="10" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid ShowGridLines="True" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="0.9*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="injector_flow_TextBlock" Text="喷油器流量K" FontFamily="You Yuan"
+                           FontSize="25" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                <Grid ShowGridLines="True" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="＜" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="25" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Name="flow_c1_r1_TextBox" Text="20.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c1_r2_TextBox" Text="15.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c1_r3_TextBox" Text="10.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c1_r4_TextBox" Text="6.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c1_r5_TextBox" Text="3.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c1_r6_TextBox" Text="1.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r1_TextBox" Text="13500.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r2_TextBox" Text="13500.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r3_TextBox" Text="13500.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r4_TextBox" Text="13500.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r5_TextBox" Text="13000.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c2_r6_TextBox" Text="8000.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r1_TextBox" Text="300.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r2_TextBox" Text="250.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r3_TextBox" Text="200.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r4_TextBox" Text="150.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r5_TextBox" Text="100.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c3_r6_TextBox" Text="50.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r1_TextBox" Text="13500.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r2_TextBox" Text="13600.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r3_TextBox" Text="13600.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r4_TextBox" Text="13800.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r5_TextBox" Text="13800.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                    <TextBox Name="flow_c4_r6_TextBox" Text="13800.0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="5" VerticalAlignment="Center"></TextBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid ShowGridLines="True" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid ShowGridLines="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.8*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid ShowGridLines="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <RadioButton Grid.Row="0" GroupName="oil_heat" Name="MPA_180" 
+                                     Content="180 Mpa" FontFamily="Yu Gothic UI Semibold"
+                                     FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        </RadioButton>
+                        <RadioButton Grid.Row="1" GroupName="oil_heat" Name="MPA_240" 
+                                     Content="240 Mpa" FontFamily="Yu Gothic UI Semibold"
+                                     FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        </RadioButton>
+                    </Grid>
+                    <Grid ShowGridLines="True" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="Mpa_0_TextBlock" Text="0Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_25_TextBlock" Text="25Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_100_TextBlock" Text="100Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_160_TextBlock" Text="160Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_180_TextBlock" Text="180Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_240_TextBlock" Text="240Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Mpa_260_TextBlock" Text="260Mpa" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="M_0_TextBlock" Text="0M" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="M_6_TextBlock" Text="6M" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="M_12_TextBlock" Text="12M" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="Mpa_0_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_25_TextBox" Text="1141" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_100_TextBox" Text="2758" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_160_TextBox" Text="4040" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_180_TextBox" Text="4294" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_240_TextBox" Text="4400" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Mpa_260_TextBox" Text="4500" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="M_0_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="M_6_TextBox" Text="604" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="M_12_TextBox" Text="730" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    </Grid>
+                    
+                </Grid>
+                <Grid ShowGridLines="True" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.4*"></RowDefinition>
+                        <RowDefinition Height="0.3*"></RowDefinition>
+                        <RowDefinition Height="0.3*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid ShowGridLines="True" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="Gu_version_TextBlock" Text="固件版本" FontFamily="YouYuan"
+                                   FontSize="25" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Sys_version_TextBlock" Text="系统版本" FontFamily="YouYuan"
+                                   FontSize="25" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="Gu_version_TextBox" Text="0" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1"  VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Sys_version_TextBox" Text="2.1.3.800" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3"  VerticalAlignment="Center"></TextBox>
+                    </Grid>
+                    <Grid ShowGridLines="True" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="Oilk_TextBlock" Text="Oilk" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="Pumpinjk_TextBlock" Text="Pumpinjk" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="PumpRek_TextBlock" Text="PumpRek" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="Oilk_TextBox" Text="400" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="Pumpinjk_TextBox" Text="700" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1"  Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="PumpRek_TextBox" Text="700" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
                     </Grid>
                 </Grid>
             </Grid>
