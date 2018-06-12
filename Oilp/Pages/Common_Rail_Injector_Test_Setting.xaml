@@ -44,7 +44,36 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="round_speed_TextBlock" Text="转速：RPM"
-                                   FontFamily="YouYuan" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="LEAK_TEST_TextBlock" Text="转速：LEAK TEST" Grid.Row="1"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="VL_TextBlock" Text="VL" Grid.Row="2"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="TL_TextBlock" Text="TL" Grid.Row="3"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="EM_TextBlock" Text="EM" Grid.Row="4"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="LL_TextBlock" Text="LL" Grid.Row="5"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="VE_TextBlock" Text="VE" Grid.Row="6"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="Other_TextBlock" Text="其他" Grid.Row="7"
+                                   FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="LEAK_TEST_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="VL_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="TL_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="EM_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="LL_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="VE_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <TextBox Name="Other_TextBox" Text="3.5" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+
             </Grid>
         </Grid>
             

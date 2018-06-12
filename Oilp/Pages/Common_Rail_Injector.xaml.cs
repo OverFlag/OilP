@@ -176,5 +176,18 @@ namespace OilP.Pages
             Common_Rail_Inejector_Add common_Rail_Injector_Add_Page= new Common_Rail_Inejector_Add();
             this.NavigationService.Navigate(common_Rail_Injector_Add_Page);
         }
+
+        public List<Setting_Model> GetData()
+        {
+            List<Setting_Model> data = new List<Setting_Model>();
+            Setting_Model temp_data = new Setting_Model();
+            /*系统状态2-1*/
+            /*下位机返回*/
+            temp_data.Name = "sys_status";
+            temp_data.Value = null;
+            data.Add(temp_data);
+
+            return data;
+        }
     }
 }

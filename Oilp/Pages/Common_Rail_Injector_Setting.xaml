@@ -41,10 +41,10 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <RadioButton Grid.Row="0" GroupName="oil_heat" Name="heat_false" Content="柴油不加热" FontFamily="YouYuan"
+                        <RadioButton Grid.Row="0" GroupName="fuel_heat" Name="heat_false" Content="柴油不加热" FontFamily="YouYuan"
                  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         </RadioButton>
-                        <RadioButton Grid.Row="1" GroupName="oil_heat" Name="heat_true" Content="柴油加热" FontFamily="YouYuan"
+                        <RadioButton Grid.Row="1" GroupName="fuel_heat" Name="heat_true" Content="柴油加热" FontFamily="YouYuan"
                  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left">
                         </RadioButton>
                     </Grid>
@@ -195,7 +195,7 @@
                     <TextBox Name="flow_c1_r1_TextBox" Text="20.0" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
                     <TextBox Name="flow_c1_r2_TextBox" Text="15.0" FontFamily="Yu Gothic UI Semibold"
-                                 FontSize="25" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                                 FontSize="25" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,9" Width="100"></TextBox>
                     <TextBox Name="flow_c1_r3_TextBox" Text="10.0" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
                     <TextBox Name="flow_c1_r4_TextBox" Text="6.0" FontFamily="Yu Gothic UI Semibold"
@@ -263,17 +263,18 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <RadioButton Grid.Row="0" GroupName="oil_heat" Name="MPA_180" 
+                        <RadioButton Grid.Row="0" GroupName="rail_pressure_group" Name="MPA_180" 
                                      Content="180 Mpa" FontFamily="Yu Gothic UI Semibold"
                                      FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         </RadioButton>
-                        <RadioButton Grid.Row="1" GroupName="oil_heat" Name="MPA_240" 
+                        <RadioButton Grid.Row="1" GroupName="rail_pressure_group" Name="MPA_240" 
                                      Content="240 Mpa" FontFamily="Yu Gothic UI Semibold"
                                      FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left">
                         </RadioButton>
                     </Grid>
                     <Grid ShowGridLines="True" Grid.Row="1">
                         <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
@@ -310,26 +311,35 @@
                                    FontSize="25" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
                         <TextBlock Name="M_12_TextBlock" Text="12M" FontFamily="Yu Gothic UI Semibold"
                                    FontSize="25" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
-                        <TextBox Name="Mpa_0_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
+                        <TextBlock Name="M_20_TextBlock" Text="12M" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="M_30_TextBlock" Text="12M" FontFamily="Yu Gothic UI Semibold"
+                                   FontSize="25" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="fuel_1_rail_pressure_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_25_TextBox" Text="1141" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_2_rail_pressure_TextBox" Text="1141" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_100_TextBox" Text="2758" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_3_rail_pressure_TextBox" Text="2758" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_160_TextBox" Text="4040" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_4_rail_pressure_TextBox" Text="4040" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_180_TextBox" Text="4294" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_5_rail_pressure_TextBox" Text="4294" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_240_TextBox" Text="4400" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_6_rail_pressure_TextBox" Text="4400" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="Mpa_260_TextBox" Text="4500" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="fuel_7_rail_pressure_TextBox" Text="4500" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="M_0_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="oil_1_rail_pressure_TextBox" Text="502" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="M_6_TextBox" Text="604" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="oil_2_rail_pressure_TextBox" Text="604" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                        <TextBox Name="M_12_TextBox" Text="730" FontFamily="Yu Gothic UI Semibold"
+                        <TextBox Name="oil_3_rail_pressure_TextBox" Text="730" FontFamily="Yu Gothic UI Semibold"
                                  FontSize="25" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="oil_4_rail_pressure_TextBox" Text="730" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBox Name="oil_5_rail_pressure_TextBox" Text="730" FontFamily="Yu Gothic UI Semibold"
+                                 FontSize="25" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+
                     </Grid>
                     
                 </Grid>

@@ -66,3 +66,7 @@ E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Inejector_Add.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Inejector_Add.baml
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Setting.g.cs
 E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Setting.baml
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Curve.g.cs
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Test_Setting.g.cs
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Curve.baml
+E:\GitRepository\OilP\OilP\obj\Debug\Pages\Common_Rail_Injector_Test_Setting.baml

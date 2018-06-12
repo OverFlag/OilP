@@ -101,6 +101,7 @@
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\CONFIG_Model.cs" />
+    <Compile Include="Model\Setting_Model.cs" />
     <Compile Include="Model\CRI_Model.cs" />
     <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
@@ -116,6 +117,9 @@
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Curve.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Curve.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Common_Rail_Injector_Edit.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Edit.xaml</DependentUpon>
     </Compile>
@@ -124,6 +128,9 @@
     </Compile>
     <Compile Include="Pages\Common_Rail_Injector_Test.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Test_Setting.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Test_Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Common_Rail_Pump_Test.xaml.cs">
       <DependentUpon>Common_Rail_Pump_Test.xaml</DependentUpon>
@@ -170,6 +177,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Common_Rail_Injector_Curve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Common_Rail_Injector_Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Common_Rail_Injector_Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common_Rail_Injector_Test_Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

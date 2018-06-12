@@ -96,7 +96,7 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <materialDesign:Chip Name="cri_rotating_speed" Grid.Row="0" Grid.Column="0"
+                        <!--<materialDesign:Chip Name="cri_rotating_speed" Grid.Row="0" Grid.Column="0"
                        Content="转速" FontSize="25" VerticalAlignment="Center"  FontFamily="YouYuan">
                         </materialDesign:Chip>
                         <TextBox Name="rotating_speed_TextBox" Grid.Row="1" FontSize="25" FontFamily="Yu Gothic UI Semibold"
@@ -120,7 +120,52 @@
                        Content="流量检测" FontSize="25" VerticalAlignment="Center"   FontFamily="YouYuan">
                         </materialDesign:Chip>
                         <TextBox Name="flow_TextBox" Grid.Row="9" FontSize="25" FontFamily="Yu Gothic UI Semibold"
-                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="flow"></TextBox>
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Text="flow"></TextBox>-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="show_fuel_T_TextBlcok" Text="柴油当前温度" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_fuel_T_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_inj_flow_TextBlcok" Text="喷油器流量" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_inj_flow_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_pump_flow_TextBlcok" Text="油泵流量" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_pump_flow_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_read_pressure_TextBlcok" Text="读取轨压" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_read_pressure_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_read_oil_flow_TextBlcok" Text="读取机油流量" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_read_oil_flow_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_sys_status_1_TextBlcok" Text="系统状态1" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_sys_status_1_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_sys_status_2_TextBlcok" Text="系统状态2" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_sys_status_2_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_read_oil_pressure_TextBlcok" Text="读取机油压力" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_read_oil_pressure_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_el_fuel_V_TextBlcok" Text="燃油压力电压EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_el_fuel_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Name="show_el_oil_V_TextBlcok" Text="机油压力电压EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                        <TextBox Name="show_el_oil_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+
                     </Grid>
 
                     <Grid ShowGridLines="true" Grid.Column="1">
@@ -501,7 +546,7 @@
                                     </ImageBrush>
                                 </Button.Background>
                             </Button>
-                            <TextBox FontSize="25" 
+                            <TextBox FontSize="25"  Name="fuel_T_TextBox"
                                      Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                             </TextBox>
                             <TextBox FontSize="25" 
@@ -514,10 +559,10 @@
 
                         <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="4">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="40*"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="50*"></RowDefinition>
-                                <RowDefinition Height="51*"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition ></RowDefinition>
+                                <RowDefinition ></RowDefinition>
+                                <RowDefinition ></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -682,6 +727,7 @@
                  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">
                     </RadioButton>
                 </Grid>
+                
                 <Grid ShowGridLines="True" Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -694,10 +740,35 @@
                  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
                     </RadioButton>
                 </Grid>
-             
-                <Button Name="time_add" Background="LightBlue" Grid.Row="2" Grid.Column="0" 
+                <Grid ShowGridLines="True" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton GroupName="fuel_heat" Name="fuel_heat_true" Content="柴油加热" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                    </RadioButton>
+                    <RadioButton GroupName="fuel_heat" Name="fuel_heat_false" Content="柴油不加热" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                    </RadioButton>
+                </Grid>
+
+                <Grid ShowGridLines="True" Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RadioButton GroupName="oil_heat" Name="oil_heat_true" Content="机油加热" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                    </RadioButton>
+                    <RadioButton GroupName="oil_heat" Name="oil_heat_false" Content="机油不加热" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                    </RadioButton>
+                </Grid>
+
+                <!--<Button Name="time_add" Background="LightBlue" Grid.Row="2" Grid.Column="0" 
                         Content="+" FontSize="30" Margin="20,20,20,20" Height="50" >
-                </Button>
+                </Button>-->
             </Grid>
 
             <Grid ShowGridLines="True" Grid.Row="0" Grid.Column="3">
@@ -799,6 +870,61 @@
                 <Button Grid.Column="2" Grid.Row="7" Content="0.0-70.0" FontSize="35" Height="45"
                         Background="LightBlue" Name="range_8"></Button>
             </Grid>
+            <Grid ShowGridLines="True" Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="show_el_fuel_drv_TextBlcok" Text="燃油DRV电流EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_fuel_drv_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_oil_drv_TextBlcok" Text="机油DRV电流EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_oil_drv_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_fuel_flow_TextBlcok" Text="燃油流量计EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_fuel_flow_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_oil_flow_TextBlcok" Text="机油流量计EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_oil_flow_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_inj_drive_V_TextBlcok" Text="喷油器驱动电压EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_inj_drive_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_inj_A_V_TextBlcok" Text="喷油器电流EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_inj_A_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_oil_T_V_TextBlcok" Text="机油温度EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_oil_T_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_el_oil_h_V_TextBlcok" Text="回油温度EL" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_el_oil_h_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="show_oil_T_V_TextBlcok" Text="机油温度" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="show_oil_T_V_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+
+            </Grid>
         </Grid>
         <Grid ShowGridLines="true" Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -826,7 +952,35 @@
                 </TextBlock>
             </Grid>
 
-            <Grid Grid.Column="1" ShowGridLines="True">
+            <Grid ShowGridLines="True" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <RadioButton GroupName="tongdao" Name="tongdao_1" Content="通道1" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                </RadioButton>
+                <RadioButton GroupName="tongdao" Name="tongdao_2" Content="通道2" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                </RadioButton>
+            </Grid>
+
+            <Grid ShowGridLines="True" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="max_pulse_TextBlock" Text="脉宽最大值" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="YouYuan" FontSize="20" Grid.Row="0" Grid.Column="0"></TextBlock>
+                <TextBox FontSize="25" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" 
+                         HorizontalAlignment="Center" Name="max_pulse_TextBox">
+                </TextBox>
+            </Grid>
+            <!--<Grid Grid.Column="1" ShowGridLines="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.3*"></RowDefinition>
                     <RowDefinition Height="0.7*"></RowDefinition>
@@ -839,7 +993,7 @@
                 </Button>
                 <TextBlock Text="演示" FontFamily="YouYuan" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">
                 </TextBlock>
-            </Grid>
+            </Grid>-->
 
             <Grid Grid.Column="3" ShowGridLines="True">
                 <Grid.RowDefinitions>
@@ -867,8 +1021,58 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <TextBlock Text="启动" FontFamily="YouYuan" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">
+                <TextBlock Text="停止" FontFamily="YouYuan" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">
                 </TextBlock>
+            </Grid>
+
+            <Grid ShowGridLines="True" Grid.Column="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <RadioButton GroupName="PenYou_1" Name="PenYou_1_JinZhi" Content="喷油1禁止" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                </RadioButton>
+                <RadioButton GroupName="PenYou_1" Name="PenYou_1_ShiNeng" Content="喷油1使能" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                </RadioButton>
+            </Grid>
+
+            <Grid ShowGridLines="True" Grid.Column="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <RadioButton GroupName="PenYou_2" Name="PenYou_2_JinZhi" Content="喷油2禁止" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" >
+                </RadioButton>
+                <RadioButton GroupName="PenYou_2" Name="PenYou_2_ShiNeng" Content="喷油2使能" FontFamily="YouYuan"
+                 FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" >
+                </RadioButton>
+            </Grid>
+            <Grid ShowGridLines="True" Grid.Column="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="stop_round_speed_TextBlcok" Text="电机转速" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="stop_round_speed_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="stop_rail_pressure_TextBlcok" Text="目标轨压" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="stop_rail_pressure_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <TextBlock Name="stop_oil_pressure_TextBlcok" Text="目标机油压力" FontFamily="You Yuan" HorizontalAlignment="Center"
+                           FontSize="18" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="stop_oil_pressure_TextBox" Text="null" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Center"
+                                 FontSize="18" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+
             </Grid>
         </Grid>
     </Grid>
