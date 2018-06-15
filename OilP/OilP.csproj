@@ -91,6 +91,7 @@
     <Compile Include="Dao\Code_Table_DAO.cs" />
     <Compile Include="Dao\Common_Rail_Injector_Test_DAO.cs" />
     <Compile Include="Dao\Config_DAO.cs" />
+    <Compile Include="Dao\CRI_Curve_DAO.cs" />
     <Compile Include="Dao\CRI_DAO.cs" />
     <Compile Include="Dao\Device_Information_DAO.cs" />
     <Compile Include="Dao\DEV_DAO.cs" />
@@ -101,6 +102,8 @@
     <Compile Include="Model\Code_Table.cs" />
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\CONFIG_Model.cs" />
+    <Compile Include="Model\CRI_Curve_Model.cs" />
+    <Compile Include="Model\Setting_Model.cs" />
     <Compile Include="Model\CRI_Model.cs" />
     <Compile Include="Model\Detail_Information.cs" />
     <Compile Include="Model\Device_Information.cs" />
@@ -109,12 +112,16 @@
     <Compile Include="Model\HPO_Model.cs" />
     <Compile Include="Model\LAN_Model.cs" />
     <Compile Include="Model\OilP_Config.cs" />
+    <Compile Include="Model\temp.cs" />
     <Compile Include="Model\TEMPLATE_Model.cs" />
     <Compile Include="Pages\Common_Rail_Inejector_Add.xaml.cs">
       <DependentUpon>Common_Rail_Inejector_Add.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Common_Rail_Injector.xaml.cs">
       <DependentUpon>Common_Rail_Injector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Common_Rail_Injector_Curve.xaml.cs">
+      <DependentUpon>Common_Rail_Injector_Curve.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Common_Rail_Injector_Edit.xaml.cs">
       <DependentUpon>Common_Rail_Injector_Edit.xaml</DependentUpon>
@@ -170,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Common_Rail_Injector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Common_Rail_Injector_Curve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

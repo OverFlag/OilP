@@ -167,12 +167,31 @@
                                    FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 <TextBlock Name="FuYa_TextBlock" Text="负压值" Grid.Row="1"  Grid.Column="2"
                                    FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                <TextBox Name="after_XiDong_TextBox" Text="负压" FontFamily="Yu Gothic UI Semibold"
-                                 FontSize="35" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-                <TextBox Name="after_BaoChi_TextBox" Text="持续负压" FontFamily="Yu Gothic UI Semibold"
-                                 FontSize="35" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-                <TextBox Name="FuYa_TextBox" Text="60" FontFamily="Yu Gothic UI Semibold"
-                                 FontSize="35" Grid.Row="1" Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+                <ComboBox  Name="after_XiDong_ComboBox" Grid.Row="1" Grid.Column="1" FontFamily="Yu Gothic UI Semibold"
+                      IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="自然"  Name="ziran_item" IsSelected="True">
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="负压"  Name="fuya_item" >
+                    </ComboBoxItem>
+                </ComboBox>
+                <ComboBox  Name="after_BaoChi_ComboBox" Grid.Row="2" Grid.Column="1" FontFamily="Yu Gothic UI Semibold"
+                      IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="自然"  Name="b_ziran_item" IsSelected="True">
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="负压"  Name="b_fuya_item" >
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="持续负压"  Name="b_chixufuya_item">
+                    </ComboBoxItem>
+                </ComboBox>
+                  <ComboBox Name="fuya_ComboBox" Grid.Row="1" Grid.Column="3" FontFamily="Yu Gothic UI Semibold"
+                      IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">
+                    <ComboBoxItem Content="0"  Name="item_0" IsSelected="True">
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="36"  Name="item_36" IsSelected="True">
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="60"  Name="item_60" >
+                    </ComboBoxItem>
+                </ComboBox>
                 <Grid ShowGridLines="True" Grid.Row="1" Grid.Column="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -193,8 +212,13 @@
                                  FontSize="35"  Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
             <TextBlock Name="curve_TextBlock" Text="曲线名称"  Grid.Column="2"
                                    FontFamily="Yu Gothic UI Semibold" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-            <TextBox Name="curve_TextBox" Text="14V" FontFamily="Yu Gothic UI Semibold"
-                                 FontSize="35"  Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <ComboBox materialDesign:HintAssist.Hint="Search" Name="Curve_ComboBox" Grid.Column="3"
+                  IsEditable="True" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" SelectionChanged="Curve_ComboBox_SelectionChanged_1" >
+                <ComboBoxItem Content="14V" Name="ComboBoxItem_1" IsSelected="True">
+                </ComboBoxItem>
+                <ComboBoxItem Content="16V" Name="ComboBoxItem_2" >
+                </ComboBoxItem>
+            </ComboBox>
         </Grid>
     </Grid>
  

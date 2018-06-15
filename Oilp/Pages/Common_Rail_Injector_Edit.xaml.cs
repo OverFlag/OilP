@@ -27,6 +27,7 @@ namespace OilP.Pages
         public static string MODEL_NO;
         public bool EDIT_FLAG = false;
         public bool TEXT_BG_FLAG = false;
+        public static string CURVE;
 
         public Common_Rail_Injector_Edit(string model_no)
         {
@@ -162,6 +163,7 @@ namespace OilP.Pages
             }
             else
             {
+                CURVE = cRI_Model.Curve.ToString();
                 curve_TextBox.Text = cRI_Model.Curve.ToString();
             }
             magn_TextBox.Text = cRI_Model.Manufacturer;
@@ -474,6 +476,13 @@ namespace OilP.Pages
                 //    Init_step_ListBox(MODEL_NO);
                 //}
             }
+        }
+
+        private void curve_Click(object sender, RoutedEventArgs e)
+        {
+            //页面跳转
+            Common_Rail_Injector_Curve Common_Rail_Injector_Curve_Page= new Common_Rail_Injector_Curve();
+            this.NavigationService.Navigate(Common_Rail_Injector_Curve_Page);
         }
     }
 }
