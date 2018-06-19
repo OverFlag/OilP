@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Oilp.Com;
 using OilP.Model;
 namespace OilP.Pages
 {
@@ -337,6 +338,7 @@ namespace OilP.Pages
             temp_data.Name = "test_type";
             temp_data.Value = "1";
             temp_data.Command = "0003";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
             /* 柴油加热使能-1*/
             temp_data.Name = "fuel_heat";
@@ -351,6 +353,7 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_data.ToString();
             temp_data.Command = "0018";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
             /* 机油加热使能-2*/
             temp_data.Name = "oil_heat";
@@ -364,18 +367,21 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_data.ToString();
             temp_data.Command = "0019";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
             /* 上位机状态-3*/
             temp_data.Name = "up_status";
             /* 根据不同的进入方式改变*/
             temp_data.Value = "1";
             temp_data.Command = "0041";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
             /* 喷油器类型-4*/
             temp_data.Name = "injector_type";
             temp_data.Value = "1";
             temp_data.Command = "0100";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 驱动目标通道-5*/
@@ -390,24 +396,28 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_value.ToString();
             temp_data.Command = "0105";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器升压电压-6*/
             temp_data.Name = "v_TiSheng";
             temp_data.Value = null;
             temp_data.Command = "0106";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器脉宽最大值-7*/
             temp_data.Name = "max_pulse";
             temp_data.Value = max_pulse_TextBox.Text;
             temp_data.Command = "010D";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器1开启时间1-8*/
             temp_data.Name = "1_open_time_1";
             temp_data.Value = "100";
             temp_data.Command = "0110";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器1开启时间2-9*/
@@ -415,6 +425,7 @@ namespace OilP.Pages
             temp_data.Name = "1_open_time_2";
             temp_data.Value = null;
             temp_data.Command = "0111";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器1开启时间3-10*/
@@ -422,6 +433,7 @@ namespace OilP.Pages
             temp_data.Name = "1_open_time_3";
             temp_data.Value = null;
             temp_data.Command = "0112";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器1开启电流1-11*/
@@ -429,6 +441,7 @@ namespace OilP.Pages
             temp_data.Name = "1_open_A_1";
             temp_data.Value = null;
             temp_data.Command = "011D";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器1开启电流2-12*/
@@ -436,6 +449,7 @@ namespace OilP.Pages
             temp_data.Name = "1_open_A_2";
             temp_data.Value = null;
             temp_data.Command = "011E";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器1开启电流3-13*/
@@ -443,6 +457,7 @@ namespace OilP.Pages
             temp_data.Name = "1_open_A_3";
             temp_data.Value = null;
             temp_data.Command = "011F";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器2开启时间1-14*/
@@ -450,6 +465,7 @@ namespace OilP.Pages
             temp_data.Name = "2_open_time_1";
             temp_data.Value = "100";
             temp_data.Command = "0123";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 电磁喷油器2开启时间2-15*/
@@ -457,6 +473,7 @@ namespace OilP.Pages
             temp_data.Name = "2_open_time_2";
             temp_data.Value = null;
             temp_data.Command = "0124";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器2开启时间3-16*/
@@ -464,6 +481,7 @@ namespace OilP.Pages
             temp_data.Name = "2_open_time_3";
             temp_data.Value = null;
             temp_data.Command = "0125";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器2开启电流1-17*/
@@ -471,6 +489,7 @@ namespace OilP.Pages
             temp_data.Name = "2_open_A_1";
             temp_data.Value = null;
             temp_data.Command = "0127";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器2开启电流2-18*/
@@ -478,6 +497,7 @@ namespace OilP.Pages
             temp_data.Name = "2_open_A_2";
             temp_data.Value = null;
             temp_data.Command = "0128";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /*电磁喷油器2开启电流3-19*/
@@ -485,12 +505,14 @@ namespace OilP.Pages
             temp_data.Name = "2_open_A_3";
             temp_data.Value = null;
             temp_data.Command = "0129";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             /* 测试类型03-20*/
             temp_data.Name = "test_type";
             temp_data.Value = "1";
             temp_data.Command = "030C";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
             INTO_DATA = data;
@@ -518,9 +540,10 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_value.ToString();
             temp_data.Command = "0001";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*泵转向03-0*/
+            /*泵转向03-1*/
             temp_data.Name = "direction03";
             if (forward.IsChecked == true)
             {
@@ -532,62 +555,71 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_value.ToString();
             temp_data.Command = "0301";
+            temp_data.PageSelect = "0x30";
             data.Add(temp_data);
 
-            /*电机转速-1*/
+            /*电机转速-2*/
             /*从数据库来*/
             temp_data.Name = "round_speed";
             temp_data.Value = null;
             temp_data.Command = "0302";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*电机转速-1*/
+            /*电机转速-3*/
             /*从数据库来*/
             temp_data.Name = "round_speed";
             temp_data.Value = null;
             temp_data.Command = "0027";
+            temp_data.PageSelect = "0x30";
             data.Add(temp_data);
 
-            /*目标轨压-1*/
+            /*目标轨压-4*/
             /*从数据库来*/
             temp_data.Name = "rail_pressure";
             temp_data.Value = null;
             temp_data.Command = "0028";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);    
 
-            /*喷油器1频率-1*/
+            /*喷油器1频率-5*/
             /*从数据库来*/
             temp_data.Name = "1_pinlv";
             temp_data.Value = null;
             temp_data.Command = "010E";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
-            /*喷油器1脉宽-1*/
+            /*喷油器1脉宽-6*/
             /*从数据库来*/
             temp_data.Name = "1_pulse";
             temp_data.Value = null;
             temp_data.Command = "010F";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
-            /*喷油器2频率-1*/
+            /*喷油器2频率-7*/
             /*从数据库来*/
             temp_data.Name = "2_pinlv";
             temp_data.Value = null;
             temp_data.Command = "0121";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
-            /*喷油器2脉宽-1*/
+            /*喷油器2脉宽-8*/
             /*从数据库来*/
             temp_data.Name = "2_pulse";
             temp_data.Value = null;
             temp_data.Command = "0122";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
-            /* 喷油器油量系数-1*/
+            /* 喷油器油量系数-9*/
             temp_data.Name = "flow_c2_r1";
             temp_data.Value = null;
             temp_data.Command = "003F";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /* 喷油1使能-1*/
+            /* 喷油1使能-10*/
             temp_data.Name = "penyou_1";
             if (PenYou_1_ShiNeng.IsChecked == true)
             {
@@ -599,9 +631,10 @@ namespace OilP.Pages
             }
             temp_data.Command = "0101";
             temp_data.Value = temp_value.ToString();
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
-            /* 喷油2使能-1*/
+            /* 喷油2使能-11*/
             temp_data.Name = "penyou_2";
             if (PenYou_2_ShiNeng.IsChecked == true)
             {
@@ -613,140 +646,160 @@ namespace OilP.Pages
             }
             temp_data.Value = temp_value.ToString();
             temp_data.Command = "0102";
+            temp_data.PageSelect = "0x10";
             data.Add(temp_data);
 
-            /*柴油当前温度-1*/
+            /*柴油当前温度-12*/
             /*下位机返回*/
             temp_data.Name = "fuel_T";
             temp_data.Value = show_fuel_T_TextBox.Text;
             temp_data.Command = "0032";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*喷油器流量-1*/
+            /*喷油器流量-13*/
             /*下位机返回*/
             temp_data.Name = "inj_flow";
             temp_data.Value = show_inj_flow_TextBox.Text;
             temp_data.Command = "0033";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*油泵流量-1*/
+            /*油泵流量-14*/
             /*下位机返回*/
             temp_data.Name = "pump_flow";
             temp_data.Value = show_pump_flow_TextBox.Text;
             temp_data.Command = "0034";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*读取轨压-1*/
+            /*读取轨压-15*/
             /*下位机返回*/
             temp_data.Name = "read_pressure";
             temp_data.Value = show_read_pressure_TextBox.Text;
             temp_data.Command = "0035";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*读取机油流量-1*/
+            /*读取机油流量-16*/
             /*下位机返回*/
             temp_data.Name = "read_oil_flow";
             temp_data.Value = show_read_oil_flow_TextBox.Text;
             temp_data.Command = "003A";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*系统状态1-1*/
+            /*系统状态1-17*/
             /*下位机返回*/
             temp_data.Name = "sys_status_1";
             temp_data.Value = show_sys_status_1_TextBox.Text;
             temp_data.Command = "003B";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
-            /*系统状态2-1*/
+            /*系统状态2-18*/
             /*下位机返回*/
             temp_data.Name = "sys_status_2";
             temp_data.Value = show_sys_status_2_TextBox.Text;
             temp_data.Command = "003C";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*读取机油压力-1*/
+            /*读取机油压力-19*/
             /*下位机返回*/
             temp_data.Name = "read_oil_pressure";
             temp_data.Value = show_read_oil_pressure_TextBox.Text;
             temp_data.Command = "003D";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*燃油压力电压EL-1*/
+            /*燃油压力电压EL-20*/
             /*下位机返回*/
             temp_data.Name = "el_fuel_V";
             temp_data.Value = show_el_fuel_V_TextBox.Text;
             temp_data.Command = "002C";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*机油压力电压EL-1*/
+            /*机油压力电压EL-21*/
             /*下位机返回*/
             temp_data.Name = "el_oil_V";
             temp_data.Value = show_el_oil_V_TextBox.Text;
             temp_data.Command = "0051";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*燃油DRV电流EL-1*/
+            /*燃油DRV电流EL-22*/
             /*下位机返回*/
             temp_data.Name = "el_fuel_drv";
             temp_data.Value = show_el_fuel_drv_TextBox.Text;
             temp_data.Command = "0052";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*机油DRV电流EL-1*/
+            /*机油DRV电流EL-23*/
             /*下位机返回*/
             temp_data.Name = "el_oil_drv";
             temp_data.Value = show_el_oil_drv_TextBox.Text;
             temp_data.Command = "0053";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*燃油流量计EL-1*/
+            /*燃油流量计EL-24*/
             /*下位机返回*/
             temp_data.Name = "el_fuel_flow";
             temp_data.Value = show_el_fuel_flow_TextBox.Text;
             temp_data.Command = "0054";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
 
-            /*机油流量计EL-1*/
+            /*机油流量计EL-25*/
             /*下位机返回*/
             temp_data.Name = "el_oil_flow";
             temp_data.Value = show_el_oil_flow_TextBox.Text;
             temp_data.Command = "0055";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*喷油器驱动电压EL-1*/
+            /*喷油器驱动电压EL-26*/
             /*下位机返回*/
             temp_data.Name = "el_inj_drive_V";
             temp_data.Value = show_el_inj_drive_V_TextBox.Text;
             temp_data.Command = "0056";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*喷油器电流EL-1*/
+            /*喷油器电流EL-26*/
             /*下位机返回*/
             temp_data.Name = "el_inj_A";
             temp_data.Value = show_el_inj_A_V_TextBox.Text;
             temp_data.Command = "0057";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*机油温度EL-1*/
+            /*机油温度EL-26*/
             /*下位机返回*/
             temp_data.Name = "el_oil_T";
             temp_data.Value = show_el_oil_T_V_TextBox.Text;
             temp_data.Command = "0058";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
 
-            /*回油温度EL-1*/
+            /*回油温度EL-27*/
             /*下位机返回*/
             temp_data.Name = "el_oil_h";
             temp_data.Value = show_el_oil_h_V_TextBox.Text;
             temp_data.Command = "0059";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
 
-            /*机油温度-1*/
+            /*机油温度-28*/
             /*下位机返回*/
             temp_data.Name = "oil_T";
             temp_data.Value = show_oil_T_V_TextBox.Text;
             temp_data.Command = "005A";
+            temp_data.PageSelect = "0x00";
             data.Add(temp_data);
             START_DATA = data;
 
@@ -789,6 +842,7 @@ namespace OilP.Pages
          * */
         public void ShowDataFromLowerStart(List<Setting_Model> setting_Models)
         {
+            /*柴油当前温度-12*/
             show_fuel_T_TextBox.Text = setting_Models[0].Value;
             show_inj_flow_TextBox.Text = setting_Models[1].Value;
             show_pump_flow_TextBox.Text = setting_Models[2].Value;
@@ -874,6 +928,50 @@ namespace OilP.Pages
             /*曲线数据库--电流保持*/
             INTO_DATA[19].Value = cRI_Curve_Model.A_baochi;
         }
+
+        /**
+         * 发送报文
+         * */
+        // public void SendInto485()
+        //{
+        //    RS485Communicate send = new RS485Communicate();
+        //    //发送IntoData
+        //    foreach (Setting_Model item in INTO_DATA)
+        //    {
+        //        StructFrame485 sF485 = new StructFrame485();
+        //        sF485 = ModelTo485(item, "0xFE");
+        //        int sendReturn;
+        //        sendReturn = send.SendOneFrame(sF485);
+        //    }
+        //    //发送StartData
+        //    int i = 0;
+        //    foreach (Setting_Model item in START_DATA)
+        //    {
+        //        StructFrame485 sF485 = new StructFrame485();
+        //        sF485 = ModelTo485(item, "0xFE");
+        //        int sendReturn;
+        //        sendReturn = send.SendOneFrame(sF485);
+        //        i++;//前12条发送完退出
+        //        if (i>=12)
+        //        {
+        //            break;
+        //        }
+        //    }     
+        //}
+
+
+        ///**
+        // * 结构化需要发送的报文
+        // * */
+        // public StructFrame485 ModelTo485(Setting_Model setting_Model, string strFirstByte/*0xFE  or  0xEF*/)
+        //{
+        //    StructFrame485 sF485 = new StructFrame485();
+        //    sF485.strFirstByte = strFirstByte;
+        //    sF485.strOrder = setting_Model.Command;
+        //    sF485.strDataPhysical = setting_Model.Value;
+        //    sF485.strPageSelect = setting_Model.PageSelect;
+        //    return sF485;
+        //}
 
     }
 }

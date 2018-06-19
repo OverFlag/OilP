@@ -15,5 +15,6 @@ namespace OilP.Model
         public string Name { get => name; set => name = value; }
         public string Value { get => value; set => this.value = value; }
         public string Command { get => command; set => command = value; }
+
     }
 }
