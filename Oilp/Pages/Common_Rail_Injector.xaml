@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="电控共轨系统测试软件(版本V1.0) - Common rail injector"   
+        Title="电控共轨系统测试软件(版本V1.0) - Common rail injector"   Unloaded="Page_Unloaded"
       >
     <Page.Resources>
         <ResourceDictionary>
@@ -146,9 +146,9 @@
                     FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="edit_Click"
                      >
             </Button>
-            <Button Content="删除" Name="delete" Grid.Row="0" Grid.Column="2" Margin="30,20,30,20" 
+            <Button Content="设置" Name="set" Grid.Row="0" Grid.Column="2" Margin="30,20,30,20" 
                       Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="LightGreen"
-                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan"
+                    FontSize="35" Height="Auto" FontWeight="Bold" FontFamily="YouYuan" Click="set_Click"
                      >
             </Button>
             <Button Content="确认" Name="confirm" Grid.Row="0" Grid.Column="3" Margin="30,20,30,20" 

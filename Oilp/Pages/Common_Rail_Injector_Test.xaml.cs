@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Oilp.Com;
+using OilP.Com;
 using OilP.Model;
 namespace OilP.Pages
 {
@@ -30,6 +31,8 @@ namespace OilP.Pages
         private static String MODEL_NO;
         public Common_Rail_Injector_Test(string model_no)
         {
+            
+            (Application.Current as App).WindowCount++;
             InitializeComponent();
             Initialize_Page(model_no);
             MODEL_NO = model_no;
@@ -803,6 +806,9 @@ namespace OilP.Pages
             data.Add(temp_data);
             START_DATA = data;
 
+            //为从曲线中获取值的变量赋值
+            SetDataFromCurve(GetDataFromCurve());
+
             return data;
         }
         /**
@@ -930,48 +936,49 @@ namespace OilP.Pages
         }
 
         /**
-         * 发送报文
+         *  检测界面  发送报文   type=2
          * */
-        // public void SendInto485()
-        //{
-        //    RS485Communicate send = new RS485Communicate();
-        //    //发送IntoData
-        //    foreach (Setting_Model item in INTO_DATA)
-        //    {
-        //        StructFrame485 sF485 = new StructFrame485();
-        //        sF485 = ModelTo485(item, "0xFE");
-        //        int sendReturn;
-        //        sendReturn = send.SendOneFrame(sF485);
-        //    }
-        //    //发送StartData
-        //    int i = 0;
-        //    foreach (Setting_Model item in START_DATA)
-        //    {
-        //        StructFrame485 sF485 = new StructFrame485();
-        //        sF485 = ModelTo485(item, "0xFE");
-        //        int sendReturn;
-        //        sendReturn = send.SendOneFrame(sF485);
-        //        i++;//前12条发送完退出
-        //        if (i>=12)
-        //        {
-        //            break;
-        //        }
-        //    }     
-        //}
+        public List<StructFrame485> SendIntoMessage()
+        {
+            List<StructFrame485> structFrame485s = new List<StructFrame485>();
+            List<Setting_Model> setting_Models = new List<Setting_Model>();
+            setting_Models = INTO_DATA;
+            structFrame485s = Send485.CycleSend(2,setting_Models);
+            return structFrame485s;
+        }
 
+        /**
+        *  开始检测  发送报文   type=3  有返回值，根据返回的值填充到需要展示的页面中
+        *  
+        * */
+        public List<StructFrame485> SendStartMessage()
+        {
+            List<StructFrame485> structFrame485s = new List<StructFrame485>();
+            List<Setting_Model> setting_Models = new List<Setting_Model>();
+            setting_Models = START_DATA;
+            structFrame485s = Send485.CycleSend(3, setting_Models);
+            return structFrame485s;
+        }
 
-        ///**
-        // * 结构化需要发送的报文
-        // * */
-        // public StructFrame485 ModelTo485(Setting_Model setting_Model, string strFirstByte/*0xFE  or  0xEF*/)
-        //{
-        //    StructFrame485 sF485 = new StructFrame485();
-        //    sF485.strFirstByte = strFirstByte;
-        //    sF485.strOrder = setting_Model.Command;
-        //    sF485.strDataPhysical = setting_Model.Value;
-        //    sF485.strPageSelect = setting_Model.PageSelect;
-        //    return sF485;
-        //}
+        /**
+       *  停止检测  发送报文   type=4  
+       * */
+        public List<StructFrame485> SendStopMessage()
+        {
+            List<StructFrame485> structFrame485s = new List<StructFrame485>();
+            List<Setting_Model> setting_Models = new List<Setting_Model>();
+            setting_Models = STOP_DATA;
+            structFrame485s = Send485.CycleSend(4, setting_Models);
+            return structFrame485s;
+        }
 
+        /**
+        * 关闭窗口调用的方法
+        **/
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            /*close page     -1s*/
+            (Application.Current as App).WindowCount--;
+        }
     }
 }

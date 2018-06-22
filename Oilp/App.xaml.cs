@@ -13,5 +13,8 @@ namespace OilP
     /// </summary>
     public partial class App : Application
     {
+        /*用于确定当前有几个page页面开启，用于page页面的开启数量*/
+        public  int WindowCount { set; get; }
+
     }
 }

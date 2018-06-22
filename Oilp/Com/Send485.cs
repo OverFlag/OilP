@@ -41,15 +41,11 @@ namespace OilP.Com
                     string commond = structFrame485s[i].strPageSelect + structFrame485s[i].strOrder;
                     if (commond.Equals(set.Command))
                     {
-                       
-                        structFrame485s[i].strDataPhysical = set.Value;
+                        StructFrame485 temp = new StructFrame485();
+                        temp.strDataPhysical = set.Value;
+                        structFrame485s[i] = temp;
                     }
                 }            
-            }
-
-            for (int i = 0; i < setting_Models.Count; i++)
-            {
-                setting_Models[i].Name = "aa";
             }
             return structFrame485s;
         }
@@ -57,7 +53,7 @@ namespace OilP.Com
         /**
          * 循环发送，根据传入的发送时机和setting_models
          **/
-         public List<StructFrame485> CycleSend(int send_type, List<Setting_Model> setting_Models)
+         public static  List<StructFrame485> CycleSend(int send_type, List<Setting_Model> setting_Models)
         {
             RS485Communicate send = new RS485Communicate();
             /* 获取List<StructShowData>参数*/

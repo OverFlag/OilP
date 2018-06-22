@@ -18,10 +18,11 @@ namespace Oilp.Com
 
         #region//主要参数
         public List<StructFrame485>[] llisstruRs485Frame = new List<StructFrame485>[5];//读取并用Congfig文件中的信息初始化发动机的结构体数组。0主/设置界面，1数据库界面，2，检测界面，3点启动按键，4停止/急停
-        public List<StructShowData> lisstruShowData = new List<StructShowData>();//用于显示数据，提取转换方式和变量类型来计算
+        public List<StructShowData> lisstruShowData = new List<StructShowData>();//用于显示获得数据格式，从XML文件中提取转换方式和变量类型，用来与从界面或文件中获得的变量做计算
 
         public List<Setting_Model> lisstruSettingModelRead = new List<Setting_Model>();//用于从界面提取数据和向界面标签赋值
         public List<Setting_Model> lisstruSettingModelWrite = new List<Setting_Model>();//用于从界面提取数据和向界面标签赋值
+        public List<string>[] llisstrOldFileItemsList = new List<string>[6];//用于从配置文件中读取旧数控库文件中的列表标号
         //主界面
         #endregion
         string strConfigFilePath = Application.StartupPath + "\\Config-new.xml";
@@ -88,7 +89,7 @@ namespace Oilp.Com
                 xmldocumentConfig.Load(strConfigFilePath);
                 XmlNode nodeMainFrame = xmldocumentConfig.SelectSingleNode("Config");
                 #region//发动机信息、航海信息结构读取
-                int iTempNodeCout = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes.Count - 1;
+                int iTempNodeCout = nodeMainFrame.ChildNodes[0].ChildNodes.Count;
                 for (int iFrameArry = 0; iFrameArry < llisstruRs485Frame.Length; iFrameArry++)
                 {
                     llisstruRs485Frame[iFrameArry] = new List<StructFrame485>();
@@ -103,22 +104,22 @@ namespace Oilp.Com
                     struShowdata1 = new StructShowData();
                     struSettingMoelRead = new Setting_Model();
                     struSettingMoelWrite = new Setting_Model();
-                    //struFrameData.strTimeStamp = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                    //struFrameData.strFirstByte = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
+                    //struFrameData.strTimeStamp = nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText;
+                    //struFrameData.strFirstByte = nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText;
                     struFrameData.strFirstByte = "FE";
-                    struFrameData.strReadOrWrite = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[1].InnerText;
-                    //struFrameData.strBootLoader = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                    struFrameData.strPageSelect = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[2].InnerText;
-                    struFrameData.strOrder = Convert.ToInt32(nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText).ToString("X");
-                    //struFrameData.strData = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                    //struFrameData.strCheckSum = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                    struFrameData.strSendTime = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[3].InnerText;
-                    struFrameData.strChineseName = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[4].InnerText;
-                    struFrameData.strFormat = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[5].InnerText;
-                    struFrameData.strUnit = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[6].InnerText;
-                    struFrameData.strResolution = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[7].InnerText;
-                    struFrameData.strConvertMatherd = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[8].InnerText;
-                    switch (nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[3].InnerText)
+                    struFrameData.strReadOrWrite = nodeMainFrame.ChildNodes[i].ChildNodes[1].InnerText;
+                    //struFrameData.strBootLoader = nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText;
+                    struFrameData.strPageSelect = nodeMainFrame.ChildNodes[i].ChildNodes[2].InnerText;
+                    struFrameData.strOrder = Convert.ToInt32(nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText).ToString("X");
+                    //struFrameData.strData = nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText;
+                    //struFrameData.strCheckSum = nodeMainFrame.ChildNodes[i].ChildNodes[0].InnerText;
+                    struFrameData.strSendTime = nodeMainFrame.ChildNodes[i].ChildNodes[3].InnerText;
+                    struFrameData.strChineseName = nodeMainFrame.ChildNodes[i].ChildNodes[4].InnerText;
+                    struFrameData.strFormat = nodeMainFrame.ChildNodes[i].ChildNodes[5].InnerText;
+                    struFrameData.strUnit = nodeMainFrame.ChildNodes[i].ChildNodes[6].InnerText;
+                    struFrameData.strResolution = nodeMainFrame.ChildNodes[i].ChildNodes[7].InnerText;
+                    struFrameData.strConvertMatherd = nodeMainFrame.ChildNodes[i].ChildNodes[8].InnerText;
+                    switch (nodeMainFrame.ChildNodes[i].ChildNodes[3].InnerText)
                     {
                         case "主/设置界面":
                             llisstruRs485Frame[0].Add(struFrameData);
@@ -138,19 +139,19 @@ namespace Oilp.Com
                         default:
                             break;
                     }
-                    struShowdata1.strData = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[10].InnerText;
+                    struShowdata1.strData = nodeMainFrame.ChildNodes[i].ChildNodes[10].InnerText;
                     struShowdata1.strOrderAndPageSelect = struFrameData.strPageSelect.PadLeft(2, '0') + struFrameData.strOrder.PadLeft(2, '0');
-                    struShowdata1.strFormat = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[5].InnerText;
-                    struShowdata1.strUnit = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[6].InnerText;
-                    struShowdata1.strResolution = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[7].InnerText;
-                    struShowdata1.strConvertMatherd = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[8].InnerText;
+                    struShowdata1.strFormat = nodeMainFrame.ChildNodes[i].ChildNodes[5].InnerText;
+                    struShowdata1.strUnit = nodeMainFrame.ChildNodes[i].ChildNodes[6].InnerText;
+                    struShowdata1.strResolution = nodeMainFrame.ChildNodes[i].ChildNodes[7].InnerText;
+                    struShowdata1.strConvertMatherd = nodeMainFrame.ChildNodes[i].ChildNodes[8].InnerText;
                     lisstruShowData.Add(struShowdata1);
 
-                    struSettingMoelRead.Name = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[12].InnerText;
+                    struSettingMoelRead.Name = nodeMainFrame.ChildNodes[i].ChildNodes[12].InnerText;
                     struSettingMoelRead.Command = struShowdata1.strOrderAndPageSelect;
                     struSettingMoelRead.strSendTime = struFrameData.strSendTime;
                     lisstruSettingModelRead.Add(struSettingMoelRead);
-                    struSettingMoelWrite.Name = nodeMainFrame.FirstChild.ChildNodes[0].ChildNodes[i].ChildNodes[12].InnerText;
+                    struSettingMoelWrite.Name = nodeMainFrame.ChildNodes[i].ChildNodes[12].InnerText;
                     struSettingMoelWrite.Command = struShowdata1.strOrderAndPageSelect;
                     struSettingMoelWrite.strSendTime = struFrameData.strSendTime;
                     lisstruSettingModelWrite.Add(struSettingMoelWrite);
@@ -172,6 +173,7 @@ namespace Oilp.Com
         }
         public void FunShow(Exception ex)
         {
+            MessageBox.Show(ex.ToString());
             bool bHaveSameException = false;
             string[] lstrException = ex.ToString().Split('\n');
             if (lstrExceptionLastSentence.Count > 0)

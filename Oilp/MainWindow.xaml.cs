@@ -13,8 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OilP.Com;
 using OilP.Model;
-
+using OilP.Pages;
 
 /**
  * author:Slytherin
@@ -29,11 +30,15 @@ namespace OilP
     /// </summary>
     public partial class MainWindow : Window
     {
+        /*用于判断*/
+        public static int windowCount = 0;
+
         public MainWindow()
         {
             InitializeComponent();
             Initialize_Item_Name();
-           
+            /*初始化结束后发送报文*/
+            SendMessage();
         }
 
         /**
@@ -159,31 +164,70 @@ namespace OilP
         {
             //this.Content = new Pages.Common_Rail_Injector();
 
+            if (!CheckWindow())
+            {
+                string message = "请关闭已开启的检测窗口，同时只允许存在一个检测窗口";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                if (dr == MessageBoxResult.OK)
+                {
+                    return;
+                }
+                return;
+            }
+
             //可以实现
             NavigationWindow window = new NavigationWindow();
             window.Source = new Uri("Pages/Common_Rail_Injector.xaml", UriKind.Relative);
             window.Height = 1100;
             window.Width = 1500;
+            /*open NavigationWindow  +1s*/
+            (Application.Current as App).WindowCount++;
             window.Show();
         }
 
         private void common_rail_pump_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!CheckWindow())
+            {
+                string message = "请关闭已开启的检测窗口，同时只允许存在一个检测窗口";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                if (dr == MessageBoxResult.OK)
+                {
+                    return;
+                }
+                return;
+            }
+
             //可以实现
-            NavigationWindow window = new NavigationWindow();
+            NavigationWindow window = new NavigationWindow();           
             window.Source = new Uri("Pages/Common_Rail_Pump_Test.xaml", UriKind.Relative);
             window.Height = 900;
             window.Width = 1200;
+            /*open NavigationWindow  +1s*/
+            (Application.Current as App).WindowCount++;
             window.Show();
         }
 
         private void hpo_pump_Click(object sender, RoutedEventArgs e)
         {
+            if (!CheckWindow())
+            {
+                string message = "请关闭已开启的检测窗口，同时只允许存在一个检测窗口";
+                MessageBoxResult dr = MessageBox.Show(message, "提示", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+                if (dr == MessageBoxResult.OK)
+                {
+                    return;
+                }
+                return;
+            }
+
             NavigationWindow window = new NavigationWindow();
             window.Source = new Uri("Pages/HPO_Pump_Injector.xaml", UriKind.Relative);
             window.Height = 1000;
             window.Width = 1400;
+            /*open NavigationWindow  +1s*/
+            (Application.Current as App).WindowCount++;
             window.Show();
         }
 
@@ -228,6 +272,32 @@ namespace OilP
             window.Height = 500;
             window.Width = 700;
             window.Show();
+        }
+
+        /**
+         * 主界面/设置 发送报文   type=0
+         * */
+        public void SendMessage()
+        {
+            List<Setting_Model> setting_Models = new List<Setting_Model>();
+            Common_Rail_Injector_Setting common_Rail_Injector_Setting = new Common_Rail_Injector_Setting();
+            setting_Models = common_Rail_Injector_Setting.GetDataFromPage();
+            Send485.CycleSend(0, setting_Models);
+        }
+
+        /**
+         * 检查是否打开了两个以上的界面
+         * */
+         public bool CheckWindow()
+        {
+            if ((Application.Current as App).WindowCount==1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

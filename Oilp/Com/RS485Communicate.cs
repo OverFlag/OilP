@@ -158,7 +158,6 @@ namespace Oilp.Com
             }
         }
 
-
         public int CycleSendFrame(List<StructShowData> lisstruDataInfo, int iCycleNum, ref List<StructFrame485> lisstruRs485Frame)//连续发送一组报文List<StructShowData> lisstruDataInfo要发送的一组报文数组的数据部分，从调用函数端传过来，填充到对应的发送报文中， int iCycleNum发送报文组号，表示当前发送support提取xml文件得到的几组需要发送的报文中的哪一组报文, ref List<StructFrame485> lisstruRs485Frame当发送读取报文从控制器内部读取数据时的包含所读取数据的返回报文，用于提取控制器当前数据
         {
             try
@@ -171,6 +170,7 @@ namespace Oilp.Com
                 {
                     return 1;
                 }
+                serialPort.PortName = "COM10";
                 OpenPort();
                 for (int i = 0; i < llisstruRs485Frame[iCycleNum].Count; i++)
                 {
@@ -388,7 +388,7 @@ namespace Oilp.Com
                         else
                         {
                             serialPort.Open();
-                            serialPort.ReadTimeout = 20;
+                            serialPort.ReadTimeout = 500;
                         }
                         if (serialPort.IsOpen)
                         {
@@ -425,6 +425,26 @@ namespace Oilp.Com
             }
 
         }
+        public void SendCommand(string strLine)//按字节发送
+        {
+            ////转换
+            ////串口只能读取ASCII码或者进制数（1，2，3.....的进制，一般是16进制）
+            //byte[] WriteBuffer = Encoding.ASCII.GetBytes(CommandString);
+            ////将数据缓冲区的数据写入到串口端口
+            //serialPort.Write(WriteBuffer, 0, WriteBuffer.Length);
+
+            //转换
+            //串口只能读取ASCII码或者进制数（1，2，3.....的进制，一般是16进制）
+
+            byte[] WriteBuffer = new byte[strLine.Length / 2];
+
+            for (int i = 0; i < strLine.Length / 2; i++)
+            {
+                WriteBuffer[i] = Convert.ToByte(strLine.Substring(i * 2, 2), 16);
+            }
+            //将数据缓冲区的数据写入到串口端口
+            serialPort.Write(WriteBuffer, 0, WriteBuffer.Length);
+        }
         public int Write(string strLine)//1为信，其他为旧传感器
         {
             bWrite = true;
@@ -432,7 +452,15 @@ namespace Oilp.Com
             {
                 if (serialPort.IsOpen == true)
                 {
-                    serialPort.WriteLine(strLine);
+                    byte[] WriteBuffer = new byte[strLine.Length / 2];
+
+                    for (int i = 0; i < strLine.Length / 2; i++)
+                    {
+                        WriteBuffer[i] = Convert.ToByte(strLine.Substring(i * 2, 2), 16);
+                    }
+                    //将数据缓冲区的数据写入到串口端口
+                    serialPort.Write(WriteBuffer, 0, WriteBuffer.Length);
+                    //serialPort.WriteLine(strLine);
                     bWrite = false;
                     return 0;
                 }
@@ -447,7 +475,7 @@ namespace Oilp.Com
             }
 
         }
-        private int ReadLine(ref string strNewLine)//old旧传感器
+        public int ReadLine(ref string strNewLine)//old旧传感器
         {
             if (bWrite != false)
             {
@@ -457,13 +485,24 @@ namespace Oilp.Com
             {
                 if (serialPort.IsOpen)
                 {
+                    //string currentline = "";
+                    //循环接收串口中的数据
+                    Thread.Sleep(100);
+                    while (serialPort.BytesToRead > 0)
+                    {
+                        string ch = Convert.ToString(serialPort.ReadByte(), 16).PadLeft(2, '0');
+                        strNewLine += ch.ToString();
+                    }
+
                     //string strTemp = serialPort.ReadLine();
                     //while (strTemp!=null)
                     //{
                     //    strNewLine = strTemp;
                     //    strTemp = serialPort.ReadLine();
                     //}
-                    strNewLine = serialPort.ReadLine();
+                    //strNewLine = serialPort.ReadLine();
+                    //strNewLine = serialPort.ReadExisting();
+                    //strNewLine = serialPort.();
                     if (strNewLine.Length <= 0)
                     { return 1; }
                     serialPort.DiscardInBuffer();
@@ -472,7 +511,7 @@ namespace Oilp.Com
             }
             catch (Exception e)
             {
-                Support.FunShow(e);
+                //Support.FunShow(e);
                 return 1;
             }
         }

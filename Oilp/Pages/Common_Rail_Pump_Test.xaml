@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-      Title="Common_Rail_Injector_Test"  Height="1000" Width="1400">
+      Title="Common_Rail_Injector_Test"  Height="1000" Width="1400"  Unloaded="Page_Unloaded">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

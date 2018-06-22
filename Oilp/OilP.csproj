@@ -97,6 +97,7 @@
     <Compile Include="Dao\Config_DAO.cs" />
     <Compile Include="Dao\CRI_Curve_DAO.cs" />
     <Compile Include="Dao\CRI_DAO.cs" />
+    <Compile Include="Dao\CRI_SET_DAO.cs" />
     <Compile Include="Dao\Device_Information_DAO.cs" />
     <Compile Include="Dao\DEV_DAO.cs" />
     <Compile Include="Dao\HPO_DAO.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Model\Common_Rail_Injector_Test.cs" />
     <Compile Include="Model\CONFIG_Model.cs" />
     <Compile Include="Model\CRI_Curve_Model.cs" />
+    <Compile Include="Model\CRI_SET.cs" />
     <Compile Include="Model\Setting_Model.cs" />
     <Compile Include="Model\CRI_Model.cs" />
     <Compile Include="Model\Detail_Information.cs" />

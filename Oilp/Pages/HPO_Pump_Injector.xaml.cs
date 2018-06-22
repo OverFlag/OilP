@@ -152,6 +152,12 @@ namespace OilP.Pages
             this.NavigationService.Navigate(hPO_Pump_Injector_Test_page);
             //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Common_Rail_Injector_Test.xaml", UriKind.Relative));
         }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            /*close page     -1s*/
+            (Application.Current as App).WindowCount--;
+        }
     }
 }
 

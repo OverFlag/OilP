@@ -31,6 +31,12 @@ namespace OilP.Pages
         {
             Application.Current.Shutdown();
         }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            /*close page     -1s*/
+            (Application.Current as App).WindowCount--;
+        }
     }
 }
 

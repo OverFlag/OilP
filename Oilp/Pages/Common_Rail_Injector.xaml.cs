@@ -27,6 +27,7 @@ namespace OilP.Pages
             InitializeComponent();
             Initialize_Page();
         }
+        
 
         /**
          * set the item name and datagrid
@@ -54,6 +55,8 @@ namespace OilP.Pages
          * */
         private void Button_Exit_Click(object sender, RoutedEventArgs e)
         {
+            //关闭窗口数量减1
+            (Application.Current as App).WindowCount--;
              Application.Current.Shutdown();
             //NavigationService.GetNavigationService(this).Navigate(new Uri("Pages/Page1.xaml", UriKind.Relative));
         }
@@ -69,7 +72,7 @@ namespace OilP.Pages
             exit_system.Content = item_Names[2].Item_name;
             add.Content = item_Names[3].Item_name;
             edit.Content = item_Names[4].Item_name;
-            delete.Content = item_Names[5].Item_name;
+            set.Content = item_Names[5].Item_name;
             confirm.Content = item_Names[6].Item_name;
             //change the datagrid header language
             Regex regChina = new Regex("^[^\x00-\xFF]");
@@ -93,7 +96,7 @@ namespace OilP.Pages
             exit_system.FontFamily = new FontFamily(font);
             add.FontFamily = new FontFamily(font);
             edit.FontFamily = new FontFamily(font);
-            delete.FontFamily = new FontFamily(font); 
+            set.FontFamily = new FontFamily(font); 
             confirm.FontFamily = new FontFamily(font);
         }
 
@@ -188,6 +191,22 @@ namespace OilP.Pages
             data.Add(temp_data);
 
             return data;
+        }
+
+        /**
+         * 关闭窗口调用的方法
+         **/
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            /*close page     -1s*/
+            (Application.Current as App).WindowCount--;
+        }
+
+        private void set_Click(object sender, RoutedEventArgs e)
+        {
+            //页面跳转
+            Common_Rail_Injector_Setting common_Rail_Injector_Setting_Page = new Common_Rail_Injector_Setting();
+            this.NavigationService.Navigate(common_Rail_Injector_Setting_Page);
         }
     }
 }

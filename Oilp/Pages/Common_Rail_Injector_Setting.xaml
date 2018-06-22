@@ -390,6 +390,10 @@
                     </Grid>
                 </Grid>
             </Grid>
+            <Grid Grid.Row="1">
+                <Button Name="UpdateData" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Width="120" Height="50" Background="Gray" Content="更新数据" FontSize="20" ></Button>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
